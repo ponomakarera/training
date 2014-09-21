@@ -1,3 +1,1 @@
-function javascript() {
-  alert("fdosihf");
-}
+document.write("<p>JavaScript テスト</p>");
