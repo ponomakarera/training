@@ -183,8 +183,7 @@ function newGame() {
 }
 
 var element = document.getElementById("tetris");
-ctx.font = "20pt Arial";
-ctx.fillText("Click Start", 10, 50); 
+ 
 element.onclick = function (e){
     // InternetExplorer 用
 		if (!e)	e = window.event;
