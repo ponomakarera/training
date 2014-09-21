@@ -22,6 +22,10 @@ var shapes = [
 var colors = [
     'cyan', 'orange', 'blue', 'yellow', 'red', 'green', 'purple'
 ];
+var canvas = document.getElementsByTagName( 'canvas' )[ 0 ];
+var context = canvas.getContext( '2d' );
+context.font = "20pt Arial";
+context.fillText("Sample String", 10, 50);
 
 // creates a new 4x4 shape in global variable 'current'
 // 4x4 so as to cover the size when the shape is rotated
