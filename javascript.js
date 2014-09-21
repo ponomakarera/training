@@ -1,1 +1,3 @@
-alert("dsoihf");
+function javascript() {
+  alert("fdosihf");
+}
