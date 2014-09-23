@@ -3,4 +3,3 @@ $.each(['#000000', '#1C1C1C', '#424242', '#6E6E6E', '#A4A4A4', '#D8D8D8', '#F2F2
               });
     $('#colors_sketch').sketch();
   });
-  $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts?id=98223055450&api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&jsonp=?",function(data){$('#colors_demo .tools').append("<a href="#colors_sketch" data-setBaseImageURL=" + data.response.posts[0].photos[0].original_size.url + " style="float: right;">image</a>");});
