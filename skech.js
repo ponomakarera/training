@@ -89,17 +89,8 @@ var __slice = Array.prototype.slice;
 
 
 
-          if ($(this).attr('data-download')) {
-            sketch.download($(this).attr('data-download'));
-          }
           else if ($(this).attr('data-setBaseImageURL')) {
             sketch.setBaseImageURL($(this).attr('data-setBaseImageURL'));
-          }
-          else if ($(this).attr('data-setBgcolor')) {
-            sketch.setBgcolor($(this).attr('data-setBgcolor'));
-          }
-          else if ($(this).attr('data-clear')) {
-            sketch.clear($(this).attr('data-clear'));
           }
 
           return false;
@@ -114,7 +105,7 @@ var __slice = Array.prototype.slice;
 
 
 		// 追加
-    Sketch.prototype.clear = function(format) {
+    Sketch.prototype.clear = function() {
 			var cc = this.context;
 			cc.setTransform(1, 0, 0, 1, 0, 0);
 			cc.clearRect(0, 0, 1000, 1000);
