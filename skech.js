@@ -89,7 +89,7 @@ var __slice = Array.prototype.slice;
 
 
 
-          else if ($(this).attr('data-setBaseImageURL')) {
+          if ($(this).attr('data-setBaseImageURL')) {
             sketch.setBaseImageURL($(this).attr('data-setBaseImageURL'));
           }
 
