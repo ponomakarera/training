@@ -95,6 +95,12 @@ var __slice = Array.prototype.slice;
           else if ($(this).attr('data-setBaseImageURL')) {
             sketch.setBaseImageURL($(this).attr('data-setBaseImageURL'));
           }
+          else if ($(this).attr('data-setBgcolor')) {
+            sketch.setBgcolor($(this).attr('data-setBgcolor'));
+          }
+          else if ($(this).attr('data-clear')) {
+            sketch.clear($(this).attr('data-clear'));
+          }
 
           return false;
         });
