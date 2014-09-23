@@ -28,10 +28,19 @@ var __slice = Array.prototype.slice;
     }
   };
   Sketch = (function() {
+
+
     function Sketch(el, opts) {
       this.el = el;
       this.canvas = $(el);
       this.context = el.getContext('2d');
+
+      this.bgcolor = 'rgb(255,255,255)';
+
+      //背景色設定
+      this.context.fillStyle = this.bgcolor;
+      this.context.fillRect(0, 0, this.canvas.width(), this.canvas.height());
+
       this.options = $.extend({
         toolLinks: true,
         defaultTool: 'marker',
@@ -44,27 +53,73 @@ var __slice = Array.prototype.slice;
       this.tool = this.options.defaultTool;
       this.actions = [];
       this.action = [];
+
+      this.baseImageURL = "", //追加
+      this.baseImageCache = "",
+
+
       this.canvas.bind('click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel', this.onEvent);
+
+			// iPhone対応追加
+			var _this = this;
+			this.canvas.get(0).addEventListener("touchend", function(){
+				if (_this.action) {
+					_this.actions.push(_this.action);
+				}
+				_this.painting = false;
+				_this.action = null;
+				return _this.redraw();
+			});
+
       if (this.options.toolLinks) {
         $('body').delegate("a[href=\"#" + (this.canvas.attr('id')) + "\"]", 'click', function(e) {
           var $canvas, $this, key, sketch, _i, _len, _ref;
           $this = $(this);
           $canvas = $($this.attr('href'));
           sketch = $canvas.data('sketch');
+
           _ref = ['color', 'size', 'tool'];
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             key = _ref[_i];
             if ($this.attr("data-" + key)) {
+
               sketch.set(key, $(this).attr("data-" + key));
             }
           }
+
+
+
           if ($(this).attr('data-download')) {
             sketch.download($(this).attr('data-download'));
           }
+          else if ($(this).attr('data-setBaseImageURL')) {
+            sketch.setBaseImageURL($(this).attr('data-setBaseImageURL'));
+          }
+
           return false;
         });
       }
     }
+
+    Sketch.prototype.setBgcolor = function(color) {
+      this.bgcolor = color;
+      this.redraw();
+		}
+
+
+		// 追加
+    Sketch.prototype.clear = function(format) {
+			var cc = this.context;
+			cc.setTransform(1, 0, 0, 1, 0, 0);
+			cc.clearRect(0, 0, 1000, 1000);
+			cc.restore();
+			this.baseImageURL = "";
+			this.baseImageCache = "";
+
+			this.actions = [];
+			this.redraw();
+		}
+
     Sketch.prototype.download = function(format) {
       var mime;
       format || (format = "png");
@@ -72,7 +127,7 @@ var __slice = Array.prototype.slice;
         format = "jpeg";
       }
       mime = "image/" + format;
-      return window.open(this.el.toDataURL(mime));
+      return this.el.toDataURL(mime);
     };
     Sketch.prototype.set = function(key, value) {
       this[key] = value;
@@ -104,10 +159,38 @@ var __slice = Array.prototype.slice;
       e.preventDefault();
       return false;
     };
+
+    Sketch.prototype.setBaseImageURL = function(url){
+     this.clear();
+     this.baseImageURL = url;
+     this.baseImageCache = "";
+     return this.redraw();
+    }
+
     Sketch.prototype.redraw = function() {
       var sketch;
       this.el.width = this.canvas.width();
       this.context = this.el.getContext('2d');
+
+      //背景色設定
+      this.context.fillStyle = this.bgcolor;
+      this.context.fillRect(0, 0, this.canvas.width(), this.canvas.height());
+
+
+      if(this.baseImageURL){
+       if(this.baseImageCache){
+          this.context.drawImage(this.baseImageCache, 0, 0);
+       } else {
+        var img = new Image();    //新規画像オブジェクト
+        var _this = this;
+        img.src = this.baseImageURL;
+        img.onload = (function(){
+          _this.baseImageCache = img;
+          _this.context.drawImage(img, 0, 0);
+        });
+       }
+      }
+
       sketch = this;
       $.each(this.actions, function() {
         if (this.tool) {
@@ -163,6 +246,58 @@ var __slice = Array.prototype.slice;
       return this.context.stroke();
     }
   };
+
+//Added
+  $.sketch.tools.spoit = {
+    onEvent: function(e) {
+      switch (e.type) {
+        case 'mousedown':
+        case 'touchstart':
+          $.sketch.tools.marker.onEvent.call(this, e);
+        break;
+      }
+    },
+    draw: function(action) {
+      var event, previous, _i, _len, _ref;
+      var cc = this.context;
+      var spuitImage = cc.getImageData(action.events[0].x, action.events[0].y, 1, 1);
+      var r = spuitImage.data[0];
+      var g = spuitImage.data[1];
+      var b = spuitImage.data[2];
+      var spuit_color = 'rgb(' + r +','+ g + ',' + b +')';
+      this.color = spuit_color ;
+
+      setPaletColor(this.color); // Palletの色変更
+      return false;
+    }
+  };
+
+//Added
+  $.sketch.tools.nuru = {
+    onEvent: function(e) {
+      switch (e.type) {
+        case 'mousedown':
+        case 'touchstart':
+          alert("1");
+
+        break;
+      }
+    },
+    draw: function(action) {
+
+
+      var event, previous, _i, _len, _ref;
+
+      this.context.moveTo(action.events[0].x, action.events[0].y);
+      this.context.fillStyle = "rgb(255, 0, 0)";
+      this.context.fill();
+      return this.context.stroke();
+
+    }
+  };
+
+
+
   return $.sketch.tools.eraser = {
     onEvent: function(e) {
       return $.sketch.tools.marker.onEvent.call(this, e);
@@ -170,10 +305,16 @@ var __slice = Array.prototype.slice;
     draw: function(action) {
       var oldcomposite;
       oldcomposite = this.context.globalCompositeOperation;
+
       this.context.globalCompositeOperation = "copy";
-      action.color = "rgba(0,0,0,0)";
+      action.color = this.bgcolor;
       $.sketch.tools.marker.draw.call(this, action);
       return this.context.globalCompositeOperation = oldcomposite;
     }
   };
+
+
+
+
+
 })(jQuery);
