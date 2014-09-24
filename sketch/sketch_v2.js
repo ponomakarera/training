@@ -117,7 +117,7 @@ var __slice = Array.prototype.slice;
 
 
 		// 追加
-    Sketch.prototype.clear = function(format) {
+    Sketch.prototype.clear = function() {
 			var cc = this.context;
 			cc.setTransform(1, 0, 0, 1, 0, 0);
 			cc.clearRect(0, 0, 1000, 1000);
@@ -128,7 +128,7 @@ var __slice = Array.prototype.slice;
 			this.actions = [];
 			this.redraw();
 		}
-　　Sketch.prototype.erase = function(format) {
+　　Sketch.prototype.erase = function() {
 　　	this.clear();
 　　	this.setBaseImageURL(this.baseImageURL);
 　　}
