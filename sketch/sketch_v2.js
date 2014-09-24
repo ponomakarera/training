@@ -157,7 +157,7 @@ var __slice = Array.prototype.slice;
 			cc.restore();
 			this.baseImageURL = "";
 			this.baseImageCache = "";
-
+			urlCounter = 0;
 			this.actions = [];
 			this.redraw();
 		}
@@ -169,7 +169,7 @@ var __slice = Array.prototype.slice;
 　　Sketch.prototype.next = function() {
 　　	urlCounter += 1;
 　　	if (urlCounter >= maxphotos) {
-　　		this.urlCounter = maxphotos - 1;
+　　		urlCounter = maxphotos - 1;
 　　	}
 　　	this.setBaseImageURL(imageUrl[urlCounter]);
 　　}
