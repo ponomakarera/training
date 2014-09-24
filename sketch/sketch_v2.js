@@ -99,7 +99,10 @@ var __slice = Array.prototype.slice;
             sketch.setBgcolor($(this).attr('data-setBgcolor'));
           }
           else if ($(this).attr('data-clear')) {
-            sketch.clear($(this).attr('data-clear'));
+            sketch.clear();
+          }
+          else if ($(this).attr('data-erase')) {
+            sketch.erase();
           }
 
           return false;
@@ -126,11 +129,8 @@ var __slice = Array.prototype.slice;
 			this.redraw();
 		}
 　　Sketch.prototype.erase = function(format) {
-			var cc = this.context;
-			cc.setTransform(1, 0, 0, 1, 0, 0);
-			cc.clearRect(0, 0, 1000, 1000);
-			cc.restore();
-			this.redraw();
+　　	this.clear();
+　　	this.setBaseImageURL(this.baseImageURL);
 　　}
 
     Sketch.prototype.download = function(format) {
@@ -174,7 +174,7 @@ var __slice = Array.prototype.slice;
     };
 
     Sketch.prototype.setBaseImageURL = function(url){
-     this.clear();
+     //this.clear();
      this.baseImageURL = url;
      this.baseImageCache = "";
      return this.redraw();
