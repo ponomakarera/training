@@ -118,6 +118,9 @@ var __slice = Array.prototype.slice;
           else if ($(this).attr('data-test')) {
             sketch.test();
           }
+          else if ($(this).attr('data-url')) {
+            sketch.url($(this).attr('data-url'));
+          }
 
           return false;
         });
@@ -144,6 +147,10 @@ var __slice = Array.prototype.slice;
     	console.log(this.urlCounter);
     	console.log("\nmaxphos");
     	console.log(this.maxphotos);
+    }
+    Sketch.prototype.url = function(format) {
+      this.imageUrl.push(format);
+      this.maxphotos++;
     }
 
 
