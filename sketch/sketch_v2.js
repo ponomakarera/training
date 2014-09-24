@@ -4,6 +4,7 @@ var __slice = Array.prototype.slice;
   var imageUrl = [];
   var urlCounter = 0;
   var maxphotos = 0;
+  var newline = false;
   $.fn.sketch = function() {
     var args, key, sketch;
     key = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
@@ -96,9 +97,9 @@ var __slice = Array.prototype.slice;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             key = _ref[_i];
             if ($this.attr("data-" + key)) {
-            	if (!($(this).attr('data-tool') == "line")) {
+            	
             		sketch.set('tool', 'marker');
-            	}
+            if (!($(this).attr('data-tool') == "line") || newline ~= newline) {
 
               sketch.set(key, $(this).attr("data-" + key));
             }
