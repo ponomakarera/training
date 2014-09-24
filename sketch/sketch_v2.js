@@ -288,6 +288,7 @@ var __slice = Array.prototype.slice;
   };
   $.sketch.tools.marker = {
     onEvent: function(e) {
+    	this.point = 0;
       switch (e.type) {
         case 'mousedown':
         case 'touchstart':
