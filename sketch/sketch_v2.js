@@ -50,7 +50,6 @@ var __slice = Array.prototype.slice;
       			console.log(data.response.posts[i].photos[j].original_size.url);
       			imageUrl.push(data.response.posts[i].photos[j].original_size.url);
       			maxphotos++;
-      			Sketch.test();
       		}
       	}
       });/*});*/
