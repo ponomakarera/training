@@ -44,7 +44,7 @@ var __slice = Array.prototype.slice;
       this.imageUrl = [];
       this.urlCounter = 0;
       this.maxphotos = 0;
-      $(function(){$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=スケッチ&limit=20&jsonp=?",function(data) {
+      $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=スケッチ&limit=20&jsonp=?",function(data) {
       	for (var i in data.response.posts) {
       		for (var j in data.response.posts[i].photos) {
       			this.imageUrl.push(data.response.posts[i].photos[j].original_size.url);
@@ -52,7 +52,7 @@ var __slice = Array.prototype.slice;
       		        this.maxphotos++;
       		}
       	}
-      });});
+      });
 
       this.options = $.extend({
         toolLinks: true,
@@ -144,6 +144,14 @@ var __slice = Array.prototype.slice;
     	console.log("\nmaxphos");
     	console.log(this.maxphotos);
     }
+    /*Sketch.prototype.urlget = function() {
+    	console.log("imageurl");
+    	console.log(this.imageUrl);
+    	console.log("\nurlCounter");
+    	console.log(this.urlCounter);
+    	console.log("\nmaxphos");
+    	console.log(this.maxphotos);
+    }*/
 
 
 		// 追加
