@@ -140,11 +140,11 @@ var __slice = Array.prototype.slice;
     Sketch.prototype.test = function() {
     	
     	console.log("imageurl");
-    	console.log(this.imageUrl);
+    	console.log(imageUrl);
     	console.log("\nurlCounter");
-    	console.log(this.urlCounter);
+    	console.log(urlCounter);
     	console.log("\nmaxphos");
-    	console.log(this.maxphotos);
+    	console.log(maxphotos);
     }
 
 
