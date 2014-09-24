@@ -133,6 +133,9 @@ var __slice = Array.prototype.slice;
       this.bgcolor = color;
       this.redraw();
 		}
+    Sketch.prototype.hello = function() {
+    	console.log("hello");
+    }
 
 
 		// 追加
