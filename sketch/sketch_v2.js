@@ -137,7 +137,7 @@ var __slice = Array.prototype.slice;
       this.redraw();
 		}
     Sketch.prototype.test = function() {
-    	console.log("hello");
+    	console.log(this.imageUrl);
     }
 
 
