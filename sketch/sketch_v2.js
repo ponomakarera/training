@@ -48,7 +48,7 @@ var __slice = Array.prototype.slice;
       	for (var i in data.response.posts) {
       		for (var j in data.response.posts[i].photos) {
       			console.log(data.response.posts[i].photos[j].original_size.url);
-      			this.imageUrl.push(data.response.posts[i].photos[j].original_size.url);
+      			$(this).imageUrl.push(data.response.posts[i].photos[j].original_size.url);
       			maxphotos++;
       		}
       	}
