@@ -167,18 +167,18 @@ var __slice = Array.prototype.slice;
 　　	this.setBaseImageURL(url);
 　　}
 　　Sketch.prototype.next = function() {
-　　	this.urlCounter += 1;
-　　	if (urlCounter >= this.maxphotos) {
+　　	urlCounter += 1;
+　　	if (urlCounter >= maxphotos) {
 　　		this.urlCounter = maxphotos - 1;
 　　	}
-　　	this.setBaseImageURL(this.imageUrl[this.urlCounter]);
+　　	this.setBaseImageURL(imageUrl[urlCounter]);
 　　}
 　　Sketch.prototype.prev = function() {
-　　	this.urlCounter -= 1;
+　　	urlCounter -= 1;
 　　	if (urlCounter < 0) {
-　　		this.urlCounter = 0;
+　　		urlCounter = 0;
 　　	}
-　　	this.setBaseImageURL(this.imageUrl[this.urlCounter]);
+　　	this.setBaseImageURL(imageUrl[urlCounter]);
 　　}
 
     Sketch.prototype.download = function(format) {
