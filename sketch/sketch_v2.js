@@ -129,7 +129,10 @@ var __slice = Array.prototype.slice;
 			this.redraw();
 		}
 　　Sketch.prototype.erase = function() {
-　　	this.clear();
+　　	var cc = this.context;
+	cc.setTransform(1, 0, 0, 1, 0, 0);
+	cc.clearRect(0, 0, 1000, 1000);
+	this.redraw();
 　　	this.setBaseImageURL(this.baseImageURL);
 　　}
 
