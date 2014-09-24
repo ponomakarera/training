@@ -137,7 +137,12 @@ var __slice = Array.prototype.slice;
       this.redraw();
 		}
     Sketch.prototype.test = function() {
+    	console.log("imageurl");
     	console.log(this.imageUrl);
+    	console.log("\nurlCounter");
+    	console.log(this.urlCounter);
+    	console.log("\nmaxphos");
+    	console.log(this.maxphotos);
     }
 
 
