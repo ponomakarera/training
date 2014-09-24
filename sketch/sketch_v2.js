@@ -107,27 +107,35 @@ var __slice = Array.prototype.slice;
 
 
           if ($(this).attr('data-download')) {
+          	sketch.set('tool', 'marker');
             sketch.download($(this).attr('data-download'));
           }
           else if ($(this).attr('data-setBaseImageURL')) {
+          	sketch.set('tool', 'marker');
             sketch.setBaseImageURL($(this).attr('data-setBaseImageURL'));
           }
           else if ($(this).attr('data-setBgcolor')) {
+          	sketch.set('tool', 'marker');
             sketch.setBgcolor($(this).attr('data-setBgcolor'));
           }
           else if ($(this).attr('data-clear')) {
+          	sketch.set('tool', 'marker');
             sketch.clear();
           }
           else if ($(this).attr('data-erase')) {
+          	sketch.set('tool', 'marker');
             sketch.erase();
           }
           else if ($(this).attr('data-next')) {
+          	sketch.set('tool', 'marker');
             sketch.next();
           }
           else if ($(this).attr('data-prev')) {
+          	sketch.set('tool', 'marker');
             sketch.prev();
           }
           else if ($(this).attr('data-test')) {
+          	sketch.set('tool', 'marker');
             sketch.test();
           }
           
