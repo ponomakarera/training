@@ -96,6 +96,9 @@ var __slice = Array.prototype.slice;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             key = _ref[_i];
             if ($this.attr("data-" + key)) {
+            	if (!($(this).attr('data-tool') == "line")) {
+            		sketch.set('tool', 'marker');
+            	}
 
               sketch.set(key, $(this).attr("data-" + key));
             }
