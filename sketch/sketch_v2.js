@@ -133,6 +133,14 @@ var __slice = Array.prototype.slice;
         });
       }
     }
+    Sketch.prototype.newAction = function() {
+        return this.action = {
+          tool: this.tool,
+          color: this.color,
+          size: parseFloat(this.size),
+          events: []
+        };
+      };
 
     Sketch.prototype.setBgcolor = function(color) {
       this.bgcolor = color;
