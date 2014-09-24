@@ -40,6 +40,18 @@ var __slice = Array.prototype.slice;
       //背景色設定
       this.context.fillStyle = this.bgcolor;
       this.context.fillRect(0, 0, this.canvas.width(), this.canvas.height());
+      
+      this.imageUrl = [];
+      this.urlCounter = 0;
+      this.maxphotos = 0;
+      $(function(){$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=スケッチ&limit=20&jsonp=?",function(data) {
+      	for (var i in data.response.posts) {
+      		for (var j in data.response.posts[i].photos) {
+      			this.imageUrl.push(data.response.posts[i].photos[j].original_size.url);
+      		        this.maxphotos++;
+      		}
+      	}
+      });});
 
       this.options = $.extend({
         toolLinks: true,
@@ -104,6 +116,12 @@ var __slice = Array.prototype.slice;
           else if ($(this).attr('data-erase')) {
             sketch.erase();
           }
+          else if ($(this).attr('data-next')) {
+            sketch.next();
+          }
+          else if ($(this).attr('data-prev')) {
+            sketch.prev();
+          }
 
           return false;
         });
@@ -132,6 +150,20 @@ var __slice = Array.prototype.slice;
 　　	var url = this.baseImageURL;
 　　	this.clear();
 　　	this.setBaseImageURL(url);
+　　}
+　　Sketch.prototype.next = function() {
+　　	this.urlCounter += 1;
+　　	if (urlCounter >= this.maxphotos) {
+　　		this.urlCounter = maxphotos - 1;
+　　	}
+　　	this.setBaseImageURL(this.imageUrl[this.urlCounter]);
+　　}
+　　Sketch.prototype.prev = function() {
+　　	this.urlCounter -= 1;
+　　	if (urlCounter < 0) {
+　　		this.urlCounter = 0;
+　　	}
+　　	this.setBaseImageURL(this.imageUrl[this.urlCounter]);
 　　}
 
     Sketch.prototype.download = function(format) {
