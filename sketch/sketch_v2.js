@@ -123,6 +123,9 @@ var __slice = Array.prototype.slice;
           else if ($(this).attr('data-prev')) {
             sketch.prev();
           }
+          else if ($(this).attr('data-test')) {
+            sketch.test();
+          }
 
           return false;
         });
@@ -133,7 +136,7 @@ var __slice = Array.prototype.slice;
       this.bgcolor = color;
       this.redraw();
 		}
-    Sketch.prototype.hello = function() {
+    Sketch.prototype.test = function() {
     	console.log("hello");
     }
 
