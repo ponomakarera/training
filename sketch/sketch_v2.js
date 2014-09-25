@@ -195,7 +195,7 @@ var __slice = Array.prototype.slice;
 			this.baseImageURL = "";
 			this.baseImageCache = "";
 			urlCounter = 0;
-			//this.actions = [];
+			this.actions = [];
 			this.redraw();
 		}
 　　Sketch.prototype.erase = function() {
