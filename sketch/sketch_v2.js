@@ -188,10 +188,6 @@ var __slice = Array.prototype.slice;
 
 		// 追加
     Sketch.prototype.clear = function() {
-    	onEvent: function(e) {
-    		return $.sketch.tools.marker.onEvent.call(this, e);
-    	},
-    	draw: function(action) {
 			var cc = this.context;
 			cc.setTransform(1, 0, 0, 1, 0, 0);
 			cc.clearRect(0, 0, 1000, 1000);
@@ -202,7 +198,6 @@ var __slice = Array.prototype.slice;
 			this.actions = [];
 			this.redraw();
 		}
-    }
 　　Sketch.prototype.erase = function() {
 　　	var url = this.baseImageURL;
 　　	this.clear();
@@ -399,19 +394,6 @@ var __slice = Array.prototype.slice;
 
     }
   };
-  $.sketch.tools.eraser = {
-      onEvent: function(e) {
-        return $.sketch.tools.marker.onEvent.call(this, e);
-      },
-      draw: function(action) {
-        var oldcomposite;
-        oldcomposite = this.context.globalCompositeOperation;
-        this.context.globalCompositeOperation = "destination-out";
-        action.color = "rgba(0,0,0,1)";
-        $.sketch.tools.marker.draw.call(this, action);
-        return this.context.globalCompositeOperation = oldcomposite;
-      }
-    };
   $.sketch.tools.line = {
       onEvent: function(e) {
         var newPoint;
@@ -458,13 +440,22 @@ var __slice = Array.prototype.slice;
       return $.sketch.tools.marker.onEvent.call(this, e);
     },
     draw: function(action) {
-      var oldcomposite;
+      /*var oldcomposite;
       oldcomposite = this.context.globalCompositeOperation;
 
       this.context.globalCompositeOperation = "copy";
       action.color = "rgba(0,0,0,0)";
       $.sketch.tools.marker.draw.call(this, action);
-      return this.context.globalCompositeOperation = oldcomposite;
+      return this.context.globalCompositeOperation = oldcomposite;*/
+      var cc = this.context;
+			cc.setTransform(1, 0, 0, 1, 0, 0);
+			cc.clearRect(0, 0, 1000, 1000);
+			cc.restore();
+			this.baseImageURL = "";
+			this.baseImageCache = "";
+			urlCounter = 0;
+			this.actions = [];
+			this.redraw();
     }
   };
 
