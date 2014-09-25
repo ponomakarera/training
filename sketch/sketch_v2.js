@@ -413,9 +413,14 @@ var __slice = Array.prototype.slice;
               this.action.events.push(this.point);
               this.action.events.push(newPoint);
               this.actions.push(this.action);
+              this.point = 0;
+              return this.redraw;
             }
+            else {
             this.point = newPoint;
             return this.redraw();
+            }
+            
         }
       },
       draw: function(action) {
