@@ -124,9 +124,9 @@ var __slice = Array.prototype.slice;
           	sketch.set('tool', 'marker');
             sketch.clear();
           }
-          else if ($(this).attr('data-erase')) {
+          else if ($(this).attr('data-reset')) {
           	sketch.set('tool', 'marker');
-            sketch.erase();
+            sketch.reset();
           }
           else if ($(this).attr('data-next')) {
           	sketch.set('tool', 'marker');
@@ -163,7 +163,7 @@ var __slice = Array.prototype.slice;
           this.undone.push(this.actions.pop());
         } else if (mode === "redo" && this.undone.length > 0) {
           this.actions.push(this.undone.pop());
-        } else if (mode === "reset") {
+        } else if (mode === "erase") {
           this.undone = [];
           this.actions = [];
           this.action = {};
@@ -196,12 +196,15 @@ var __slice = Array.prototype.slice;
 			this.baseImageCache = "";
 			urlCounter = 0;
 			this.actions = [];
+			this.undone = [];
+			this.action = {};
 			this.redraw();
 		}
-　　Sketch.prototype.erase = function() {
-　　	var url = this.baseImageURL;
-　　	this.clear();
-　　	this.setBaseImageURL(url);
+　　Sketch.prototype.reset = function() {
+　　	this.baseImageURL = "";
+	this.baseImageCache = "";
+	urlCounter = 0;
+	this.redraw();
 　　}
 　　Sketch.prototype.next = function() {
 　　	urlCounter += 1;
