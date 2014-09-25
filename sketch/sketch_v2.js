@@ -195,7 +195,7 @@ var __slice = Array.prototype.slice;
 			this.baseImageURL = "";
 			this.baseImageCache = "";
 			urlCounter = 0;
-			this.actions = [];
+			//this.actions = [];
 			this.redraw();
 		}
 　　Sketch.prototype.erase = function() {
@@ -440,22 +440,13 @@ var __slice = Array.prototype.slice;
       return $.sketch.tools.marker.onEvent.call(this, e);
     },
     draw: function(action) {
-      /*var oldcomposite;
+      var oldcomposite;
       oldcomposite = this.context.globalCompositeOperation;
 
       this.context.globalCompositeOperation = "copy";
       action.color = "rgba(0,0,0,0)";
       $.sketch.tools.marker.draw.call(this, action);
-      return this.context.globalCompositeOperation = oldcomposite;*/
-      var cc = this.context;
-			cc.setTransform(1, 0, 0, 1, 0, 0);
-			cc.clearRect(0, 0, 1000, 1000);
-			cc.restore();
-			this.baseImageURL = "";
-			this.baseImageCache = "";
-			urlCounter = 0;
-			this.actions = [];
-			this.redraw();
+      return this.context.globalCompositeOperation = oldcomposite;
     }
   };
 
