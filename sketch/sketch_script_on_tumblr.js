@@ -5,7 +5,9 @@
 <div class="tools">
 <a href="#colors_sketch" data-clear="clear" style="float: right;">CLEAR</a>
 <a style="float:right; text-decoration:none;">&nbsp;&nbsp;</a>
-<a href="#colors_sketch" data-erase="erase" style="float: right;">erase</a>
+<a href="#colors_sketch" data-operation="erase" style="float: right;">erase</a>
+<a style="float:right; text-decoration:none;">&nbsp;&nbsp;</a>
+<a href="#colors_sketch" data-reset="reset" style="float: right;">reset</a>
 <a style="float:right; text-decoration:none;">&nbsp;&nbsp;</a>
 <a href="#colors_sketch" data-next="next" style="float: right;">next</a>
 <a style="float:right; text-decoration:none;">&nbsp;&nbsp;</a>
