@@ -163,7 +163,7 @@ var __slice = Array.prototype.slice;
           this.undone.push(this.actions.pop());
         } else if (mode === "redo" && this.undone.length > 0) {
           this.actions.push(this.undone.pop());
-        } else if (mode === "clear") {
+        } else if (mode === "reset") {
           this.undone = [];
           this.actions = [];
           this.action = {};
