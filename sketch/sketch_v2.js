@@ -67,6 +67,8 @@ var __slice = Array.prototype.slice;
       this.tool = this.options.defaultTool;
       this.actions = [];
       this.action = [];
+      this.undone = [];
+      this.point = [];
 
       this.baseImageURL = "", //追加
       this.baseImageCache = "",
@@ -138,6 +140,10 @@ var __slice = Array.prototype.slice;
           	sketch.set('tool', 'marker');
             sketch.test();
           }
+          else if ($(this).attr('data-operation')) {
+          	sketch.set('tool', 'marker');
+              sketch.operation($(this).attr('data-operation'));
+          }
           
 
           return false;
@@ -151,6 +157,18 @@ var __slice = Array.prototype.slice;
           size: parseFloat(this.size),
           events: []
         };
+      };
+      Sketch.prototype.operation = function(mode) {
+        if (mode === "undo" && this.actions.length > 0) {
+          this.undone.push(this.actions.pop());
+        } else if (mode === "redo" && this.undone.length > 0) {
+          this.actions.push(this.undone.pop());
+        } else if (mode === "clear") {
+          this.undone = [];
+          this.actions = [];
+          this.action = {};
+        }
+        return this.redraw();
       };
 
     Sketch.prototype.setBgcolor = function(color) {
