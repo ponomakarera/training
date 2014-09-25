@@ -414,7 +414,7 @@ var __slice = Array.prototype.slice;
               this.action.events.push(newPoint);
               this.actions.push(this.action);
               this.point = 0;
-              return this.redraw;
+              return this.redraw();
             }
             else {
             this.point = newPoint;
