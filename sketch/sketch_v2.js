@@ -188,6 +188,10 @@ var __slice = Array.prototype.slice;
 
 		// 追加
     Sketch.prototype.clear = function() {
+    	onEvent: function(e) {
+    		return $.sketch.tools.marker.onEvent.call(this, e);
+    	},
+    	draw: function(action) {
 			var cc = this.context;
 			cc.setTransform(1, 0, 0, 1, 0, 0);
 			cc.clearRect(0, 0, 1000, 1000);
@@ -198,6 +202,7 @@ var __slice = Array.prototype.slice;
 			this.actions = [];
 			this.redraw();
 		}
+    }
 　　Sketch.prototype.erase = function() {
 　　	var url = this.baseImageURL;
 　　	this.clear();
