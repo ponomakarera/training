@@ -157,7 +157,7 @@ var __slice = Array.prototype.slice;
     }
     Sketch.prototype.start = function() {
     	var i = 0;
-        while (i < maxphotos) {
+        while (true) {
         	var j = 0;
         	if (i >= maxphotos) {
         		i = 0;
