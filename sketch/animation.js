@@ -45,7 +45,7 @@ var __slice = Array.prototype.slice;
       this.context.fillRect(0, 0, this.canvas.width(), this.canvas.height());
       
       
-      $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=アニメーション&limit=50&jsonp=?",function(data) {
+      $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=画像&limit=50&jsonp=?",function(data) {
       	for (var i in data.response.posts) {
       		for (var j in data.response.posts[i].photos) {
       			console.log(data.response.posts[i].photos[j].original_size.url);
@@ -144,12 +144,23 @@ var __slice = Array.prototype.slice;
           	sketch.set('tool', 'marker');
               sketch.operation($(this).attr('data-operation'));
           }
-          
+          else if ($(this).attr('data-start')) {
+            sketch.start();
+          }
 
           return false;
         });
       }
     }
+    Sketch.prototype.start = function() {
+    	var i = 0;
+        while (i < maxphotos) {
+        	if (i >= maxphots) {
+        		i = 0;
+        	}
+        this.setBaseImageURL(imageUrl[i]);	
+        }
+      };
     Sketch.prototype.newAction = function() {
         return this.action = {
           tool: this.tool,
