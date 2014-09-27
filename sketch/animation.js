@@ -48,7 +48,7 @@ var __slice = Array.prototype.slice;
       $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/photo?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=画像&limit=50&jsonp=?",function(data) {
       	for (var i in data.response.posts) {
       		for (var j in data.response.posts[i].photos) {
-      			if (data.response.posts[i].photos[j].alt_sizes[4].url == null) {
+      			if (!(data.response.posts[i].photos[j].alt_sizes[4].url)) {
       				continue;
       			}
       			console.log(data.response.posts[i].photos[j].alt_sizes[4].url);
@@ -162,7 +162,7 @@ var __slice = Array.prototype.slice;
         	if (i >= maxphotos) {
         		i = 0;
         	}
-        	while (j++ > 1000);
+        	while (j++ > 5000);
         this.setBaseImageURL(imageUrl[i++]);	
         }
       };
