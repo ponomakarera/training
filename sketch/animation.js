@@ -49,7 +49,7 @@ var __slice = Array.prototype.slice;
       	for (var i in data.response.posts) {
       		for (var j in data.response.posts[i].photos) {
       			console.log(data.response.posts[i].photos[j].alt_sizes[data.response.posts[i].photos[j].alt_sizes.length - 1].url);
-      			imageUrl.push(data.response.posts[i].photos[j].alt_sizes[].data.response.posts[i].photos[j].alt_sizes.length - 1url);
+      			imageUrl.push(data.response.posts[i].photos[j].alt_sizes[data.response.posts[i].photos[j].alt_sizes.length - 1].url);
       			maxphotos++;
       		}
       	}
