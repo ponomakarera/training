@@ -155,7 +155,7 @@ var __slice = Array.prototype.slice;
     Sketch.prototype.start = function() {
     	var i = 0;
         while (i < maxphotos) {
-        	if (i >= maxphots) {
+        	if (i >= maxphotos) {
         		i = 0;
         	}
         this.setBaseImageURL(imageUrl[i]);	
