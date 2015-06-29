@@ -31,8 +31,8 @@ var Asset = {}
 
 // アセットの定義
 Asset.assets = [
-  { type: 'image', name: 'back', src: 'assets/back.png' },
-  { type: 'image', name: 'box', src: 'assets/box.png' }
+  { type: 'image', name: 'back', src: 'http://www.spriters-resource.com/resources/sheets/3/2511.png' },
+  { type: 'image', name: 'box', src: 'http://www.spriters-resource.com/resources/sheets/3/2514.png' }
 ];
 
 // 読み込んだ画像
