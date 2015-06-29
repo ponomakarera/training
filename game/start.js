@@ -36,8 +36,8 @@ var Asset = {}
 
 // アセットの定義
 Asset.assets = [
-  { type: 'image', name: 'back', src: 'http://www.skywaycc.com/file/52/sample_image.gif' },
-  { type: 'image', name: 'box', src: 'http://www.skywaycc.com/file/52/sample_image.gif' }
+  { type: 'image', name: 'back', src: '54006.png' },
+  { type: 'image', name: 'box', src: '54006.png' }
 ];
 
 // 読み込んだ画像
