@@ -25,6 +25,11 @@ function update() {
 function render() {
   // 全体をクリア
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // 背景を表示
+  ctx.drawImage(Asset.images['back'], 0, 0);
+
+  // みかん箱を表示
+  ctx.drawImage(Asset.images['box'], 0, 0);
 }
 
 var Asset = {}
