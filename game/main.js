@@ -1,4 +1,4 @@
 function main() {}
-main.prototype.print() {
+main.prototype.print = function () {
 document.write("Hello World!!");
 }
