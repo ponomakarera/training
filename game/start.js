@@ -1,14 +1,10 @@
 var SCREEN_WIDTH = 800;
 var SCREEN_HEIGHT = 600;
 
-window.addEventListener('load', initial);
+window.addEventListener('load', init);
 
 var canvas;
 var ctx;
-
-function initial() {
-  document.write("Hello World!!");
-}
 
 function init() {
   canvas = document.getElementById('maincanvas');
