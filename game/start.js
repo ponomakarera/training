@@ -13,11 +13,11 @@ function init() {
   canvas.width = SCREEN_WIDTH;
   canvas.height = SCREEN_HEIGHT;
 
-  requestAnimationFrame(update);
+  window.requestAnimationFrame(update);
 }
 
 function update() {
-  requestAnimationFrame(update);
+  window.requestAnimationFrame(update);
 
   render();
 }
