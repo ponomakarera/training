@@ -1,7 +1,7 @@
 var SCREEN_WIDTH = 800;
 var SCREEN_HEIGHT = 600;
 
-window.addEventListener('load', inital);
+window.addEventListener('load', initial);
 
 var canvas;
 var ctx;
