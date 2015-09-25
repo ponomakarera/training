@@ -3,6 +3,8 @@ $.fn.addlink = function(baseURL){
                 "京都","http://ja.wikipedia.org/wiki/京都市",
                 "秋葉原","http://ja.wikipedia.org/wiki/秋葉原",
                 "築地市場","http://ja.wikipedia.org/wiki/築地市場" ];
+                dict.push("test");
+                dict.push("http://ponomakarera.tumblr.com/post/129834164555/test")
     return this.each(function(){
         var srcText = this.innerHTML;
         for (var i=0; i<dict.length; i+=2){
