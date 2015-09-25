@@ -4,7 +4,8 @@ $.fn.addlink = function(baseURL){
       	for (var i in data.response.posts) {
       	  dict.push(data.response.posts[i].title);
       	  dict.push(data.response.posts[i].post_url);
-      	  console.log("hello");
+      	  console.log(data.response.posts[i].title);
+      	  console.log(data.response.posts[i].post_url);
       	}
       });
     return this.each(function(){
