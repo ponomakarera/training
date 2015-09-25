@@ -9,11 +9,11 @@ $.fn.addlink = function(baseURL){
     return this.each(function(){
         var srcText = this.innerHTML;
         console.log(dict);
-        console.log(dict.length);
         var count = 0;
         for (var i in dict) {
           count++;
         }
+        console.log(count);
         for (var i=0; i<count; i+=2){
             srcText = srcText.replace(new RegExp(dict[i], "g"),"<a href='"+dict[i+1]+"'>"+dict[i]+"</a>");
             
