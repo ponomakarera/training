@@ -6,7 +6,7 @@ $.fn.addlink = function(baseURL){
       	  dict.push(data.response.posts[i].post_url);
       	}
       });
-      console.log(dict);
+      console.log("test");
     return this.each(function(){
         var srcText = this.innerHTML;
         for (var i=0; i<dict.length; i+=2){
