@@ -1,8 +1,5 @@
 $.fn.addlink = function(baseURL){
-    var dict = ["富士山", "http://ja.wikipedia.org/wiki/富士山",
-                "京都","http://ja.wikipedia.org/wiki/京都市",
-                "秋葉原","http://ja.wikipedia.org/wiki/秋葉原",
-                "築地市場","http://ja.wikipedia.org/wiki/築地市場" ];
+    var dict = [];
                 dict.push("test");
                 dict.push("http://ponomakarera.tumblr.com/post/129834164555/test")
     return this.each(function(){
