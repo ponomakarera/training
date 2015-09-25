@@ -1,6 +1,6 @@
 $.fn.addlink = function(baseURL){
 var dict = [];
-var tumblr = require('https://npmjs.org/package/tumblr.js');
+var tumblr = require('tumblr.js');
 var client = tumblr.createClient({ consumer_key: '1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V' });
 
 // Make the request
