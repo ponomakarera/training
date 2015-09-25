@@ -6,7 +6,7 @@ $.fn.addlink = function(baseURL){
     return this.each(function(){
         var srcText = this.innerHTML;
         for (var i=0; i<dict.length; i+=2){
-            srcText = srcText.replace(new RegExp(dict[i]),"<a href='"+dict[i+1]+"'>"+dict[i]+"</a>");
+            srcText = srcText.replace(new RegExp(dict[i], "g"),"<a href='"+dict[i+1]+"'>"+dict[i]+"</a>");
         }
         this.innerHTML = srcText;
     });
