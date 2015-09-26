@@ -13,6 +13,7 @@ $(function () {
 	});
     	$(document).ready(function(){
 	 simple_tooltip2(".link","tooltip");
+	 simple_tooltip(".link","tooltip");
 });
     }
       );
