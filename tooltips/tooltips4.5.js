@@ -39,3 +39,6 @@ var my_tooltip = $("#"+name+i);
 		}
 	});
 }
+$(document).ready(function(){
+	 simple_tooltip("a","tooltip");
+});
