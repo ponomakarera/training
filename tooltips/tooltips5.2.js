@@ -29,11 +29,8 @@ var my_tooltip = $("#"+name+i);
 					top_pos = border_top +offset;
 					} else{
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
-					console.log("kmouse.pageY-my_tooltip.height()-offset = "+ kmouse.pageY-my_tooltip.height()-offset);
 					}
 					
-console.log("left_pos = "+ left_pos);
-console.log("top_pos = "+ top_pos);
 				my_tooltip.css({left:left_pos, top:top_pos});
 		}).mouseout(function(){
 				my_tooltip.css({left:"-9999px"});
