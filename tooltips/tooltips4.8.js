@@ -11,7 +11,7 @@ var my_tooltip = $("#"+name+i);
 
 		if($(this).attr("title") != "" && $(this).attr("title") != "undefined"){
 
-		$(this).removeAttr("title").mouseover(function(){console.log("hello ");
+		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 		}).mousemove(function(kmouse){console.log("little");
 				var border_top = $(window).scrollTop();
@@ -32,6 +32,8 @@ var my_tooltip = $("#"+name+i);
 					}
 
 				my_tooltip.css({left:left_pos, top:top_pos});
+				console.log("left_pos="+ leftpos);
+				console.log("top_pos="+ top_pos);
 		}).mouseout(function(){console.log(" boy");
 				my_tooltip.css({left:"-9999px"});
 		});
