@@ -1,9 +1,9 @@
 function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
  var id = $(this).attr('href').match(/(\d+)/);
- $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+id+"&jsonp=?", function(data){
+ $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+id[0]+"&jsonp=?", function(data){
  
-		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+data.posts.body+"</p></div>");
+		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+data.response.posts[0].body+"</p></div>");
 		var my_tooltip = $("#"+name+i);
 
 		if(1 ){
