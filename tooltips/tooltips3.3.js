@@ -4,7 +4,9 @@ function simple_tooltip(target_items, name){
  $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+id[0]+"&jsonp=?", function(data){
  
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+data.response.posts[0].body+"</p></div>");
-		var my_tooltip = $("#"+name+i);
+		
+});
+var my_tooltip = $("#"+name+i);
 
 		if($(this).attr("title") != "" && $(this).attr("title") != "undefined"){
 
@@ -34,6 +36,5 @@ function simple_tooltip(target_items, name){
 		});
 
 		}
-});
 	});
 }
