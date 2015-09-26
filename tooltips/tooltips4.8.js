@@ -13,12 +13,14 @@ var my_tooltip = $("#"+name+i);
 
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-		}).mousemove(function(kmouse){console.log("little");
+		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop();
 				var border_right = $(window).width();
 				var left_pos;
 				var top_pos;
 				var offset = 15;
+				console.log("$(window).scrollTop() = "+ $(window).scrollTop());
+				console.log("$(window).width() = "+ $(window).width());
 				if(border_right - (offset *2) >= my_tooltip.width() + kmouse.pageX){
 					left_pos = kmouse.pageX+offset;
 					} else{
@@ -32,9 +34,7 @@ var my_tooltip = $("#"+name+i);
 					}
 
 				my_tooltip.css({left:left_pos, top:top_pos});
-				console.log("left_pos="+ leftpos);
-				console.log("top_pos="+ top_pos);
-		}).mouseout(function(){console.log(" boy");
+		}).mouseout(function(){
 				my_tooltip.css({left:"-9999px"});
 		});
 
