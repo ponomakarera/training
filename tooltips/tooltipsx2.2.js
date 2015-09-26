@@ -27,7 +27,7 @@ function simple_tooltip(target_items, name){
 				
 				
 				my_tooltip.css({left:left_pos, top:top_pos});
-		}).mouseout(function(){concole.log(" boy");
+		}).mouseout(function(){console.log(" boy");
 				my_tooltip.css({left:"-9999px"});				  
 		});
 		
