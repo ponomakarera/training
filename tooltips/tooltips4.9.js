@@ -19,18 +19,20 @@ var my_tooltip = $("#"+name+i);
 				var left_pos;
 				var top_pos;
 				var offset = 15;
-				console.log("$(window).scrollTop() = "+ $(window).scrollTop());
-				console.log("$(window).width() = "+ $(window).width());
 				if(border_right - (offset *2) >= my_tooltip.width() + kmouse.pageX){
 					left_pos = kmouse.pageX+offset;
+					console.log("kmouse.pageX+offset = "+ kmouse.pageX+offset);
 					} else{
 					left_pos = border_right-my_tooltip.width()-offset;
+					console.log("border_right-my_tooltip.width()-offset = "+ border_right-my_tooltip.width()-offset);
 					}
 
 				if(border_top + (offset *2)>= kmouse.pageY - my_tooltip.height()){
 					top_pos = border_top +offset;
+					console.log("border_top +offset = "+ border_top +offset);
 					} else{
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
+					console.log("kmouse.pageY-my_tooltip.height()-offset = "+ kmouse.pageY-my_tooltip.height()-offset);
 					}
 
 				my_tooltip.css({left:left_pos, top:top_pos});
