@@ -8,12 +8,10 @@ function simple_tooltip(target_items, name){
 });
 
 var my_tooltip = $("#"+name+i);
-my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-my_tooltip.css({left:"200px"/*left_pos*/, top:"200px"/*top_pos*/});
 
 		if(1/*$(this).attr("title") != "" && $(this).attr("title") != "undefined"*/){
 
-		$(".link").mouseover(function(){
+		$(".link").mouseover(function(){console.log("hello");
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop();
