@@ -6,6 +6,7 @@ function simple_tooltip(target_items, name){
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+data.response.posts[0].body+"</p></div>");
 		
 });
+my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 var my_tooltip = $("#"+name+i);
 
 		if(1/*$(this).attr("title") != "" && $(this).attr("title") != "undefined"*/){
