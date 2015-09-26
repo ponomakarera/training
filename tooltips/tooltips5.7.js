@@ -35,8 +35,3 @@ function simple_tooltip(target_items, name){
 
 	});
 }
-
-	
-$(document).ready(function(){
-	 simple_tooltip(".link","tooltip");
-});
