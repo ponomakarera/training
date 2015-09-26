@@ -5,9 +5,9 @@ function simple_tooltip(target_items, name){
 		
 		if($(this).attr("title") != "" && $(this).attr("title") != "undefined" ){
 		
-		$(this).removeAttr("title").mouseover(function(){
+		$(this).removeAttr("title").mouseover(function(){console.log("hello ");
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-		}).mousemove(function(kmouse){
+		}).mousemove(function(kmouse){console.log("little");
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
 				var left_pos;
@@ -27,7 +27,7 @@ function simple_tooltip(target_items, name){
 				
 				
 				my_tooltip.css({left:left_pos, top:top_pos});
-		}).mouseout(function(){
+		}).mouseout(function(){concole.log(" boy");
 				my_tooltip.css({left:"-9999px"});				  
 		});
 		
