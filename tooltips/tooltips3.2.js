@@ -6,7 +6,7 @@ function simple_tooltip(target_items, name){
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+data.response.posts[0].body+"</p></div>");
 		var my_tooltip = $("#"+name+i);
 
-		if(1 ){
+		if($(this).attr("title") != "" && $(this).attr("title") != "undefined"){
 
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
