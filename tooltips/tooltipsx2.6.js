@@ -1,6 +1,6 @@
 function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
-		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p></div>");
+		$("body").append("<div><p>"+$(this).attr('title')+"</p></div>");
 		var my_tooltip = $("#"+name+i);
 		
 		if($(this).attr("title") != "" && $(this).attr("title") != "undefined" ){
