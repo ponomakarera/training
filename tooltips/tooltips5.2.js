@@ -1,4 +1,4 @@
-function simple_tooltip(target_items, name){
+function simple_tooltip2(target_items, name){
  $(target_items).each(function(i){
  var id = $(this).attr('href').match(/(\d+)/);
  $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+id[0]+"&jsonp=?", function(data){
