@@ -9,7 +9,7 @@ $(function () {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
-		$(this).html(txt.replace(new RegExp(data.response.posts[i].title),"<a  class='link' title='"+ data.response.posts[i].body +"' href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));}
+		$(this).html(txt.replace(new RegExp(data.response.posts[i].title),"<a  class='link' title=&#39;"+ data.response.posts[i].body +"&#39; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));}
 	});
     	$(document).ready(function(){
 	 simple_tooltip(".link","tooltip");
