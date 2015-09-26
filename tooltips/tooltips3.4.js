@@ -8,7 +8,7 @@ function simple_tooltip(target_items, name){
 });
 var my_tooltip = $("#"+name+i);
 
-		if($(this).attr("title") != "" && $(this).attr("title") != "undefined"){
+		if(1/*$(this).attr("title") != "" && $(this).attr("title") != "undefined"*/){
 
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
