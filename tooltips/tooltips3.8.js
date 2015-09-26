@@ -9,6 +9,7 @@ function simple_tooltip(target_items, name){
 
 var my_tooltip = $("#"+name+i);
 my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
+my_tooltip.css({left:"0px"/*left_pos*/, top:"0px"/*top_pos*/});
 
 		if(1/*$(this).attr("title") != "" && $(this).attr("title") != "undefined"*/){
 
