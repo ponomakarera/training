@@ -10,7 +10,7 @@ var my_tooltip = $("#"+name+i);
 
 		if(1/*$(this).attr("title") != "" && $(this).attr("title") != "undefined"*/){
 
-		$(this).removeAttr("title").mouseover(function(){
+		$(".link").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop();
