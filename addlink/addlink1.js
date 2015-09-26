@@ -10,7 +10,11 @@ $(function () {
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
 		$(this).html(txt.replace(new RegExp(data.response.posts[i].title),"<a  class='link' href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));}
-	});}
+	});
+    	$(document).ready(function(){
+	 simple_tooltip(".link","tooltip");
+});
+    }
       );
     }
 });
