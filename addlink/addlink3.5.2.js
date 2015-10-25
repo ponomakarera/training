@@ -8,7 +8,7 @@ $(function () {
     $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?",function(data) {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
-		if ($('h2').txt() == data.response.posts[i].title) {
+		if ($('h2').text() == data.response.posts[i].title) {
 		  continue;
 		}
 			var linkbody = data.response.posts[i].body;
