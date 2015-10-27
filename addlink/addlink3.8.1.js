@@ -17,6 +17,8 @@ $(function () {
       );
     }
     
+    var forward = "<span id='wordlist'>";
+    var back = "</span>";
     for (var i = 0; i <= total_posts / 20; i++) {
     $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?",function(data) {
 	$(".addlink").each(function() {
@@ -28,7 +30,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp("<span id='wordlist'>"+data.response.posts[i].title+"</span>"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
+		    $(this).html(txt.replace(new RegExp(forward+data.response.posts[i].title+back),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		}
 	});
     	$(document).ready(function(){
