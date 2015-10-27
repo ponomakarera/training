@@ -15,7 +15,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(before.replace(
+		    $(this).html(txt.replace(
 	/(data.response.posts[j].title)|(<(?:(?!\sclass='|>).)+\sclass='(?:(?:(?!textlink|'')\w)+\s)*textlink(?:\s\w+)*'[^>]*>(?:(?!data.response.posts[j].title|<).)*data.response.posts[j].title[^<]*<\/[^>]+>)/,
 	function() {
 		if (arguments[2]) {
