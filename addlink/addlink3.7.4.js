@@ -11,14 +11,13 @@ $(function () {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),"+name+i+"));
+		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),name+number));
 		}
 	});
     }
       );
     }
     
-    number = 1;
     for (var i = 0; i <= total_posts / 20; i++) {
     $.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?",function(data) {
 	$(".addlink").each(function() {
@@ -30,7 +29,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp("+name+i+"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
+		    $(this).html(txt.replace(new RegExp(name+number),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		}
 	});
     	$(document).ready(function(){
