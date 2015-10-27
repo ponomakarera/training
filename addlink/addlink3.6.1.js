@@ -15,7 +15,9 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		$(this).html(txt.replace(new RegExp(data.response.posts[j].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>"));}
+		$(this).html(txt.replace(new RegExp(data.response.posts[j].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>"));
+			console.log(this);
+		}
 	});
     	$(document).ready(function(){
 	 simple_tooltip(".textlink","tooltip");
