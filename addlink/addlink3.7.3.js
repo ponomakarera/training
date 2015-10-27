@@ -11,7 +11,7 @@ $(function () {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(/(data.response.posts[i].title)/, function () {if (arguments[1]) {number++; return name + number;}}));
+		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),"+name+i+"));
 		}
 	});
     }
@@ -30,7 +30,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(/(name+i)/, function () {if (arguments[1]) {number++; return "<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>";}}));
+		    $(this).html(txt.replace(new RegExp("+name+i+"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		}
 	});
     	$(document).ready(function(){
