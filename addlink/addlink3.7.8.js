@@ -30,7 +30,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp("<span id='wordlist'>"+data.response.posts[i].title+"</span>"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));}
+		    $(this).html(txt.replace(new RegExp("<span id='wordlist'>"+data.response.posts[i].title+"</span>"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		}
 	});
     	$(document).ready(function(){
