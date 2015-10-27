@@ -11,7 +11,7 @@ $(function () {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(/(data.response.posts[i].title)/, function () {if (arguments[1]) (number++; return name + number; number++;)}));
+		    $(this).html(txt.replace(/(data.response.posts[i].title)/, function () {if (arguments[1]) {number++; return name + number;}}));
 		}
 	});
     }
