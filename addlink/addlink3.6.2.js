@@ -15,8 +15,18 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		$(this).html(txt.replace(new RegExp(data.response.posts[j].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>"));
-			console.log(this);
+		    $(this).html(before.replace(
+	/(data.response.posts[j].title)|(<(?:(?!\sclass='|>).)+\sclass='(?:(?:(?!textlink|'')\w)+\s)*textlink(?:\s\w+)*'[^>]*>(?:(?!data.response.posts[j].title|<).)*data.response.posts[j].title[^<]*<\/[^>]+>)/,
+	function() {
+		if (arguments[2]) {
+			return arguments[2];
+		} else if (arguments[1]) {
+			return '<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>';
+		}
+	}
+));
+		//$(this).html(txt.replace(new RegExp(data.response.posts[j].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>"));
+		
 		}
 	});
     	$(document).ready(function(){
