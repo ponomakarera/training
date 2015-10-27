@@ -10,7 +10,7 @@ $(function () {
         $(".addlink").each(function(){
 		for (var i in data.response.posts) {
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),wordlist+data.response.posts[i].title));
+		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),"<span id='wordlist'>"+data.response.posts[i].title+"</span>"));
 		}
 	});
     }
@@ -28,7 +28,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    $(this).html(txt.replace(new RegExp(wordlist+data.response.posts[i].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
+		    $(this).html(txt.replace(new RegExp("<span id='wordlist'>"+data.response.posts[i].title+"</span>"),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		}
 	});
     	$(document).ready(function(){
