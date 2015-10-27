@@ -21,7 +21,7 @@ $(function () {
 		if (arguments[2]) {
 			return arguments[2];
 		} else if (arguments[1]) {
-			return '<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[j].post_url+"' style='color:#0645ad '>"+data.response.posts[j].title+"</a>';
+			return 'test';
 		}
 	}
 ));
