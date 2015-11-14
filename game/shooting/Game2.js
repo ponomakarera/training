@@ -8,6 +8,16 @@ this.shotini();
 this.shotspeed = 4;
 this.oldkey = 0;
 this.burston = 0;
+var audio = new Audio();
+
+// サウンドファイルまでの URL アドレスを指定
+audio.src = "https://a.tumblr.com/tumblr_nxsuknCrTm1t0jrzao1.mp3";
+
+// ループ再生を有効
+audio.loop = true;
+
+// 再生を開始する
+audio.play();
 }
 
 Game.prototype.update = function (gameini) {
