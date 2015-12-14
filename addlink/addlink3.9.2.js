@@ -30,7 +30,7 @@ $(function () {
 			linkbody = linkbody.replace(/>/g,'&gt;');
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
-		    if ($('.regular h2').text() !=  data.response.posts[i].title) {
+		    if ($(this).('.regular h2').text() !=  data.response.posts[i].title) {
 		    $(this).html(txt.replace(new RegExp(forward+data.response.posts[i].title+back),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		    }
 		}
