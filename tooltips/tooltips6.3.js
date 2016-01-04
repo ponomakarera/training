@@ -18,7 +18,7 @@ function simple_tooltip(target_items, name){
 					left_pos = kmouse.pageX+offset;
 					}
 				else if (border_right-my_tooltip.width()-offset < 0){
-					left_pos = kmouse.pageX+offset;
+					left_pos = $(window).width() - $(document).width();
 					right_pos = offset;
 					}
 				else {
@@ -38,7 +38,7 @@ function simple_tooltip(target_items, name){
 				  my_tooltip.css({left:left_pos, top:top_pos});
 				}
 		}).mouseout(function(){
-				my_tooltip.css({left:"-9999px"});				  
+				my_tooltip.css({left:"-9999px", right:"-9999px"});				  
 		});
 		
 		}
