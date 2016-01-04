@@ -32,10 +32,10 @@ function simple_tooltip(target_items, name){
 					}	
 				
 				
-				my_tooltip.css({left:left_pos, top:top_pos, right:right_pos, "z-index": 1501});
+				my_tooltip.css({left:left_pos, top:top_pos, right:right_pos});
 				
 		}).mouseout(function(){
-				my_tooltip.css({"z-index": -9999});				  
+				my_tooltip.css({left:"-9999px"});				  
 		});
 		
 		}
