@@ -18,7 +18,7 @@ function simple_tooltip(target_items, name){
 					left_pos = kmouse.pageX+offset;
 					}
 				else if (border_right-my_tooltip.width()-offset < 0){
-					left_pos = offset;
+					left_pos = 100;
 					right_pos = offset;
 					}
 				else {
