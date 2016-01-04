@@ -12,14 +12,14 @@ function simple_tooltip(target_items, name){
 				var border_right = $(window).width();
 				var left_pos;
 				var top_pos;
-				var right_pos = null;
+				var right_pos = 1;
 				var offset = 20;
 				if(border_right - (offset *2) >= my_tooltip.width() + kmouse.pageX){
 					left_pos = kmouse.pageX+offset;
 					}
 				else if (border_right-my_tooltip.width()-offset < 0){
 					left_pos = 0;
-					right_pos = $(window).width();
+					right_pos = 0;
 					}
 				else {
 				  left_pos = border_right-my_tooltip.width()-offset;
@@ -31,7 +31,7 @@ function simple_tooltip(target_items, name){
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}	
 				
-				if (right_pos) {
+				if (!right_pos) {
 				  my_tooltip.css({right:right_pos, left:left_pos, top:top_pos});
 				}
 				else {
