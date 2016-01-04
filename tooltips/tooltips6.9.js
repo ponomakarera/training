@@ -12,7 +12,7 @@ function simple_tooltip(target_items, name){
 				var border_right = $(window).width();
 				var left_pos;
 				var top_pos;
-				var right_pos = null;
+				var right_pos;
 				var offset = 20;
 				if(border_right - (offset *2) >= my_tooltip.width() + kmouse.pageX){
 					left_pos = kmouse.pageX+offset;
@@ -31,14 +31,11 @@ function simple_tooltip(target_items, name){
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}	
 				
-				if (right_pos) {
-				  my_tooltip.css({right:right_pos, left:left_pos, top:top_pos});
-				}
-				else {
-				  my_tooltip.css({left:left_pos, top:top_pos});
-				}
+				
+				my_tooltip.css({left:left_pos, top:top_pos, right:right_pos});
+				
 		}).mouseout(function(){
-				my_tooltip.css({z-index:" -1"});				  
+				my_tooltip.css({left:"-9999px", right:"9999px"});				  
 		});
 		
 		}
