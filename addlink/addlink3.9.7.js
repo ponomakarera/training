@@ -36,7 +36,7 @@ $(function () {
 		}
 	});
     	$(document).ready(function(){
-	 simple_tooltip(".textlink","post");
+	 simple_tooltip(".textlink","content");
 });
     }
       );
