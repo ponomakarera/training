@@ -16,7 +16,7 @@ $(function () {
 			linkbody = linkbody.replace(/</g,'&lt;');
 		    var txt = $(this).html();
 			if (!($(this).hasClass(data.response.posts[i].title))) {
-		    $(this).html(txt.replace(new RegExp(forward+data.response.posts[i].title+back),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
+		    $(this).html(txt.replace(new RegExp(data.response.posts[i].title),"<a  class='textlink' title='"+ linkbody +"'; href='"+data.response.posts[i].post_url+"' style='color:#0645ad '>"+data.response.posts[i].title+"</a>"));
 		    }
 		}
 	});
