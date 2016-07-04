@@ -6,6 +6,8 @@ $(function () {
 			});
 	
 	var count = total_posts / 20;
+	console.log("total_posts = "+ total_posts);
+	console.log("count = "+ count);
 	var i = 0;
 	var array = new Array();
 	var listnumber = 0;
