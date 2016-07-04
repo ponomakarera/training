@@ -18,6 +18,7 @@ $(function () {
 						array[listnumber++] = data.response.posts[i].title;
 						body[data.response.posts[i].title] = data.response.posts[i].body;
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
+						console.log(array[listnumber - 1]);
 					}
 				});
 			}
