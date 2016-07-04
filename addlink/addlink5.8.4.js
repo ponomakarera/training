@@ -24,25 +24,6 @@ $(function () {
 			
 	});
 	
-	var count = total_posts / 20;
-	console.log("total_posts = "+ total_posts);
-	console.log("count = "+ count);
-	var i = 0;
-	var array = new Array();
-	var listnumber = 0;
-	var body = {};
-	var url = {};
-	while (count--) {
-		$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
-			for (var i in data.response.posts) {
-				array[listnumber++] = data.response.posts[i].title;
-				body[data.response.posts[i].title] = data.response.posts[i].body;
-				url[data.response.posts[i].title] = data.response.posts[i].post_url;
-			}
-		});
-		i++;
-	}
-	
 	$(window).load(function() {
 	
 		array.sort();
