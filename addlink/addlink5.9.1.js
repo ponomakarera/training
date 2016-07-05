@@ -16,10 +16,10 @@ $(function () {
 						array[listnumber++] = data.response.posts[i].title;
 						var linkbody = data.response.posts[i].body;
 						linkbody = linkbody.replace(/"/g,'&quot;');
-				    linkbody = linkbody.replace(/'/g,'&#39;');
-				    linkbody = linkbody.replace(/&/g,'&amp;');
-				    linkbody = linkbody.replace(/>/g,'&gt;');
-				    linkbody = linkbody.replace(/</g,'&lt;');
+				    		linkbody = linkbody.replace(/'/g,'&#39;');
+				    		linkbody = linkbody.replace(/&/g,'&amp;');
+				    		linkbody = linkbody.replace(/>/g,'&gt;');
+				    		linkbody = linkbody.replace(/</g,'&lt;');
 						body[data.response.posts[i].title] = linkbody;
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
 					}
