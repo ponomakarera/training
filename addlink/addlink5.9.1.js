@@ -46,7 +46,7 @@ $(function () {
 					$(this).html(txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]));
 				}
 				else {
-					$(this).html(txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' title='"+ body[array[i]]; +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>"));
+					$(this).html(txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' title='"+ body[array[i]] +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>"));
 					txt = $(this).html();
 					$(this).html(txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]));
 				}
