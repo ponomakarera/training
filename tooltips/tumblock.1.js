@@ -60,7 +60,7 @@
     }
 
     const detox = (ctx) => {
-        if (!ctx.querySelectorAll) return;
+        //if (!ctx.querySelectorAll) return;
 
         Array.from(ctx.querySelectorAll([
             'a[href^="http://t.umblr.com/redirect?z="]',
