@@ -16,6 +16,7 @@ $(function () {
 					for (var i in data.response.posts) {
 						for (var j in data.response.posts[i].tags) {
 							if (data.response.posts[i].tags[j].match(match)) {
+								console.log("match:$1 $2");
 								$("#$1").append("<li><a href='http://tagmani.tumblr.com/tagged/$2'>$2</a><ul id='$2'><a href='http://tagmani.tumblr.com/tagged/$1-&gt;$2'>ローカルルール</a></ul></li>");
 							}
 						}
