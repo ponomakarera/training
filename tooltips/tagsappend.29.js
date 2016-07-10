@@ -8,7 +8,8 @@ $(function () {
 	$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=1&jsonp=?", function (data) {
 			
 			var total_posts = data.response.total_posts;
-			var count = total_posts / 20;
+			console.log(data.response.total_posts);
+			var count = Math.floor(total_posts / 20);
 			
 			for (var i = count; i >= 0; i--) {
 				$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
