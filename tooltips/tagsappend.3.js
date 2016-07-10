@@ -9,7 +9,7 @@ $(function () {
 			
 			var total_posts = data.response.total_posts;
 			var count = total_posts / 20;
-			var match = /(.+)-&gt;(.+)/;
+			var match = /(.+)\.\.(.+)/;
 			
 			for (var i = 0; i <= count; i++) {
 				$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
