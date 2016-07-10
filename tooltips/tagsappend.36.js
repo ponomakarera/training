@@ -23,8 +23,11 @@ $(function () {
 								if (!oldtag) {
 									var major = RegExp.$1;
 									var minor = RegExp.$2;
-									$("#"+ major).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ minor +"'>"+ minor +"</a><ul id='"+ minor +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ major +".."+ minor +"'>ローカルルール</a></li></ul></li>");
-									tagsarray.push(major +".."+ minor);
+									var targetElem = document.getElementById(major);
+									if(targetElem){
+										$("#"+ major).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ minor +"'>"+ minor +"</a><ul id='"+ minor +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ major +".."+ minor +"'>ローカルルール</a></li></ul></li>");
+										tagsarray.push(major +".."+ minor);
+									}
 								}
 							}
 						}
