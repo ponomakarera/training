@@ -14,8 +14,10 @@ $(function () {
 							if (data.response.posts[i].tags[j].match(/(.+)\.\.(.+)/)) {
 								var oldtag = 0;
 								for (var k in tagsarray) {
-									console.log(tagsarray);
-									if (k.match(new RegExp(data.response.posts[i].tags[j]))) {
+									console.log(k);
+									var ot = new RegExp(data.response.posts[i].tags[j]);
+									if (k.match(ot)) {
+										console.log("hit");
 										oldtag = 1;
 										break;
 									}
