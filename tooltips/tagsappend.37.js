@@ -15,7 +15,6 @@ $(function () {
 								var oldtag = 0;
 								for (var k in tagsarray) {
 									if (tagsarray[k].match(new RegExp(data.response.posts[i].tags[j]))) {
-										console.log("hit");
 										oldtag = 1;
 										break;
 									}
