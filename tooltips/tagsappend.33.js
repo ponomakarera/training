@@ -15,7 +15,7 @@ $(function () {
 								var oldtag = 0;
 								for (var k in tagsarray) {
 									console.log(tagsarray);
-									if (k.match(RegExp(data.response.posts[i].tags[j]))) {
+									if (k.match(new RegExp(data.response.posts[i].tags[j]))) {
 										oldtag = 1;
 										break;
 									}
