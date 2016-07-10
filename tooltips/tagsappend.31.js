@@ -14,7 +14,7 @@ $(function () {
 							if (data.response.posts[i].tags[j].match(/(.+)\.\.(.+)/)) {
 								var oldtag = 0;
 								for (var k in tagsarray) {
-									if (k.match(RegExp(data.response.posts[i].tags[j])) {
+									if (k.match(RegExp(data.response.posts[i].tags[j]))) {
 										oldtag = 1;
 										break;
 									}
