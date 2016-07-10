@@ -15,9 +15,11 @@ $(function () {
 				$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
 					for (var i in data.response.posts) {
 						for (var j in data.response.posts[i].tags) {
-							if (data.response.posts[i].tags[j].replace(/(.+)\.\.(.+)/)) {
+							if (data.response.posts[i].tags[j].match(/(.+)\.\.(.+)/)) {
+								var major = RegExp.$1;
+								var minor = RegExp.$2;
 								console.log('$1 = '+ RegExp.$1 +' $2 = '+ RegExp.$2);
-								$("#"+ RegExp.$1).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$2 +"'>"+ RegExp.$2 +"</a><ul id='"+ RegExp.$2 +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$1 +".."+ RegExp.$2 +"'>ローカルルール</a></li></ul></li>");
+								$("#"+ major).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ minor +"'>"+ minor +"</a><ul id='"+ minor +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ major +".."+ minor +"'>ローカルルール</a></li></ul></li>");
 							}
 						}
 					}
