@@ -16,8 +16,8 @@ $(function () {
 					for (var i in data.response.posts) {
 						for (var j in data.response.posts[i].tags) {
 							if (data.response.posts[i].tags[j].match(match)) {
-								console.log("$1 = "+ RegExp.$1 +" $2 = "+ RegExp.$2);
-								$("#"+ RegExp.$1).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$3 +"'>"+ RegExp.$3 +"</a><ul id='"+ RegExp.$3 +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$2 +".."+ RegExp.$3 +"'>ローカルルール</a></li></ul></li>");
+								console.log('$1 $2');
+								$("#"+ RegExp.$1).append("<li class='closed'><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$1 +"'>"+ RegExp.$1 +"</a><ul id='"+ RegExp.$1 +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ RegExp.$2 +".."+ RegExp.$1 +"'>ローカルルール</a></li></ul></li>");
 							}
 						}
 					}
