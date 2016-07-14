@@ -10,7 +10,7 @@ $(function () {
 			for (var i = count; i >= 0; i--) {
 				$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
 					for (var i = data.response.posts.length - 1; i >= 0; i--) {
-						//if (data.response.posts[i].title.match(/^fusianasan$/)) {
+						if (data.response.posts[i].title.match(/^fusianasan$/)) {
 						for (var j in data.response.posts[i].tags) {
 							if (data.response.posts[i].tags[j].match(/(.+)→(.+)/)) {
 								var oldtag = 0;
@@ -25,7 +25,7 @@ $(function () {
 									var minor = RegExp.$2;
 									var targetElem = document.getElementById(major);
 									if(targetElem){
-										$("ul #"+ major).append("<li id='listid"+ minor +"'><a href='http://tagmani.tumblr.com/tagged/"+ minor +"'>"+ minor +"</a><ul id='"+ minor +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ major +"→"+ minor +"'>ローカルルール</a></li></ul></li>");
+										$("#"+ major).append("<li id='listid"+ minor +"'><a href='http://tagmani.tumblr.com/tagged/"+ minor +"'>"+ minor +"</a><ul id='"+ minor +"'><li><a href='http://tagmani.tumblr.com/tagged/"+ major +"→"+ minor +"'>ローカルルール</a></li></ul></li>");
 										tagsarray.push(major +"→"+ minor);
 									}
 								}
@@ -40,7 +40,7 @@ $(function () {
 								}
 							}
 						}
-						//}
+						}
 					}
 				});
 			}			
