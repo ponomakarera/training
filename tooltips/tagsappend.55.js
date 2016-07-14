@@ -1,6 +1,7 @@
+var dic = {};
+
 $(function () {
 	
-	var dic = {};
 	
 	$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=1&jsonp=?", function (data) {
 			
@@ -35,7 +36,7 @@ $(function () {
 										var major = RegExp.$1;
 										var minor = RegExp.$2;
 										$("#"+ major +" li").remove("#listid"+ minor);
-										delete dic[major +"→"+ minor];
+										deltreenest(major, minor);
 									}
 								}
 							}
@@ -45,4 +46,13 @@ $(function () {
 			}			
 	});
 	
+});
+
+$(funciton deltreenest(major, minor) {
+	for (var key in dic) {
+											if (key.match(new RegExp(minor +"→(.+)"))) {
+												deltreenest(minor, RegExp.$1);
+											}
+											delete dic[major +"→"+ minor];
+										}
 });
