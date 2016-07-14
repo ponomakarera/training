@@ -12,7 +12,7 @@ $(function () {
 					for (var i = data.response.posts.length - 1; i >= 0; i--) {
 						var title = new Array();
 						title[0] = data.response.posts[i].title;
-						if (title[0].match(/^fusianasan$/)) {
+						if (title[0].match(/(.+)→(.+)/)) {
 						for (var j in data.response.posts[i].tags) {
 							if (data.response.posts[i].tags[j].match(/(.+)→(.+)/)) {
 								var oldtag = 0;
