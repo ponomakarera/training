@@ -10,11 +10,11 @@ $(function () {
 			for (var i = count; i >= 0; i--) {
 				$.getJSON("http://api.tumblr.com/v2/blog/tagmani.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
 					for (var i = data.response.posts.length - 1; i >= 0; i--) {
+						var title = new Array();
+						title[0] = data.response.posts[i].title;
+						if (title[0].match(/^fusianasan$/)) {
 						for (var j in data.response.posts[i].tags) {
 							if (data.response.posts[i].tags[j].match(/(.+)→(.+)/)) {
-								if (!data.response.posts[i].title.match(/^fusianasan$/)) {
-									break;
-								}
 								var oldtag = 0;
 								for (var k in tagsarray) {
 									if (tagsarray[k].match(new RegExp(data.response.posts[i].tags[j]))) {
@@ -33,9 +33,6 @@ $(function () {
 								}
 							}
 							else if (data.response.posts[i].tags[j].match(/^削除$/)) {
-								if (!data.response.posts[i].title.match(/^fusianasan$/)) {
-									break;
-								}
 								for (var j in data.response.posts[i].tags) {
 									if (data.response.posts[i].tags[j].match(/(.+)←(.+)/)) {
 										var major = RegExp.$1;
@@ -44,6 +41,7 @@ $(function () {
 									}
 								}
 							}
+						}
 						}
 					}
 				});
