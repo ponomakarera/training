@@ -32,14 +32,16 @@ $(function () {
 	
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
-		var txt = $(".addlink").html();
 		
 		$(".addlink").each(function(){
+			var txt = $(this).html();
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
+			$(this).html(txt);
 		});
 		$(".addlink").each(function(){
+			var txt = $(this).html();
 			for (var i = 0; i < array.length; i++) {
 				if (($(this).hasClass(array[i]))) {
 					txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
@@ -49,9 +51,8 @@ $(function () {
 					txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
 				}
 			}
+			$(this).html(txt);
 		});
-		
-		$(".addlink").html(txt);
 		
 		$(document).ready(function(){
 			simple_tooltip(".textlink","tooltip");
