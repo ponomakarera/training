@@ -35,9 +35,9 @@ $(function () {
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
-			var nashi = 0;
+			var yomiari = 1;
 			var yomi = "";
-			if (txt.match(/<kanjinashi>/)) {nashi = 1;}
+			if (txt.match(/<yominashi>/)) {yomiari = 0;}
 			else {
 				txt = txt.replace(new RegExp(/（(.+?)）/),"（）");
 				yomi = RegExp.$1;
@@ -45,7 +45,7 @@ $(function () {
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			if (!nashi) {
+			if (yomiari) {
 				txt = txt.replace(new RegExp(/（）/),"（"+ yomi +"）");
 			}
 			$(this).html(txt);
