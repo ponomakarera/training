@@ -35,17 +35,17 @@ $(function () {
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
-			var yomiari = 1;
+			var tobashi = 0;
 			var yomi = "";
-			if (txt.match(/<yominashi>/)) {yomiari = 0;}
-			else {
+			if (txt.match(/<tobashi>/)) {
+				tobashi = 1;
 				txt = txt.replace(new RegExp(/（(.+?)）/),"（）");
 				yomi = RegExp.$1;
 			}
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			if (yomiari) {
+			if (tobashi) {
 				txt = txt.replace(new RegExp(/（）/),"（"+ yomi +"）");
 			}
 			$(this).html(txt);
