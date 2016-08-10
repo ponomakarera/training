@@ -36,10 +36,11 @@ $(function () {
 		$(".addlink").each(function(){
 			var txt = $(this).html();
 			txt = txt.replace(new RegExp(/（(.+?)）/),"（）");
+			var yomi = RegExp.$1;
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			txt = txt.replace(new RegExp(/（）/),"（"+ RegExp.$1 +"）");
+			txt = txt.replace(new RegExp(/（）/),"（"+ yomi +"）");
 			$(this).html(txt);
 		});
 		$(".addlink").each(function(){
