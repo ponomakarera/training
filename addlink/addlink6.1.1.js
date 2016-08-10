@@ -35,13 +35,13 @@ $(function () {
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
-			var linkcancel = "";
+			var contents = "";
 			txt = txt.replace(new RegExp(/<linkcancel>(.+)</linkcancel>/),"<linkcancel></linkcancel>");
-			linkcancel = RegExp.$1;
+			contents = RegExp.$1;
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			txt = txt.replace(new RegExp(/<linkcancel></linkcancel>/),"<linkcancel>"+ linkcancel +"</linkcancel>");
+			txt = txt.replace(new RegExp(/<linkcancel></linkcancel>/),"<linkcancel>"+ contents +"</linkcancel>");
 			$(this).html(txt);
 		});
 		$(".addlink").each(function(){
