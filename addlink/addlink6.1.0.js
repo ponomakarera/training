@@ -35,19 +35,13 @@ $(function () {
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
-			var tobashi = 0;
-			var yomi = "";
-			if (txt.match(/<tobashi>/)) {
-				tobashi = 1;
-				txt = txt.replace(new RegExp(/（(.+?)）/),"（）");
-				yomi = RegExp.$1;
-			}
+			var linkcancel = "";
+			txt = txt.replace(new RegExp(/<linkcancel>(.+)</linkcancel>/),"<linkcancel></linkcancel>");
+			linkcancel = RegExp.$1;
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			if (tobashi) {
-				txt = txt.replace(new RegExp(/（）/),"（"+ yomi +"）");
-			}
+			txt = txt.replace(new RegExp(/<linkcancel></linkcancel>/),"<linkcancel>"+ linkcancel +"</linkcancel>");
 			$(this).html(txt);
 		});
 		$(".addlink").each(function(){
