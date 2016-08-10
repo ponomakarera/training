@@ -45,7 +45,7 @@ $(function () {
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
-			if (nashi) {
+			if (!nashi) {
 				txt = txt.replace(new RegExp(/（）/),"（"+ yomi +"）");
 			}
 			$(this).html(txt);
