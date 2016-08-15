@@ -1,8 +1,8 @@
 $(function () {
 
 	var linkurl = [
-	  'http://ponomakarera.tumblr.com/post/137832799790/%E8%80%83%E3%81%88%E3%82%8B%E4%BA%BA',
-	  'http://ponomakarera.tumblr.com/tagged/%E5%A6%84%E6%83%B3%E9%83%BD%E5%B8%82',
+	  'http://ponomakarera.tumblr.com/post/137832799790/%E8%80%83%E3%81%88%E3%82%8B%E4%BA%BA',//考える人
+	  'http://ponomakarera.tumblr.com/tagged/%E5%A6%84%E6%83%B3%E9%83%BD%E5%B8%82',//妄想都市
 	]
 	
 	var image = [
