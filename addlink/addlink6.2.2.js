@@ -25,8 +25,10 @@ $(function () {
 					}
 				});
 			}
-			
+			console.log("process 1");
 	}).done(function() {
+		console.log("process 2");
+		
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
 		
