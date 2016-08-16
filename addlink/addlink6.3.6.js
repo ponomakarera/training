@@ -29,8 +29,7 @@ $(function () {
 				});
 			}
 			
-	}
-	).done(
+	}).done(function() {
 	console.log("process 3");
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
@@ -63,5 +62,5 @@ $(function () {
 		$(document).ready(function(){
 			simple_tooltip(".textlink","tooltip");
 		});
-	);
+	});
 });
