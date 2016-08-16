@@ -11,6 +11,7 @@ $(function () {
 			
 			total_posts = data.response.total_posts;
 			count = Math.floor(total_posts / 20);
+			console.log("process 1");
 	}),
 	function(){for (var i = 0; i <= count; i++) {
 				$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
@@ -26,8 +27,11 @@ $(function () {
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
 					}
 				});
-			}}
+			}
+			console.log("process 2");
+			}
 	).done(function() {
+	console.log("process 3");
 				array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
 		
