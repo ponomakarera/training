@@ -26,6 +26,7 @@ $(function () {
 				});
 			}
 			console.log("process 2");
+			console.log(array);
 	}).done(function() {
 	console.log("process 3");
 		array.sort();
