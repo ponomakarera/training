@@ -35,8 +35,8 @@ $(function () {
 	}
 	
 	$.when(
-		process1,
-		process2
+		process1(),
+		process2()
 	).done(function() {
 		console.log("process 3");
 		array.sort();
