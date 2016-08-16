@@ -33,11 +33,11 @@ $(function () {
 		array.sort(function(a, b) {return b.length - a.length;});
 		
 		$(".addlink").each(function(){
-			console.log("hit");
 			var txt = $(this).html();
 			var contents = "";
 			txt = txt.replace(new RegExp("<linkcancel>(.+)</linkcancel>"),"<linkcancel></linkcancel>");
 			contents = RegExp.$1;
+			console.log(array.length);
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
