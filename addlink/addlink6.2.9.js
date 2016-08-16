@@ -39,6 +39,7 @@ $(function () {
 			contents = RegExp.$1;
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
+				console.log(array[i]);
 			}
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents +"</linkcancel>");
 			$(this).html(txt);
