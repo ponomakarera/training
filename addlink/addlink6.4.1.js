@@ -11,7 +11,7 @@ $(function () {
 			var count = Math.floor(total_posts / 20);
 			console.log("process 1");
 			
-			$.when(function() {
+			(function() {
 								console.log("process 2");
 			for (var i = 0; i <= count; i++) {
 				$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
