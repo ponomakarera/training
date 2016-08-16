@@ -27,7 +27,7 @@ $(function () {
 			}
 			console.log("process 2");
 			console.log(array);
-	}).done(function() {
+	}).then(function() {
 	console.log("process 3");
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
