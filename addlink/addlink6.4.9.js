@@ -23,8 +23,8 @@ $(function () {
 						body[data.response.posts[i].title] = linkbody;
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
 					}
-					if (i == count) {
 					console.log("i = "+ i);
+					if (i > count) {
 					console.log(array.length);
 						array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
