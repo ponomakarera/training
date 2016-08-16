@@ -9,9 +9,10 @@ $(function () {
 			
 			var total_posts = data.response.total_posts;
 			var count = Math.floor(total_posts / 20);
+			var offset = 0;
 			
-			for (var i = 0; i <= count; i++) {
-				$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
+			for (offset = 0; offset <= count; offset++) {
+				$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ offset * 20 +"&jsonp=?", function (data) {
 					for (var i in data.response.posts) {
 						array[listnumber++] = data.response.posts[i].title;
 						var linkbody = data.response.posts[i].body;
@@ -23,8 +24,8 @@ $(function () {
 						body[data.response.posts[i].title] = linkbody;
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
 					}
-					console.log("i = "+ i);
-					if (i > count) {
+					console.log("i = "+ offset);
+					if (offset > count) {
 					console.log(array.length);
 						array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
