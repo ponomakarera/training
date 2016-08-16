@@ -9,7 +9,6 @@ $(function () {
 			
 			var total_posts = data.response.total_posts;
 			var count = Math.floor(total_posts / 20);
-			console.log("process 1");
 			for (var i = 0; i <= count; i++) {
 				$.getJSON("http://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=20&offset="+ i * 20 +"&jsonp=?", function (data) {
 					for (var i in data.response.posts) {
@@ -25,10 +24,8 @@ $(function () {
 					}
 				});
 			}
-			console.log("process 2");
-			console.log(array);
-	}).then(function() {
-	console.log("process 3");
+	}).done(function(array) {
+	console.log(array);
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
 		
@@ -37,7 +34,6 @@ $(function () {
 			var contents = "";
 			txt = txt.replace(new RegExp("<linkcancel>(.+)</linkcancel>"),"<linkcancel></linkcancel>");
 			contents = RegExp.$1;
-			console.log(array.length);
 			for (var i = 0; i < array.length; i++) {
 				txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 			}
