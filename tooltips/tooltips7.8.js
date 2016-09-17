@@ -34,7 +34,7 @@ function simple_tooltip(target_items, name){
 				my_tooltip.css({left:left_pos, top:top_pos});
 				
 		}).mouseout(function(){
-				my_tooltip.css({left:"-9999px"});				  
+				my_tooltip.css({left:"-9999999px"});				  
 		});
 		
 		}
