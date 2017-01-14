@@ -6,8 +6,8 @@ $(function () {
 	]
 	
 	var image = [
-	  'http://67.media.tumblr.com/ff999e638de6b4d4258970024bf50b1a/tumblr_o5hc04sjOB1t0jrzao1_500.png',
-	  'http://67.media.tumblr.com/a42ff6d3f4ddb6734dec1672db2bb6b1/tumblr_o5xwixDP3z1t0jrzao1_500.png',
+	  'http://68.media.tumblr.com/ff999e638de6b4d4258970024bf50b1a/tumblr_o5hc04sjOB1t0jrzao1_500.png',
+	  'http://68.media.tumblr.com/a42ff6d3f4ddb6734dec1672db2bb6b1/tumblr_o5xwixDP3z1t0jrzao1_500.png',
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
