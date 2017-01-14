@@ -47,7 +47,7 @@ this.x += this.mx;
 if (this.y + this.my >= 0 && this.y + this.my <= 460) {
 this.y += this.my;
 }
-gameini.images.push({type:"dxy", src:"http://40.media.tumblr.com/1ae567bb227c212c2363222a1aaf1462/tumblr_nxsqourU8V1t0jrzao2_75sq.png", dx:this.x, dy:this.y});
+gameini.images.push({type:"dxy", src:"http://68.media.tumblr.com/1ae567bb227c212c2363222a1aaf1462/tumblr_nxsqourU8V1t0jrzao2_75sq.png", dx:this.x, dy:this.y});
 }
 
 Game.prototype.fire = function (gameini) {
@@ -94,10 +94,10 @@ this.oldkey = 0;
 for (var i = 0; i < this.shot.length; i++) {
 if (this.shot[i].exist) {
 if (this.shot[i].burstshot) {
-gameini.images.push({type:"dxy", src:"http://40.media.tumblr.com/4dc4afe73f4e35c26acb4d5c0960d16e/tumblr_nxsqourU8V1t0jrzao1_75sq.png", dx:this.shot[i].x, dy:this.shot[i].y});
+gameini.images.push({type:"dxy", src:"http://68.media.tumblr.com/4dc4afe73f4e35c26acb4d5c0960d16e/tumblr_nxsqourU8V1t0jrzao1_75sq.png", dx:this.shot[i].x, dy:this.shot[i].y});
 }
 else {
-gameini.images.push({type:"dxy", src:"http://40.media.tumblr.com/ad0e30a6db7e2eff000a6286c61c5a31/tumblr_nxsqourU8V1t0jrzao3_75sq.png", dx:this.shot[i].x, dy:this.shot[i].y});
+gameini.images.push({type:"dxy", src:"http://68.media.tumblr.com/ad0e30a6db7e2eff000a6286c61c5a31/tumblr_nxsqourU8V1t0jrzao3_75sq.png", dx:this.shot[i].x, dy:this.shot[i].y});
 }
 }
 }
