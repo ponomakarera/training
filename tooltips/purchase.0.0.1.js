@@ -8,8 +8,14 @@ $(function () {
 	
 	var href = window.location.href ;
 	
+	console.log("href = "+ href);
+	
 	for (var key in purchaseurl) {
+		
+		console.log("key = "+ key);
+		
 		if (key.match(new RegExp(href))) {
+			console.log("match");
 			document.getElementById("purchaseprocess").innerHTML="test";
 		}
 	}
