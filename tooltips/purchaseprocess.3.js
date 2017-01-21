@@ -10,7 +10,7 @@ $(function () {
 	
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
-		document.getElementById("purchaseprocess").innerHTML="商品の購入を希望される方はこちら→『SPIKE決済の流れ』";
+		document.getElementById("purchaseprocess").innerHTML="商品の購入を希望される方はこちら→『<a href='https://ponomakarera.tumblr.com/post/156176167955/spike%E6%B1%BA%E6%B8%88%E3%81%AE%E6%B5%81%E3%82%8C'>SPIKE決済の流れ</a>』";
 	}
 	else {
 		for (var i = 0; i < purchaseurl.length; i++) {
@@ -18,7 +18,7 @@ $(function () {
 		
 			if (key.match(new RegExp("^"+ href +"$"))) {
 
-				document.getElementById("purchaseprocess").innerHTML="<br>商品の購入を希望される方はこちら→『SPIKE決済の流れ』";
+				document.getElementById("purchaseprocess").innerHTML="<br>商品の購入を希望される方はこちら→『<a href='https://ponomakarera.tumblr.com/post/156176167955/spike%E6%B1%BA%E6%B8%88%E3%81%AE%E6%B5%81%E3%82%8C'>SPIKE決済の流れ</a>』";
 			}
 		}
 	}
