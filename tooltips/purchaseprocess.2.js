@@ -10,7 +10,7 @@ $(function () {
 	
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
-		document.getElementById("purchaseprocess").innerHTML="初めてご購入される方はこちら→『SPIKE決済の流れ』";
+		document.getElementById("purchaseprocess").innerHTML="商品の購入を希望される方はこちら→『SPIKE決済の流れ』";
 	}
 	else {
 		for (var i = 0; i < purchaseurl.length; i++) {
@@ -18,7 +18,7 @@ $(function () {
 		
 			if (key.match(new RegExp("^"+ href +"$"))) {
 
-				document.getElementById("purchaseprocess").innerHTML="<br>初めてご購入される方はこちら→『SPIKE決済の流れ』";
+				document.getElementById("purchaseprocess").innerHTML="<br>商品の購入を希望される方はこちら→『SPIKE決済の流れ』";
 			}
 		}
 	}
