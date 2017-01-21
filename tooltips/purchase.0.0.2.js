@@ -7,11 +7,12 @@ $(function () {
 	
 	
 	var href = window.location.href ;
-	
+	var key = 0;
 	console.log("href = "+ href);
 	
-	for (var key in purchaseurl) {
+	for (var i = 0; i < purchaseurl.length; i++) {
 		
+		key = purchaseurl[i];
 		console.log("key = "+ key);
 		
 		if (key.match(new RegExp(href))) {
@@ -19,5 +20,6 @@ $(function () {
 			document.getElementById("purchaseprocess").innerHTML="test";
 		}
 	}
+	
 		
 });
