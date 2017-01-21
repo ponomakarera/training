@@ -15,7 +15,7 @@ $(function () {
 		key = purchaseurl[i];
 		console.log("key = "+ key);
 		
-		if (key.match(new RegExp(href))) {
+		if (key.match(/^"+ href +"$/)) {
 			console.log("match");
 			document.getElementById("purchaseprocess").innerHTML="test";
 		}
