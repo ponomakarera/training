@@ -2,6 +2,7 @@ function simple_tooltip(target, reference, number){
 	
 	console.log("start");
 	var my_tooltip = $("#"+reference+number);
+	$(document).ready(function () {
 	$("#"+ target + number).mouseover(function() {
 		console.log("mouseover");
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
@@ -32,4 +33,5 @@ function simple_tooltip(target, reference, number){
 	}).mouseout(function(){
 				my_tooltip.css({left:"-9999999px"});				  
 	});
+}
 }
