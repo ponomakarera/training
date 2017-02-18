@@ -2,11 +2,12 @@ function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
 		var img = [];
-		$("img", $(this).attr('title')).each(function(i) {
+		$("img", $(this).attr('title')).each(function() {
 				console.log("catch");
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
 				$(this).removeAttr("src");
+				console.log(this);
 		});
 		
 		console.log("img = "+ img);
