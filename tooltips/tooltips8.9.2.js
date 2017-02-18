@@ -26,7 +26,6 @@ function simple_tooltip(target_items, name){
 							$(this).attr('src', img[0]);
 							img.shift();
 					});
-					my_tooltip.append("<img src='https://68.media.tumblr.com/4635d9a3664f8a6feb7a699bcbf7ca4d/tumblr_oandt1Dmuj1t0jrzao1_400.jpg'>");
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
