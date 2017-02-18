@@ -2,9 +2,11 @@ function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
 		var img = [];
-		$(this).attr('src').each {
-				img.push($(this).attr('src'));
-				$(this).removeAttr("src")
+	 console.log(this);
+		$("img").attr('src').each {
+			console.log($("img").attr('src'));
+				img.push($("img").attr('src'));
+				$("img").removeAttr("src")
 		}
 		
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p><br><img src=""></div>");
