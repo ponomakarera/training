@@ -2,26 +2,26 @@ function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
 		console.log("test");
-		/*var img = [];
+		var img = [];
 		console.log(this);
 		$("img").each(function(i) {
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
 				$(this).removeAttr("src");
-		});*/
+		});
 		
-		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p><br><img src=""></div>");
+		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p></div>");
 		var my_tooltip = $("#"+name+i);
 		
 		if($(this).attr("title") != "" && $(this).attr("title") != "undefined" ){
 		
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-					/*$("img").each(function(i) {
+					$("img").each(function(i) {
 							console.log($(this).attr('src'));
 							$(this).attr('src', img[0]);
 							img.shift();
-					});*/
+					});
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
