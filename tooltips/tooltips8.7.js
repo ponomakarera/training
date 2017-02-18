@@ -1,10 +1,9 @@
 function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
-		console.log("test");
 		var img = [];
 		console.log(this);
-		$("img").each(function(i) {
+		$("img", this).each(function(i) {
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
 				$(this).removeAttr("src");
@@ -17,7 +16,7 @@ function simple_tooltip(target_items, name){
 		
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-					$("img").each(function(i) {
+					$("img", this).each(function(i) {
 							console.log($(this).attr('src'));
 							$(this).attr('src', img[0]);
 							img.shift();
