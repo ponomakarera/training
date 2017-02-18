@@ -2,14 +2,15 @@ function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
 		var img = [];
+		var local = this;
 		$("img", $(this).attr('title')).each(function() {
 				console.log("catch");
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
-				$(this).removeAttr("src");
+				$(this).removeAttr('src');
+				console.log($(local).attr('title'));
 		});
 		
-		console.log($(this).attr('title'));
 		console.log("img = "+ img);
 		
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p></div>");
