@@ -2,7 +2,7 @@ function simple_tooltip(target_items, name){
  $(target_items).each(function(i){
 		
 		var img = [];
-		console.log(this);
+		console.log("test");
 		$("img").each(function(i) {
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
