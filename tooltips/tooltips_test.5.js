@@ -33,5 +33,5 @@ function simple_tooltip(target, reference, number){
 	}).mouseout(function(){
 				my_tooltip.css({left:"-9999999px"});				  
 	});
-}
+});
 }
