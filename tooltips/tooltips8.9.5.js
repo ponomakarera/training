@@ -23,7 +23,7 @@ function simple_tooltip(target_items, name){
 					$("img", my_tooltip).each(function() {
 							console.log("set");
 							console.log($(this).attr('src'));
-							$(this).attr('src', 'https://pbs.twimg.com/profile_images/378800000594432349/ad423b8cdde9d888e31df8455d0a0fd5.jpeg');
+							$(this).attr('src', '+img[0]+');
 							img.shift();
 					});
 		}).mousemove(function(kmouse){
