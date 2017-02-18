@@ -7,7 +7,7 @@ function simple_tooltip(target_items, name){
 				console.log("catch");
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
-				$(this).attr('src', '');
+				$("img").attr('src', '');
 				console.log($(local).attr('title'));
 		});
 		
