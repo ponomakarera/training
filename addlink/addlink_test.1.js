@@ -44,11 +44,11 @@ $(function () {
 								}
 								else {
 									if (txt.match("<span id=."+ i +".></span>")) {
+										txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' id='textlink"+ i +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>");
+										txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
 										$("body").append("<div class='tooltip' id='tooltip"+i+"'><p>"+body[array[i]]+"</p></div>");	
 										simple_tooltip("textlink","tooltip", i);
 									}
-									txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' id='textlink"+ i +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>");
-									txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
 								}
 							}
 							$(this).html(txt);
