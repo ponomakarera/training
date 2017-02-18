@@ -3,11 +3,9 @@ function simple_tooltip(target_items, name){
 		
 		var img = [];
 	 console.log(this);
-		$("img").attr('src').each {
 			console.log($("img").attr('src'));
 				img.push($("img").attr('src'));
 				$("img").removeAttr("src")
-		}
 		
 		$("body").append("<div class='"+name+"' id='"+name+i+"'><p>"+$(this).attr('title')+"</p><br><img src=""></div>");
 		var my_tooltip = $("#"+name+i);
@@ -16,10 +14,8 @@ function simple_tooltip(target_items, name){
 		
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-					$(this).attr('src').each {
-							$(this).attr('src', img[0]);
+							$("img").attr('src', img[0]);
 							img.shift();
-					}
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
