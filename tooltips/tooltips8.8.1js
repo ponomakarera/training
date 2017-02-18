@@ -3,6 +3,7 @@ function simple_tooltip(target_items, name){
 		
 		var img = [];
 		$("img", this).each(function(i) {
+				console.log("hit");
 				console.log($(this).attr('src'));
 				img.push($(this).attr('src'));
 				$(this).removeAttr("src");
