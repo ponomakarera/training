@@ -20,6 +20,12 @@ function simple_tooltip(target_items, name){
 		
 		$(this).removeAttr("title").mouseover(function(){
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
+					$("img", my_tooltip).each(function() {
+							console.log("set");
+							console.log($(this).attr('src'));
+							$(this).attr('src', img[0]);
+							img.shift();
+					});
 					my_tooltip.append("<img src='https://68.media.tumblr.com/4635d9a3664f8a6feb7a699bcbf7ca4d/tumblr_oandt1Dmuj1t0jrzao1_400.jpg'>");
 		}).mousemove(function(kmouse){
 				var border_top = $(window).scrollTop(); 
