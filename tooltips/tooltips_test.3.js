@@ -1,5 +1,6 @@
 function simple_tooltip(target, reference, number){
-
+	
+	console.log("start");
 	var my_tooltip = $("#"+reference+number);
 	$("#"+ target + number).mouseover(function() {
 		console.log("mouseover");
