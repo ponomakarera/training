@@ -9,7 +9,7 @@ function simple_tooltip(target, reference){
 		$("#"+ target + i).mouseover(function() {
 			console.log("mouseover");
 			my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
-		}).mousemove(function() {
+		}).mousemove(function(kmouse) {
 				console.log("mousemove");
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
