@@ -2,8 +2,10 @@ function simple_tooltip(target, reference, number){
 
 	var my_tooltip = $("#"+reference+number);
 	$("#"+ target + number).mouseover(function() {
+		console.log("mouseover");
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 	}).mousemove(function() {
+			console.log("mousemove");
 			var border_top = $(window).scrollTop(); 
 			var border_right = $(window).width();
 			var left_pos;
