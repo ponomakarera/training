@@ -24,8 +24,8 @@ $(function () {
 						$(".addlink").each(function(){
 							var txt = $(this).html();
 							var contents = [];
-							while (txt.match("<linkcancel>[^</linkcancel>]+</linkcancel>")) {
-								txt = txt.replace(new RegExp("<linkcancel>([^</linkcancel>]+)</linkcancel>"),"<linkcancel></linkcancel>");
+							while (txt.match("<linkcancel>(\n|[^</linkcancel>])+</linkcancel>")) {
+								txt = txt.replace(new RegExp("<linkcancel>((\n|[^</linkcancel>])+)</linkcancel>"),"<linkcancel></linkcancel>");
 								contents.push(RegExp.$1);
 							}
 							for (var i = 0; i < array.length; i++) {
