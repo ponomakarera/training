@@ -28,6 +28,7 @@ $(function () {
 								console.log($(this).html());
 								contents.push($(this).html());
 								$(this).empty();
+								console.log("contents = "+ contents[contents.length-1]);
 							});
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
