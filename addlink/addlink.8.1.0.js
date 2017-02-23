@@ -35,7 +35,7 @@ $(function () {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
 							$("linkcancel", this).each(function(){
-								$(this).append(contents.shift());
+								/*$(this).append(contents.shift());*/
 							});
 							$(this).html(txt);
 						});
