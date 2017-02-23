@@ -25,8 +25,8 @@ $(function () {
 							var txt = $(this).html();
 							var contents = [];
 							$("linkcancel", this).each(function(){
-								console.log($(this));
-								contents.push($(this));
+								console.log($(this).html());
+								contents.push($(this).html());
 								$(this).empty();
 							});
 							for (var i = 0; i < array.length; i++) {
