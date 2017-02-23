@@ -24,9 +24,9 @@ $(function () {
 						$(".addlink").each(function(){
 							var txt = $(this).html();
 							var contents = [];
-							while (txt.match("<linkcancel>([^</linkcancel>]|[\n\r])+</linkcancel>")) {
-								txt = txt.replace(new RegExp("<linkcancel>(([^</linkcancel>]|[\n\r])+)</linkcancel>"),"<linkcancel></linkcancel>");
-								contents.push(RegExp.$2);
+							while (txt.match("<linkcancel>[^</linkcancel>]+</linkcancel>")) {
+								txt = txt.replace(new RegExp("<linkcancel>([^</linkcancel>]+)</linkcancel>"),"<linkcancel></linkcancel>");
+								contents.push(RegExp.$1);
 							}
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
