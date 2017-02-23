@@ -24,9 +24,9 @@ $(function () {
 						$(".addlink").each(function(){
 							var txt = $(this).html();
 							var contents = [];
-							while (txt.match("<linkcancel>[\s\S]+?</linkcancel>")) {
+							while (txt.match("<linkcancel>[\s\S]*?</linkcancel>")) {
 								console.log("hit");
-								txt = txt.replace(new RegExp("<linkcancel>([\s\S]+?)</linkcancel>"),"<linkcancel></linkcancel>");
+								txt = txt.replace(new RegExp("<linkcancel>([\s\S]*?)</linkcancel>"),"<linkcancel></linkcancel>");
 								contents.push(RegExp.$1);
 							}
 							for (var i = 0; i < array.length; i++) {
