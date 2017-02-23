@@ -22,22 +22,19 @@ $(function () {
 						array.sort(function(a, b) {return b.length - a.length;});
 		
 						$(".addlink").each(function(){
-							var txt = $(this).html();
 							var contents = [];
 							$("linkcancel", this).each(function(){
-								console.log($(this).html());
 								contents.push($(this).html());
 								$(this).empty();
-								console.log("linkcancel = "+ $(this).html());
-								console.log("contents = "+ contents[contents.length-1]);
 							});
+							var txt = $(this).html();
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
-							$("linkcancel", this).each(function(){
-								/*$(this).append(contents.shift());*/
-							});
 							$(this).html(txt);
+							$("linkcancel", this).each(function(){
+								$(this).append(contents.shift());
+							});
 						});
 						
 						var addlinkcount = 0;
