@@ -25,15 +25,15 @@ $(function () {
 							var txt = $(this).html();
 							var contents = [];
 							$("linkcancel", this).each(function(){
-								console.log(this);
-								contents.push(this);
+								console.log($(this));
+								contents.push($(this));
 								$(this).empty();
 							});
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
 							$("linkcancel", this).each(function(){
-								$(this).append(contents.shit());
+								$(this).append(contents.shift());
 							});
 							$(this).html(txt);
 						});
