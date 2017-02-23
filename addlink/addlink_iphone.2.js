@@ -20,19 +20,19 @@ $(function () {
 						array.sort(function(a, b) {return b.length - a.length;});
 		
 						$(".addlink").each(function(){
-							var txt = $(this).html();
 							var contents = [];
-							while (txt.match("<linkcancel>[^</linkcancel>]+</linkcancel>")) {
-								txt = txt.replace(new RegExp("<linkcancel>([^</linkcancel>]+)</linkcancel>"),"<linkcancel></linkcancel>");
-								contents.push(RegExp.$1);
-							}
+							$("linkcancel", this).each(function(){
+								contents.push($(this).html());
+								$(this).empty();
+							});
+							var txt = $(this).html();
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
-							for (var i = 0; i < contents.length; i++) {
-								txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
-							}
 							$(this).html(txt);
+							$("linkcancel", this).each(function(){
+								$(this).append(contents.shift());
+							});
 						});
 						$(".addlink").each(function(){
 							var txt = $(this).html();
