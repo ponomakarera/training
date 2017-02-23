@@ -28,6 +28,7 @@ $(function () {
 								console.log($(this).html());
 								contents.push($(this).html());
 								$(this).empty();
+								console.log("linkcancel = "+ $(this).html());
 								console.log("contents = "+ contents[contents.length-1]);
 							});
 							for (var i = 0; i < array.length; i++) {
