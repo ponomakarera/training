@@ -24,17 +24,17 @@ $(function () {
 						$(".addlink").each(function(){
 							var txt = $(this).html();
 							var contents = [];
-							while (txt.match("<linkcancel>[\s\S]+?</linkcancel>")) {
-								console.log("hit");
-								txt = txt.replace(new RegExp("<linkcancel>([\s\S]+?)</linkcancel>"),"<linkcancel></linkcancel>");
-								contents.push(RegExp.$1);
-							}
+							$("linkcancel", this).each(function(){
+								console.log(this);
+								contents.push(this);
+								$(this).empty();
+							});
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
-							for (var i = 0; i < contents.length; i++) {
-								txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
-							}
+							$("linkcancel", this).each(function(){
+								$(this).append(contents.shit());
+							});
 							$(this).html(txt);
 						});
 						
