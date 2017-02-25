@@ -4,7 +4,7 @@ $(function () {
 	
 	if (href.match(new RegExp("https://ponomakarera.tumblr.com/ask")) || href.match(new RegExp("https://ponomakarera.tumblr.com/submit"))) {
 		console.log("hit "+ href);
-		$("span #del").removeClass("addlink");
+		$("span,#del").removeClass("addlink");
 	}
 	
 });
