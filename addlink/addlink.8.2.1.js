@@ -24,14 +24,14 @@ $(function () {
 						$(".addlink").each(function(){
 							var contents = [];
 							var txt = $(this).html();
-							$("linkcancel", txt).each(function(){
+							txt.$("linkcancel").each(function(){
 								contents.push($(this).html());
 								$(this).empty();
 							});
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
-							$("linkcancel", txt).each(function(){
+							txt.$("linkcancel").each(function(){
 								$(this).append(contents.shift());
 							});
 							$(this).html(txt);
