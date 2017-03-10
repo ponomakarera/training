@@ -22,18 +22,18 @@ $(function () {
 						array.sort(function(a, b) {return b.length - a.length;});
 		
 						$(".addlink").each(function(){
-							var contents = [];
 							var txt = $(this).html();
-							txt.$("linkcancel").each(function(){
-								contents.push($(this).html());
-								$(this).empty();
-							});
+							var contents = [];
+							while (txt.match("<linkcancel>[\s\S]+?</linkcancel>")) {
+								txt = txt.replace(new RegExp("<linkcancel>([\s\S]+?)</linkcancel>"),"<linkcancel></linkcancel>");
+								contents.push(RegExp.$1);
+							}
 							for (var i = 0; i < array.length; i++) {
 								txt = txt.replace(new RegExp(array[i], "g"),"<span id='"+ i +"'></span>");
 							}
-							txt.$("linkcancel").each(function(){
-								$(this).append(contents.shift());
-							});
+							for (var i = 0; i < contents.length; i++) {
+								txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
+							}
 							$(this).html(txt);
 						});
 						
