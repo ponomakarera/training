@@ -34,7 +34,6 @@ $(function () {
 							for (var i = 0; i < contents.length; i++) {
 								txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 							}
-							console.log(contents);
 							$(this).html(txt);
 						});
 						
