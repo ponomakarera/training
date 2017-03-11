@@ -37,8 +37,6 @@ $(function () {
 							$(this).html(txt);
 						});
 						
-						var addlinkcount = 0;
-						
 						$(".addlink").each(function(){
 							var txt = $(this).html();
 							for (var i = 0; i < array.length; i++) {
@@ -49,16 +47,10 @@ $(function () {
 									if (txt.match("<span id=."+ i +".></span>")) {
 										txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' id='textlink"+ addlinkcount +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>");
 										txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
-										$("body").append("<div class='tooltip' id='tooltip"+addlinkcount+"'><p>"+body[array[i]]+"</p></div>");
-										addlinkcount++;
 									}
 								}
 							}
 							$(this).html(txt);
-						});
-						
-						$(document).ready(function(){
-							simple_tooltip("textlink","tooltip");
 						});
 					}
 				});
