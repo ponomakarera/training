@@ -45,7 +45,7 @@ $(function () {
 								}
 								else {
 									if (txt.match("<span id=."+ i +".></span>")) {
-										txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' id='textlink"+ addlinkcount +"'; href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>");
+										txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' href='"+url[array[i]]+"' style='color:#0645ad '>"+array[i]+"</a>");
 										txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
 									}
 								}
