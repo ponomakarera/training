@@ -18,7 +18,6 @@ $(function () {
 						url[data.response.posts[i].title] = data.response.posts[i].post_url;
 					}
 					if (listnumber == total_posts) {
-						console.log("sucess!");
 						array.sort();
 						array.sort(function(a, b) {return b.length - a.length;});
 		
