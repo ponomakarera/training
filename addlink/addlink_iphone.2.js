@@ -5,8 +5,11 @@ $(function () {
 	var body = {};
 	var url = {};
 	
+	$.ajaxSetup({ cache: true});
+	
 	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=%E3%83%A1%E3%83%A2&limit=1&jsonp=?", function (data) {
 			
+			$.ajaxSetup({ cache: true});
 			var total_posts = data.response.total_posts;
 			var count = Math.floor(total_posts / 50);
 			
