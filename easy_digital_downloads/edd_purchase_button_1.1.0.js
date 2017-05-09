@@ -10,6 +10,7 @@ $(function () {
 			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
 			locale: 'auto',
 			token: function(token) {
+				console.log("exit purchase");
 				modal_window(download_id, token.id, token.email);
 
 			},
@@ -31,7 +32,7 @@ $(function () {
 	});
 function modal_window(download_id, id, email) {
 
-	$('#modal-default').iziModal({
+	$('#iziModal').iziModal({
  
 		onOpening: function(modal){
  
