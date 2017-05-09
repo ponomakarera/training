@@ -4,9 +4,9 @@ $(function () {
 	
 		$('.edd_button').click(function(e) {
 			
-			var download_id = $(this).attr('#download_id');
-			var product_title = $(this).attr('.product_title');
-			var amount = $(this).attr('.amount');
+			var download_id = $(this).attr('download_id');
+			var product_title = $(this).attr('product_title');
+			var amount = $(this).attr('price');
 			
 			StripeCheckout.configure({
 				key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
@@ -26,7 +26,7 @@ $(function () {
 				amount: amount,
 			});
 			
-				return false;
+			return false;
 		
 		});
 	});
