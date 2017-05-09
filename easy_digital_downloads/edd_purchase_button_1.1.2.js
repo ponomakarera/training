@@ -33,30 +33,8 @@ $(function () {
 		
 	});
 function modal_window(download_id, id, email) {
-
-	$('#iziModal').iziModal({
- 
-		onOpening: function(modal){
- 
-			modal.startLoading();
-		
-			$.ajax({
-				url: 'https://ponomakarera.com/checkout',
-				type: "POST",
-				dataType: "html",
-				data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
-				success: function(data) {
-					console.log("success!");
-					$('#iziModal .iziModal-content').html(data);
-					modal.stopLoading();
-				},
-				error: function(){
-					console.log("error");
-				}
-			});
- 
-		}
- 
-	});
+	
+	console.log("start_iziModal");
+	$('#iziModal').iziModal('open');
 }
 });
