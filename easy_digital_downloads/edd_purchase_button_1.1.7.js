@@ -47,7 +47,7 @@ function modal_window(download_id, id, email) {
 				
 				},
 				error: function(){
-					console.log("error");
+					console.log(email);
 					$('#iziModal .iziModal-content').html("<p>お買い上げありがとうございました。<br>あなたのメールアドレス<"+ email +">に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。</p>");
 					modal.stopLoading();
 				}
