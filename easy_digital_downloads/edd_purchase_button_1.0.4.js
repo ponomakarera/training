@@ -11,6 +11,7 @@ $(function () {
 			locale: 'auto',
 			//image: '/square-image.png',
 			token: function(token) {
+				test();
 
 			},
 			opened: function() {
@@ -29,4 +30,7 @@ $(function () {
 		return false;
 		
 	});
+function test() {
+	console.log("test");
+}
 });
