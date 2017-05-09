@@ -34,8 +34,8 @@ function modal_window(download_id, id, email) {
 	
 	$("#iziModal").append("<p>ご記入したメールアドレス&lt;"+ email +"&gt;に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。</p>")
 	$('#iziModal').iziModal({
-		title: '決済が完了しました。',
-		headerColor: '#26A69A',
+		title: '決済が完了しました',
+		headerColor: '#00830c',
 		padding: '10',
 		onOpening: function(){
 
