@@ -1,8 +1,7 @@
 $(function () {
 
-	jQuery(document).ready(function($) {
 	
-		document.getElementByClassName('edd_button').addEventListener('click', function(e) {
+		$('.edd_button').click(function(e) {
 			
 			var download_id = $(this).attr('download_id');
 			var product_title = $(this).attr('product_title');
@@ -29,5 +28,4 @@ $(function () {
 			return false;
 		
 		});
-	});
 });
