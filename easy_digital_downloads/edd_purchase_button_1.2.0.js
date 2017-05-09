@@ -32,14 +32,10 @@ $(function () {
 	});
 function modal_window(download_id, id, email) {
 	
+	$("#iziModal").append("<p>ご記入したメールアドレス&lt;"+ email +"&gt;に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。</p>")
 	$('#iziModal').iziModal({
 		title: '決済が完了しました。',
-		subtitle: 'ご記入したメールアドレス&lt;'+ email +'&gt;に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。',
-		theme: "light",
-		headerColor: '#26A69A',
-		width: '400',
-		closeButton: false,
-		onOpening: function(modal){
+		onOpening: function(){
 
 			$.ajax({
 				url: 'https://ponomakarera.com/checkout',
@@ -54,6 +50,9 @@ function modal_window(download_id, id, email) {
 				}
 			});
  
+		},
+		onClosing: function() {
+			$("#iziModal").empty();
 		}
  
 	});
