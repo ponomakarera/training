@@ -1,16 +1,16 @@
 $(function () {
 
-	var download_id = $(this).attr('download_id');
-	var product_title = $(this).attr('product_title');
-	var amount = Number($(this).attr('price'));
-
 	$('.edd_button').click(function(e) {
+	
+		var download_id = $(this).attr('download_id');
+		var product_title = $(this).attr('product_title');
+		var amount = Number($(this).attr('price'));
 			
 		StripeCheckout.configure({
 			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
 			locale: 'auto',
 			token: function(token) {
-				modal_window(token.id, token.email);
+				modal_window(download_id, token.id, token.email);
 
 			},
 			opened: function() {
@@ -29,7 +29,7 @@ $(function () {
 		return false;
 		
 	});
-function modal_window(id, email) {
+function modal_window(download_id, id, email) {
 
 	$('#modal-default').iziModal({
  
