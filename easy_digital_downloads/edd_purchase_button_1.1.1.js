@@ -1,5 +1,7 @@
 $(function () {
 
+	$('#iziModal').iziModal();
+	
 	$('.edd_button').click(function(e) {
 	
 		var download_id = $(this).attr('download_id');
