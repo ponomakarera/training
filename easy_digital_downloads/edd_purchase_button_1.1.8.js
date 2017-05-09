@@ -33,23 +33,20 @@ $(function () {
 function modal_window(download_id, id, email) {
 	
 	$('#iziModal').iziModal({
- 
+		title: '決済が完了しました。',
+		subtitle: 'ご記入したメールアドレス<'+ email +'>に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。',
 		onOpening: function(modal){
- 
-			modal.startLoading();
-		
+
 			$.ajax({
 				url: 'https://ponomakarera.com/checkout',
 				type: "POST",
 				dataType: "html",
-				data:{download_id: download_id, edd_action: "straight_to_gateway", payment_key: "stripe_checkout", edd_stripe_token: 'tekitou', edd_email: email},
+				data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
 				success: function(data) {
 				
 				},
 				error: function(){
-					console.log(email);
-					$('#iziModal .iziModal-content').html("<p>お買い上げありがとうございました。<br>あなたのメールアドレス<"+ email +">に商品のダウンロードリンクを記載したレシートを送信しましたので、ご確認をお願いします。</p>");
-					modal.stopLoading();
+
 				}
 			});
  
