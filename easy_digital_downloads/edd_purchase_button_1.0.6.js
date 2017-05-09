@@ -23,7 +23,7 @@ $(function () {
 		}).open({
 			name: product_title,
 			amount: amount,
-			allowRememberMe: 'false',
+			allowRememberMe: false,
 			currency: 'JPY'
 		});
 			
