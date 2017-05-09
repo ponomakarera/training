@@ -2,7 +2,7 @@ $(function () {
 
 	jQuery(document).ready(function($) {
 	
-		$('.edd_button').click(function(e) {
+		document.getElementByClassName('edd_button').addEventListener('click', function(e) {
 			
 			var download_id = $(this).attr('download_id');
 			var product_title = $(this).attr('product_title');
