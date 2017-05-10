@@ -42,7 +42,7 @@ function modal_window(download_id, id, email) {
 		modal.startLoading();
 		
 			$.ajax({
-				url: 'https://ponomakarera.com/checkout',
+				url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
 				type: "POST",
 				dataType: "html",
 				data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
