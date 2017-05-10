@@ -9,7 +9,7 @@ $(function () {
 		var amount = Number($(this).attr('price'));
 		
 		StripeCheckout.configure({
-			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
+			key: 'pk_live_kPmUwOK0Hu0lRGtEnip8eX7C',
 			locale: 'auto',
 			token: function(token) {
 
