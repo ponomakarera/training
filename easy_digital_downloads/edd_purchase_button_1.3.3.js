@@ -34,22 +34,27 @@ function modal_window(download_id, id, email) {
 
 	$('#iziModal').iziModal({
 		iframe: true,
-		iframeHeight: 100,
-		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
- 
-	});
-	
-	$.ajax({
-		url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
-		type: "POST",
-		dataType: "html",
-		data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
-		success: function(data) {
-			$('#iziModal').iziModal('open');
-		},
-		error: function(){
+		iframeHeight: 400,
+		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/",
+		onOpening: function(modal){
+			modal.startLoading();
+			
+			$.ajax({
+				url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
+				type: "POST",
+				dataType: "html",
+				data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
+				success: function(data) {
+					modal.stopLoading();
+					$('#iziModal').iziModal('open');
+				},
+				error: function(){
 
+				}
+			});
+			
 		}
+ 
 	});
 	
 	/*$("#iziModal").append("<p>ご記入したメールアドレス&nbsp;&lt;"+ email +"&gt;&nbsp;に商品のダウンロードリンクを記載<br>したレシートを送信しましたので、ご確認をお願いします。</p>")*/
