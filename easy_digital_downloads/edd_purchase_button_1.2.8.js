@@ -36,7 +36,9 @@ function modal_window(download_id, id, email) {
 	$('#iziModal').iziModal({
 		title: '決済が完了しました',
 		headerColor: '#00830c',
-		padding: '10',
+		iframe: true,
+		iframeHeight: 800,
+		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
 		onOpening: function(modal){
 
 		modal.startLoading();
