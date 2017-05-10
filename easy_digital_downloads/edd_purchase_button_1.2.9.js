@@ -38,7 +38,7 @@ function modal_window(download_id, id, email) {
 		headerColor: '#00830c',
 		iframe: true,
 		iframeHeight: 800,
-		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
+		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/",
 		onOpening: function(modal){
 
 		modal.startLoading();
