@@ -34,7 +34,7 @@ function modal_window(download_id, id, email) {
 
 	$('#iziModal').iziModal({
 		iframe: true,
-		iframeHeight: 400,
+		iframeHeight: 800,
 		iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
  
 	});
