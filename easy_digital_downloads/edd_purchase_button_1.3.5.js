@@ -36,7 +36,7 @@ function modal_window(download_id, id, email) {
 		onOpening: function(modal){
 			modal.startLoading();
 			
-			$('#iziModal2').iziModal({
+			$('#iziModal').iziModal({
 				iframe: true,
 				iframeHeight: 100,
 				iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
@@ -49,7 +49,7 @@ function modal_window(download_id, id, email) {
 				data:{download_id: download_id, edd_action: "straight_to_gateway", edd_stripe_token: id, edd_email: email},
 				success: function(data) {
 					modal.stopLoading();
-					$('#iziModal2').iziModal('open');
+					$('#iziModal').iziModal('open');
 				},
 				error: function(){
 
