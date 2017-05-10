@@ -34,6 +34,7 @@ function modal_window(download_id, id, email) {
 
 	$('#iziModal').iziModal({
 		title: '決済が完了しました',
+		subtitle: '下へスクロールした後、商品名をクリックして商品をダウンロードしてください',
 		headerColor: '#00830c',
 		iframe: true,
 		iframeHeight: 800,
