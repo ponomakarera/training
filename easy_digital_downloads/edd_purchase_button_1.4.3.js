@@ -2,17 +2,17 @@ $(function () {
 
 	$('.edd_button').click(function(e) {
 	
-		$("#purchase_form").append("<input type='hidden' name='download_id' value='" + $(this).attr('download_id') + "'>");
-		$("#purchase_form").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
-	
+		var download_id = $(this).attr('download_id');
 		var product_title = $(this).attr('product_title');
 		var amount = Number($(this).attr('price'));
 		
 		StripeCheckout.configure({
-			key: 'pk_live_kPmUwOK0Hu0lRGtEnip8eX7C',
+			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
 			locale: 'auto',
 			token: function(token) {
-
+				
+				$("#purchase_form").append("<input type='hidden' name='download_id' value='" + download_id + "'>");
+				$("#purchase_form").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
 				$("#purchase_form").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchase_form").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				$("#purchase_form").submit();
