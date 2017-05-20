@@ -42,7 +42,7 @@ $(function () {
 	
 		$.ajax({
 			url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
-			type: 'POST',
+			type: 'GET',
 			dataType: 'html',
 			data: {download_id: download_id, edd_action: 'straight_to_gateway', edd_stripe_token: stripe_id, edd_email: email}
 		})
