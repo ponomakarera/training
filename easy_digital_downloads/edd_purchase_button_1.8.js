@@ -53,7 +53,7 @@ $(function () {
 			},
 			// 2つめは通信失敗時のコールバック
 			function () {
-				$("#ajaxtest").append(<span>Error</span>);
+				$("#ajaxtest").append("<span>Error</span>");
 		});
 		
 		/*$("#ajaxtest").append("<span>download_id is <b>"+ download_id +"</b></span><br>");
