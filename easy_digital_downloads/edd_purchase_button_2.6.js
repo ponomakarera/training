@@ -41,7 +41,7 @@ $(function () {
 	function ajaxtest(download_id, stripe_id, email) {
 	
 		$.ajax({
-			url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
+			url: 'https://ponomakarera.com/checkout/',
 			type: 'POST',
 			dataType: 'html',
 			data: {download_id: download_id, edd_action: 'straight_to_gateway', edd_stripe_token: stripe_id, edd_email: email}
