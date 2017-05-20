@@ -39,9 +39,26 @@ $(function () {
 	});
 	
 	function ajaxtest(download_id, stripe_id, email) {
-		$("#ajaxtest").append("<span>download_id is <b>"+ download_id +"</b></span><br>");
+	
+		$.ajax({
+			url: 'https://ponomakarera.com/checkout/',
+			type: 'POST',
+			dataType: 'html',
+			data: {download_id: download_id, edd_action: 'straight_to_gateway', edd_stripe_token: stripe_id, edd_email: email}
+		})
+		.then(
+			// 1つめは通信成功時のコールバック
+			function (data) {
+				$("#ajaxtest").append(data);
+			},
+			// 2つめは通信失敗時のコールバック
+			function () {
+				$("#ajaxtest").append(<span>Error</span>);
+		});
+		
+		/*$("#ajaxtest").append("<span>download_id is <b>"+ download_id +"</b></span><br>");
 		$("#ajaxtest").append("<span>stripe_id is <b>"+ stripe_id +"</b></span><br>");
-		$("#ajaxtest").append("<span>email is <b>"+ email +"</b></span><br>");
+		$("#ajaxtest").append("<span>email is <b>"+ email +"</b></span><br>");*/
 	}
 	
 });
