@@ -11,7 +11,7 @@ $(function () {
 			locale: 'auto',
 			token: function(token) {
 				
-				ajaxtest(download_id, stripe_id, email);
+				ajaxtest(download_id, token.id, token.email);
 				
 				/*$("#purchase_form").append("<input type='hidden' name='download_id' value='" + download_id + "'>");
 				$("#purchase_form").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
