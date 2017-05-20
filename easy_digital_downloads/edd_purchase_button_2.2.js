@@ -43,13 +43,13 @@ $(function () {
 		$.ajax({
 			url: 'https://ponomakarera.com/checkout/purchase-confirmation/',
 			type: 'POST',
-			dataType: 'html',
+			dataType: 'text',
 			data: {download_id: download_id, edd_action: 'straight_to_gateway', edd_stripe_token: stripe_id, edd_email: email}
 		})
 		.then(
 			// 1つめは通信成功時のコールバック
 			function (data) {
-				$("#ajaxtest").append(data);
+				$("#ajaxtest").append("<p>"+ data +"</p>");
 			},
 			// 2つめは通信失敗時のコールバック
 			function () {
