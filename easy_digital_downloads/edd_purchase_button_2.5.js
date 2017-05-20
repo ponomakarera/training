@@ -49,7 +49,7 @@ $(function () {
 		.then(
 			// 1つめは通信成功時のコールバック
 			function (data) {
-				$("#ajaxtest").append("<p>"+ data +"</p>");
+				$("#ajaxtest").append(data);
 			},
 			// 2つめは通信失敗時のコールバック
 			function () {
