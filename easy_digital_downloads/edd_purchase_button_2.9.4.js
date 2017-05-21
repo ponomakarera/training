@@ -7,7 +7,7 @@ $(function () {
 		var amount = Number($(this).attr('price'));
 		
 		StripeCheckout.configure({
-			key: 'pk_live_kPmUwOK0Hu0lRGtEnip8eX7C',
+			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
 			locale: 'auto',
 			token: function(token) {
 				
@@ -17,6 +17,7 @@ $(function () {
 				$("#checkout_form").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				document.targetform.submit();
 				/*$("#checkout_form").submit();*/
+
 
 			},
 			opened: function() {
