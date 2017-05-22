@@ -19,7 +19,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<div class='modal-content'><span class='close'>&times;</span><iframe name='targetframe' scrolling='no'><iframe></div>");
+				$("#myModal").append("<div class='modal-header'><span class='close'>&times;</span></div><iframe class='modal-content' name='targetframe' scrolling='no'><iframe>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
