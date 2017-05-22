@@ -22,7 +22,7 @@ $(function () {
 					iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
 				});
 				$('#modal').iziModal('open');
-				document.targetform.submit();
+				//document.targetform.submit();
 				/*$("#checkout_form").submit();*/
 
 
