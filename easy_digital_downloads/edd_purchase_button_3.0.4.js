@@ -11,10 +11,10 @@ $(function () {
 			locale: 'auto',
 			token: function(token) {
 				
-				document.targetform.append("<input type='hidden' name='download_id' value='" + download_id + "'>");
-				document.targetform.append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
-				document.targetform.append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
-				document.targetform.append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
+				$("#purchaseform").append("<input type='hidden' name='download_id' value='" + download_id + "'>");
+				$("#purchaseform").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
+				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
+				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				$("body").append("<iframe name='targetframe'><iframe>");
 				document.targetform.submit();
 				document.targetform.empty();
