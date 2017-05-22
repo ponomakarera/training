@@ -1,7 +1,6 @@
 $(function () {
 
 	var modal = document.getElementById('myModal');
-	//var span = document.getElementsByClassName("close");
 	
 	$('.edd_button').click(function(e) {
 	
@@ -42,11 +41,9 @@ $(function () {
 		
 	});
 	
-	// When the user clicks on <span> (x), close the modal
-	/*span.onclick = function() {
-		$("#myModal").empty();
-		modal.style.display = "none";
-	}*/
+	$("iframe").on("load",function(){
+		$("body > table:not(#edd_purchase_receipt_products)").hide();
+	});
 	
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
@@ -58,8 +55,4 @@ $(function () {
 			modal.style.display = "none";
 		}
 	}
-	/*$("#myModal").click(function() {
-		$("#myModal").empty();
-		modal.style.display = "none";
-	});*/
 });
