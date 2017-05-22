@@ -43,13 +43,10 @@ $(function () {
 	});
 	
 	function submitwait() {
-	
-		var off = $('#loader-bg').offset();
-		$('#iframe-content').offset({ top: off.top, left: off.left });
-		
+
 		$("#iframe-content").on("load",function(){
 			try {
-				$('#loader-bg').delay(900).fadeOut(800);
+				$('#loader-bg').remove();
 			}
 			catch(e) {
 				alert(e.message);
