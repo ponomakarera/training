@@ -42,10 +42,10 @@ $(function () {
 		
 	});
 	
-	$("#iframe-content").on("load",function(){
+	$("iframe").on("load",function(){
 		try {
 			console.log("second");
-			$("#iframe-content").contents().find(".entry-header").append("<h1>WORKING</h1>");
+			$("iframe").contents().find(".entry-header").append("<h1>WORKING</h1>");
 			//$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
 		}
 		catch(e) {
