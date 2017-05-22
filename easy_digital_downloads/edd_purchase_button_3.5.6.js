@@ -47,7 +47,7 @@ $(function () {
 		$("#iframe-content").on("load",function(){
 			try {
 				console.log("second");
-				$('#loader-bg').delay(900).fadeOut(800);
+				$('div #loader-bg').delay(900).fadeOut(800);
 			}
 			catch(e) {
 				alert(e.message);
