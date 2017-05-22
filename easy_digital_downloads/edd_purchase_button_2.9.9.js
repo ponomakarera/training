@@ -16,14 +16,18 @@ $(function () {
 				$("#checkout_form").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#checkout_form").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				
-				$("#modal").iziModal();
-				$('#modal').iziModal('open');
 				//document.targetform.submit();
 				/*$("#checkout_form").submit();*/
 
 
 			},
 			opened: function() {
+				$("#modal").iziModal({
+					iframe: true,
+					iframeHeight: 800,
+					iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
+				});
+				$('#modal').iziModal('open');
 
 			},
 			closed: function() {
