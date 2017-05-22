@@ -42,7 +42,12 @@ $(function () {
 	});
 	
 	$("iframe").on("load",function(){
-		$("iframe > body").not("#edd_purchase_receipt_products").hide();
+		$("iframe").contents().not("#edd_purchase_receipt_products").hide();
+	});
+	
+	$(".close").on('click', function () {
+		$("#myModal").empty();
+		modal.style.display = "none";
 	});
 	
 	// When the user clicks anywhere outside of the modal, close it
