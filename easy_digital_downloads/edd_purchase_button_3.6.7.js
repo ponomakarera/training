@@ -50,8 +50,8 @@ $(function () {
 		
 		$("#iframe-content").on("load",function(){
 			try {
-				$('#loader-bg).delay(900).fadein(800);
-				$('#loader-bg).delay(900).fadeOut(800);
+				$('#iframe-content').delay(900).fadein(800);
+				$('#loader-bg').delay(900).fadeOut(800);
 			}
 			catch(e) {
 				alert(e.message);
