@@ -24,11 +24,10 @@ $(function () {
 				
 			},
 			opened: function() {
-				modal.style.display = "block";
 
 			},
 			closed: function() {
-
+				modal.style.display = "block";
 			}
 		}).open({
 			name: product_title,
