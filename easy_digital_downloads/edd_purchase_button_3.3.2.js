@@ -1,7 +1,7 @@
 $(function () {
 
 	var modal = document.getElementById('myModal');
-	var span = document.getElementsById("close");
+	var span = document.getElementById("close");
 	
 	$('.edd_button').click(function(e) {
 	
