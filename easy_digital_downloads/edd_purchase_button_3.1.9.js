@@ -8,7 +8,6 @@ $(function () {
 		var download_id = $(this).attr('download_id');
 		var product_title = $(this).attr('product_title');
 		var amount = Number($(this).attr('price'));
-		var checkoutsubmit = false;
 		
 		StripeCheckout.configure({
 			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
@@ -20,18 +19,17 @@ $(function () {
 				$("#purchaseform").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
+				modal.style.display = "block";
 				$("#myModal").append("<iframe class='modal-content' name='targetframe'><span class='close'>&times;</span><iframe>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
 			},
 			opened: function() {
-				modal.style.display = "block";
+				
 			},
 			closed: function() {
-				if (!checkoutsubmit) {
-					modal.style.display = "none";
-				}
+
 			}
 		}).open({
 			name: product_title,
@@ -53,7 +51,6 @@ $(function () {
 	// When the user clicks anywhere outside of the modal, close it
 	$("#myModal").click(function() {
 		$("#myModal").empty();
-		checkoutsubmit = false;
 		modal.style.display = "none";
 	});
 });
