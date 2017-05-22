@@ -17,7 +17,7 @@ $(function () {
 				$("#purchaseform").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
-				$("body").append("<iframe id="checkoutform" name='targetframe'><span class="close">&times;</span><iframe>");
+				$("body").append("<iframe id='checkoutform' name='targetframe'><span class='close'>&times;</span><iframe>");
 				document.targetform.submit();
 				document.targetform.empty();
 				
