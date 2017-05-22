@@ -42,7 +42,8 @@ $(function () {
 	});
 	
 	$("iframe").on("load",function(){
-		$("body > table:not(#edd_purchase_receipt_products)").hide();
+		console.log("run");
+		$("iframe > div:not(#edd_purchase_receipt_products)").hide();
 	});
 	
 	// When the user clicks anywhere outside of the modal, close it
