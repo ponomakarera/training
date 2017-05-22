@@ -16,7 +16,7 @@ $(function () {
 				$("#checkout_form").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#checkout_form").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				
-				$("#modal-iframe").iziModal({
+				$("#modal").iziModal({
 					iframe: true,
 					iframeHeight: 800,
 					iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
