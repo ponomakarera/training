@@ -1,7 +1,7 @@
 $(function () {
 
 	var modal = document.getElementById('myModal');
-	var span = document.getElementsByClassName("close");
+	//var span = document.getElementsByClassName("close");
 	
 	$('.edd_button').click(function(e) {
 	
@@ -43,17 +43,17 @@ $(function () {
 	});
 	
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
+	/*span.onclick = function() {
 		$("#myModal").empty();
 		modal.style.display = "none";
-	}
+	}*/
 	
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
 		if (event.target.className == "modal-content") {
 			return;
 		}
-		else if (event.target.className == "modal") {
+		else if (event.target.className == "modal" || event.target.className == "close") {
 			$("#myModal").empty();
 			modal.style.display = "none";
 		}
