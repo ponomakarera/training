@@ -20,7 +20,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<iframe class='modal-content' name='targetframe' scrolling='no'><span class='close'>&times;</span><iframe>");
+				$("#myModal").append("<div class='modal-content'><span class="close">&times;<span><iframe name='targetframe' scrolling='no'><iframe></div>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
@@ -43,10 +43,10 @@ $(function () {
 	});
 	
 	// When the user clicks on <span> (x), close the modal
-	$(".close").onclick = function() {
+	$(".close").click(function() {
 		$("#myModal").empty();
 		modal.style.display = "none";
-	}
+	});
 	
 	// When the user clicks anywhere outside of the modal, close it
 	$("#myModal").click(function() {
