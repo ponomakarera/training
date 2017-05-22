@@ -42,14 +42,10 @@ $(function () {
 	});
 	
 	$("#iframe-content").on("load",function(){
-		$("#iframe-content").contents().append("<h1>WORKING</h1>");
+		$("#iframe-content").contents().find("#error-page").append("<h1>WORKING</h1>");
 		//$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
 	});
 	
-	$(".close").on('click', function () {
-		$("#myModal").empty();
-		modal.style.display = "none";
-	});
 	
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
