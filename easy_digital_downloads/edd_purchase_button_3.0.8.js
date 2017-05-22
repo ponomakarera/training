@@ -1,12 +1,13 @@
 $(function () {
 
+	var modal = document.getElementById('myModal');
+	var span = document.getElementsByClassName("close")[0];
+	
 	$('.edd_button').click(function(e) {
 	
 		var download_id = $(this).attr('download_id');
 		var product_title = $(this).attr('product_title');
 		var amount = Number($(this).attr('price'));
-		var modal = document.getElementById('myModal');
-		var span = document.getElementsByClassName("close")[0];
 		
 		StripeCheckout.configure({
 			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
@@ -41,7 +42,7 @@ $(function () {
 	});
 	
 	// When the user clicks on <span> (x), close the modal
-	$(".close").onclick = function() {
+	span.onclick = function() {
 		$("#myModal").empty();
 		modal.style.display = "none";
 	}
