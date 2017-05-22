@@ -22,16 +22,15 @@ $(function () {
 
 			},
 			opened: function() {
+
+			},
+			closed: function() {
 				$("#modal").iziModal({
 					iframe: true,
 					iframeHeight: 800,
 					iframeURL: "https://ponomakarera.com/checkout/purchase-confirmation/"
 				});
 				$('#modal').iziModal('open');
-
-			},
-			closed: function() {
-
 			}
 		}).open({
 			name: product_title,
