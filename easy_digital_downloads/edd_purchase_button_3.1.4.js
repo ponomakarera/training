@@ -47,7 +47,7 @@ $(function () {
 	}
 	
 	// When the user clicks anywhere outside of the modal, close it
-	$("#myModal").on(click, function(event) {
+	$("#myModal").on(click, function() {
 		$("#myModal").empty();
 		modal.style.display = "none";
 	});
