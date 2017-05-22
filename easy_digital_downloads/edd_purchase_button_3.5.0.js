@@ -42,11 +42,11 @@ $(function () {
 		
 	});
 	
-	$("iframe").on("load",function(){
+	$("#purchaseform").submit(function(){
 		try {
 			console.log("second");
-			$("iframe").contents().find(".entry-header").append("<h1>WORKING</h1>");
-			//$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
+			//$("iframe").contents().find(".entry-header").append("<h1>WORKING</h1>");
+			$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
 		}
 		catch(e) {
 			alert(e.message);
