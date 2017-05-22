@@ -20,7 +20,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				$("#myModal").append("<iframe class='modal-content' name='targetframe'><span class='close'>&times;</span><iframe>");
 				document.targetform.submit();
-				$("#purchaseform").targetform.empty();
+				$("#purchaseform").empty();
 				
 			},
 			opened: function() {
