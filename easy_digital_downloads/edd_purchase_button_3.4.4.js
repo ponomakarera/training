@@ -42,7 +42,8 @@ $(function () {
 	});
 	
 	$("#iframe-content").on("load",function(){
-		$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
+		$("#iframe-content").contents().append("<h1>WORKING</h1>");
+		//$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
 	});
 	
 	$(".close").on('click', function () {
