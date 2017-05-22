@@ -19,7 +19,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><img id='loadimage' src='https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_1280.jpg'><iframe id='iframe-content' name='targetframe' frameborder='0'><iframe></div>");
+				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><div id='modal-loadimage'></div><iframe id='iframe-content' name='targetframe' frameborder='0'><iframe></div>");
 				console.log("first");
 				document.targetform.submit();
 				submitwait();
@@ -47,7 +47,7 @@ $(function () {
 		$("#iframe-content").on("load",function(){
 			try {
 				console.log("second");
-				$("#loadimage").remove();
+				$("#modal-loadimage").remove();
 			}
 			catch(e) {
 				alert(e.message);
