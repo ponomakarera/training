@@ -22,6 +22,7 @@ $(function () {
 				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe id='iframe-content' name='targetframe' frameborder='0'><iframe></div>");
 				console.log("first");
 				document.targetform.submit();
+				iframecss();
 				$("#purchaseform").empty();
 				
 			},
@@ -42,16 +43,18 @@ $(function () {
 		
 	});
 	
-	$("#purchaseform").submit(function(){
-		try {
-			console.log("second");
-			//$("iframe").contents().find(".entry-header").append("<h1>WORKING</h1>");
-			$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
-		}
-		catch(e) {
-			alert(e.message);
-		}
-	});
+	function iframecss() {
+		$("#iframe-content").on("load",function(){
+			try {
+				console.log("second");
+				//$("iframe").contents().find(".entry-header").append("<h1>WORKING</h1>");
+				$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
+			}
+			catch(e) {
+				alert(e.message);
+			}
+		});
+	}
 	
 	
 	// When the user clicks anywhere outside of the modal, close it
