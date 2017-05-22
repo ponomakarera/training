@@ -18,7 +18,8 @@ $(function () {
 				$("#purchaseform").append('<input type="hidden" name="edd_action" value="straight_to_gateway">');
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
-				$("#myModal").append("<iframe src='http://www.pixelimage.jp/blog/images_loading_gif/icon_loader_a_ww_01_s1.gif' class='modal-content' name='targetframe'><span class='close'>&times;</span><iframe>");
+				modal.style.display = "block";
+				$("#myModal").append("<iframe src='https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_1280.jpg' class='modal-content' name='targetframe'><span class='close'>&times;</span><iframe>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
@@ -27,7 +28,7 @@ $(function () {
 
 			},
 			closed: function() {
-				modal.style.display = "block";
+
 			}
 		}).open({
 			name: product_title,
