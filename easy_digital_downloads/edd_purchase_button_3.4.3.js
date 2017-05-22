@@ -19,7 +19,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe name='targetframe' frameborder='0'><iframe></div>");
+				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe id='iframe-content' name='targetframe' frameborder='0'><iframe></div>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
@@ -41,8 +41,8 @@ $(function () {
 		
 	});
 	
-	$("iframe").on("load",function(){
-		$("iframe").contents().not("#edd_purchase_receipt_products").hide();
+	$("#iframe-content").on("load",function(){
+		$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
 	});
 	
 	$(".close").on('click', function () {
