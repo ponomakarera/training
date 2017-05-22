@@ -42,8 +42,13 @@ $(function () {
 	});
 	
 	$("#iframe-content").on("load",function(){
-		$("#iframe-content").contents().find("#error-page").append("<h1>WORKING</h1>");
-		//$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
+		try {
+			//$("#iframe-content").contents().find(".entry-header").append("<h1>WORKING</h1>");
+			$("#iframe-content").contents().not("#edd_purchase_receipt_products").hide();
+		}
+		catch(e) {
+			alert(e.message);
+		}
 	});
 	
 	
