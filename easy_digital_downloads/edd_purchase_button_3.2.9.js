@@ -1,7 +1,7 @@
 $(function () {
 
 	var modal = document.getElementById('myModal');
-	var modal = document.getElementById('myModal');
+	var span = document.getElementsByClassName("close")[0];
 	
 	$('.edd_button').click(function(e) {
 	
@@ -20,7 +20,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe name='targetframe' scrolling='no'><iframe></div>");
+				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe name='targetframe' scrolling='no' frameborder='0'><iframe></div>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
@@ -43,10 +43,10 @@ $(function () {
 	});
 	
 	// When the user clicks on <span> (x), close the modal
-	$(".close").click(function() {
+	span.onclick = function() {
 		$("#myModal").empty();
 		modal.style.display = "none";
-	});
+	}
 	
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
