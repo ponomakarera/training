@@ -46,12 +46,11 @@ $(function () {
 	
 		var off = $('#loader-bg').offset();
 		$('#iframe-content').offset({ top: off.top, left: off.left });
-		$('#iframe-content').css('display', 'none');
 		
 		$("#iframe-content").on("load",function(){
 			try {
 				$('#loader').fadeOut(50);
-				$('#iframe-content').fadeIn(400);
+				$('#loader-bg').fadeOut(400);
 			}
 			catch(e) {
 				alert(e.message);
