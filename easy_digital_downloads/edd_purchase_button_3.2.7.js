@@ -19,7 +19,7 @@ $(function () {
 				$("#purchaseform").append("<input type='hidden' name='edd_stripe_token' value='" + token.id + "' />");
 				$("#purchaseform").append("<input type='hidden' name='edd_email' value='" + token.email + "' />");
 				modal.style.display = "block";
-				$("#myModal").append("<div class='modal-content'><div class='modal-header'><h3>決済が完了しました</h3><span class='close'>&times;</span></div><iframe name='targetframe'><iframe></div>");
+				$("#myModal").append("<div class='modal-content'><div class='modal-header'><span style='font-size:20px; font-weight: bold;'>決済が完了しました</span><span class='close'>&times;</span></div><iframe name='targetframe'><iframe></div>");
 				document.targetform.submit();
 				$("#purchaseform").empty();
 				
