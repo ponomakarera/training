@@ -51,7 +51,7 @@ $(function () {
 		$("#iframe-content").on("load",function(){
 			try {
 				$('#loader').fadeOut(50);
-				$('#iframe-content').fadeIn(400);
+				$('#loader-bg').fadeOut(400);
 			}
 			catch(e) {
 				alert(e.message);
