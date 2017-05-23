@@ -59,9 +59,8 @@ $(function () {
 		});
 	}
 	
-	
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
+	$('#myModal').on('click', function(event) {
 		if (event.target.className == "modal-content") {
 			return;
 		}
@@ -69,11 +68,6 @@ $(function () {
 			$("#myModal").empty();
 			modal.style.display = "none";
 		}
-	}
-	
-	//close button for ios
-	$('.close').on('click', function () {
-		$("#myModal").empty();
-		modal.style.display = "none";
 	});
+	
 });
