@@ -70,4 +70,10 @@ $(function () {
 			modal.style.display = "none";
 		}
 	}
+	
+	//close button for ios
+	$('.close').on('click', function () {
+		$("#myModal").empty();
+		modal.style.display = "none";
+	});
 });
