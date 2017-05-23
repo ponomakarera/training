@@ -42,10 +42,18 @@ $(function () {
 		
 	});
 	
-	function submitwait() {
 	
-		/*var off = $('#loader-bg').offset();
-		$('#iframe-content').offset({ top: off.top, left: off.left });*/
+	$("#iframe-content").on("load",function(){
+			try {
+				$('#loader').fadeOut(50);
+				$('#loader-bg').fadeOut(400);
+			}
+			catch(e) {
+				alert(e.message);
+			}
+	});
+	
+	/*function submitwait() {
 		
 		$("#iframe-content").on("load",function(){
 			try {
@@ -56,7 +64,7 @@ $(function () {
 				alert(e.message);
 			}
 		});
-	}
+	}*/
 	
 	// When the user clicks anywhere outside of the modal, close it
 	$('#myModal').on('click', function(event) {
