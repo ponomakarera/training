@@ -46,7 +46,6 @@ $(function () {
 	
 		var off = $('#loader-bg').offset();
 		$('#iframe-content').offset({ top: off.top, left: off.left });
-		$('#iframe-content').css('display', 'none');
 		
 		$("#iframe-content").on("load",function(){
 			try {
