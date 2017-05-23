@@ -44,8 +44,8 @@ $(function () {
 	
 	function submitwait() {
 	
-		var off = $('#loader-bg').offset();
-		$('#iframe-content').offset({ top: off.top, left: off.left });
+		/*var off = $('#loader-bg').offset();
+		$('#iframe-content').offset({ top: off.top, left: off.left });*/
 		
 		$("#iframe-content").on("load",function(){
 			try {
