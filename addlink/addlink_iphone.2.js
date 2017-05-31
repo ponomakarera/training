@@ -37,11 +37,6 @@ $(function () {
 							for (var i = 0; i < contents.length; i++) {
 								txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 							}
-							$(this).html(txt);
-						});
-						
-						$(".addlink").each(function(){
-							var txt = $(this).html();
 							for (var i = 0; i < array.length; i++) {
 								if (($(this).hasClass(array[i]))) {
 									txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
