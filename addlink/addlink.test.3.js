@@ -4,6 +4,7 @@
 	var array = {'あ': '149175896520', 'とは': '148474924130'};
 	
 	for (var i = 0; i < target.length; i++){
+		console.log("target.length = "+ target.length);
 		var txt = target[i].innerHTML;
 		console.log("before:"+ txt);
 		var contents = [];
