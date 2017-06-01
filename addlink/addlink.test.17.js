@@ -14,10 +14,10 @@
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ array[key] +"'></span>");
 		}
 		console.log(contents);
-		/*for (var i = 0; i < contents.length; i++) {
-			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
+		for (var j = 0; j < contents.length; j++) {
+			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[j] +"</linkcancel>");
 		}
-		for (var key in array) {
+		/*for (var key in array) {
 			if ((target[i].className +'').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
@@ -30,6 +30,5 @@
 			}
 		}*/
 		target[i].innerHTML = txt;
-		console.log("after:"+ target[i].innerHTML);
 	}
 })();
