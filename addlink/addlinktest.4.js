@@ -27,12 +27,12 @@ $(function () {
 						var contents = [];
 						
 						for (var i = 0; i < array.length; i++) {
-							contents.push("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
+							/*contents.push("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");*/
 							
-							/*$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");*/
+							$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
 						}
-
-						alert(contents);
+							$("test").select();
+							document.execCommand('copy');
 						
 					}
 				});
