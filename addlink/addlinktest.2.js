@@ -24,11 +24,16 @@ $(function () {
 					if (listnumber == total_posts) {
 						array.sort();
 						array.sort(function(a, b) {return b.length - a.length;});
+						var contents = [];
 						
 						for (var i = 0; i < array.length; i++) {
-							$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
+							contents.push("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
+							
+							/*$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");*/
 						}
 
+						console.log(contents);
+						
 					}
 				});
 			}
