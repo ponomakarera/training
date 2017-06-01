@@ -5,20 +5,19 @@
 	
 	for (var i = 0; i < target.length; i++){
 		var txt = target[i].innerHTML;
-		console.log("before:"+ txt);
 		var contents = [];
 		while (txt.match(/<linkcancel>(?!<\/linkcancel>)[\s\S]+?<\/linkcancel>/)) {
 			txt = txt.replace(new RegExp(/<linkcancel>(?!<\/linkcancel>)([\s\S]+?)<\/linkcancel>/),"<linkcancel></linkcancel>");
 			contents.push(RegExp.$1);
 		}
-		for (var key in array) {
+		console.log(txt);
+		/*for (var key in array) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ array[key] +"'></span>");
 		}
 		for (var i = 0; i < contents.length; i++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
-		console.log(txt);
-		/*for (var key in array) {
+		for (var key in array) {
 			if ((target[i].className +'').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
