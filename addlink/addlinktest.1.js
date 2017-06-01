@@ -26,7 +26,7 @@ $(function () {
 						array.sort(function(a, b) {return b.length - a.length;});
 						
 						for (var i = 0; i < array.length; i++) {
-							$("test").append("<memo><title>array[i]</title><naiyou>body[array[i]]</naiyou><memourl>url[array[i]]</memourl></memo>");
+							$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
 						}
 
 					}
