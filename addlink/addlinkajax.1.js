@@ -19,6 +19,7 @@ $(function () {
 		array.sort(function(a, b) {return b.length - a.length;});
 		
 		$(".addlink").each(function(){
+			console.log("success");
 			var txt = $(this).html();
 			var contents = [];
 			while (txt.match(/<linkcancel>(?!<\/linkcancel>)[\s\S]+?<\/linkcancel>/)) {
