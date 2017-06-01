@@ -11,6 +11,7 @@ $(function () {
     })
     .done(function(data) {
         $(data).find('.memo').each(function(){
+			console.log("hit");
 			array[listnumber++] = $(this).find('.title').html();
 			body[array[listnumber - 1]] = $(this).find('.naiyou').html();
 			url[array[listnumber - 1]] = $(this).find('.memourl').html();
