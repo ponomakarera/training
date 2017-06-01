@@ -18,7 +18,7 @@
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
 		for (var key in array) {
-			if (target[i].classList.classList.contains(array[key])) {
+			if (target[i].classList.classList.contains(key)) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
 			else {
