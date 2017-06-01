@@ -17,6 +17,7 @@ $(function () {
         });
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
+		console.log(array);
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
