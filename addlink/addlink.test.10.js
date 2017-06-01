@@ -17,7 +17,7 @@
 		for (var i = 0; i < contents.length; i++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
-		
+		console.log(txt);
 		for (var key in array) {
 			if ((target[i].className +'').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
