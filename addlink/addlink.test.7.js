@@ -17,8 +17,11 @@
 		for (var i = 0; i < contents.length; i++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
+		
+		var rclass = /[\t\r\n\f]/g;
+		
 		for (var key in array) {
-			if (target[i].classList.classList.contains(key)) {
+			if ((' ' + target[i].className + ' ').replace(rclass, ' ').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
 			else {
