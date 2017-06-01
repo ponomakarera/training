@@ -43,7 +43,7 @@ $(function () {
 									if (txt.match("<span id=."+ i +".></span>")) {
 										txt = txt.replace(new RegExp("<span id=."+ i +".></span>"),"<a  class='textlink' href='"+url[array[i]]+"' style='color:#0645ad' addlink_number="+ i +">" +array[i] +"</a>");
 										txt = txt.replace(new RegExp("<span id=."+ i +".></span>", "g"),array[i]);
-										if (!tooltip_exist[array[i]]) {$("body").append("<div class='tooltip' id='tooltip"+ i +"'><p>"+ body[array[i]] +"</p></div>"); tooltip_exist[array[i]] = true;}
+										if (!tooltip_exist[array[i]]) {$("body").append("<div class='tooltip' id='tooltip"+ i +"'>"+ body[array[i]] +"</div>"); tooltip_exist[array[i]] = true;}
 									}
 								}
 							}
