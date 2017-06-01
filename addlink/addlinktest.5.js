@@ -26,13 +26,13 @@ $(function () {
 						array.sort(function(a, b) {return b.length - a.length;});
 						var contents = [];
 						
+						$("test").append("<span id='listcount'>"+ array.length +"</span>");
+						
 						for (var i = 0; i < array.length; i++) {
 							/*contents.push("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");*/
 							
-							$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");
+							$("test").append("<div class='memo'><div class='title'>"+ array[i] +"</div><div class='naiyou'>"+ body[array[i]] +"</div><div class='memourl'>"+ url[array[i]] +"</div></div>");
 						}
-							$("test").select();
-							document.execCommand('copy');
 						
 					}
 				});
