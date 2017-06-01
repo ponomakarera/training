@@ -4,7 +4,6 @@
 	var array = {'あ': '149175896520', 'とは': '148474924130'};
 	
 	for (var i = 0; i < target.length; i++){
-		console.log("target.length = "+ target.length);
 		var txt = target[i].innerHTML;
 		console.log("before:"+ txt);
 		var contents = [];
@@ -19,7 +18,7 @@
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
 		for (var key in array) {
-			if (target[j].classList.containsarray[key]) {
+			if (target[i].classList.containsarray[key]) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
 			else {
