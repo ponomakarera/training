@@ -1,9 +1,11 @@
 function simple_tooltip(target, reference){
+
+	var my_tooltip;
 		
 	$("."+target).mouseover(function() {
 		
 		var i = $(this).attr('addlink_number');
-		var my_tooltip = $("#"+reference+i);
+		my_tooltip = $("#"+reference+i);
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
 	}).mousemove(function(kmouse) {
