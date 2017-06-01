@@ -10,14 +10,13 @@ $(function () {
         dataType: 'html',
     })
     .done(function(data) {
-        $(data).find('memo').each(function(){
-			array[listnumber++] = $(this).find('title').html();
-			body[array[listnumber - 1]] = $(this).find('naiyou').html();
-			url[array[listnumber - 1]] = $(this).find('memourl').html();
+        $(data).find('.memo').each(function(){
+			array[listnumber++] = $(this).find('.title').html();
+			body[array[listnumber - 1]] = $(this).find('.naiyou').html();
+			url[array[listnumber - 1]] = $(this).find('.memourl').html();
         });
 		array.sort();
 		array.sort(function(a, b) {return b.length - a.length;});
-		console.log(data);
 		
 		$(".addlink").each(function(){
 			var txt = $(this).html();
