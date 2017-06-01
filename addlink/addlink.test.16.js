@@ -13,10 +13,11 @@
 		for (var key in array) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ array[key] +"'></span>");
 		}
-		for (var i = 0; i < contents.length; i++) {
+		console.log(contents);
+		/*for (var i = 0; i < contents.length; i++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
-		/*for (var key in array) {
+		for (var key in array) {
 			if ((target[i].className +'').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
