@@ -32,7 +32,7 @@ $(function () {
 							/*$("test").append("<memo><title>"+ array[i] +"</title><naiyou>"+ body[array[i]] +"</naiyou><memourl>"+ url[array[i]] +"</memourl></memo>");*/
 						}
 
-						console.log(contents);
+						alert(contents);
 						
 					}
 				});
