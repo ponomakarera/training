@@ -1,4 +1,4 @@
-$(function () {
+(function () {
 
 	//link
 	var linkurl = [
@@ -22,7 +22,7 @@ $(function () {
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
-	$('#adlink').attr("href", linkurl[rand]);
-	$('#ad').attr("src", image[rand]);
+	document.getElementById("adlink").href = linkurl[rand];
+	document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"'>";
 	
-});
+})();
