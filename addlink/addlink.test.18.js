@@ -17,7 +17,7 @@
 		for (var j = 0; j < contents.length; j++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[j] +"</linkcancel>");
 		}
-		/*for (var key in array) {
+		for (var key in array) {
 			if ((target[i].className +'').indexOf(key) >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 			}
@@ -28,7 +28,7 @@
 					if (!tooltip_exist[array[i]]) {$("body").append("<div class='tooltip' id='tooltip"+ i +"'><p>"+ body[array[i]] +"</p></div>"); tooltip_exist[array[i]] = true;}
 				}
 			}
-		}*/
+		}
 		target[i].innerHTML = txt;
 	}
 })();
