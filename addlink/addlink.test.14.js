@@ -10,11 +10,10 @@
 			txt = txt.replace(new RegExp(/<linkcancel>(?!<\/linkcancel>)([\s\S]+?)<\/linkcancel>/),"<linkcancel></linkcancel>");
 			contents.push(RegExp.$1);
 		}
-		console.log(txt);
-		/*for (var key in array) {
+		for (var key in array) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ array[key] +"'></span>");
 		}
-		for (var i = 0; i < contents.length; i++) {
+		/*for (var i = 0; i < contents.length; i++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[i] +"</linkcancel>");
 		}
 		for (var key in array) {
