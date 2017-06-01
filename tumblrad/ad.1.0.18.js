@@ -23,6 +23,6 @@
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
 	document.getElementById("adlink").href = linkurl[rand];
-	document.getElementById("ad").src = image[rand];
+	document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"' align='right'>";
 	
 })();
