@@ -5,8 +5,8 @@ function simple_tooltip(target, reference){
 	
 	$("."+target).mouseover(function(kmouse) {
 		
-		var i = $(this).attr('post_id');
-		var classname = $(this);
+		var i = $(this).attr('id');
+		var test = document.getElementById(i);
 		
 		if(!matched_word[i]) {
 			console.time('timer1');
@@ -14,7 +14,8 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
 				console.timeEnd('timer1');
-				my_tooltip = $("#"+reference+i);
+				test.addEventListener( "mouseover", function() {alert("hit")});
+				/*my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 					var border_top = $(window).scrollTop(); 
 					var border_right = $(window).width();
@@ -39,7 +40,7 @@ function simple_tooltip(target, reference){
 					}
 					my_tooltip.css({left:left_pos, top:top_pos});
 					var test = document.getElementsByClassName(target);
-					test.addEventListener("mouseout", function() {my_tooltip.css({left:"-9999999px"});}); 
+					test.addEventListener("mouseout", function() {my_tooltip.css({left:"-9999999px"});});*/ 
 			});
 		}
 		
