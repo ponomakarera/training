@@ -14,7 +14,7 @@ function simple_tooltip(target, reference){
 				matched_word[i] = true;
 				console.timeEnd('timer1');
 				my_tooltip = $("#"+reference+i);
-				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(100);
+				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 				var border_top = $(window).scrollTop(); 
 				var border_right = $(window).width();
 				var left_pos;
