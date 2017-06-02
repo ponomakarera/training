@@ -3,7 +3,7 @@ function simple_tooltip(target, reference){
 	var my_tooltip;
 	var matched_word = {};
 	
-	$("."+target).mouseover(function(kmouse) {
+	$("."+target).mouseover(function() {
 		
 		var i = $(this).attr('post_id');
 		
@@ -13,7 +13,8 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
 				console.timeEnd('timer1');
-				my_tooltip = $("#"+reference+i);
+				$("."+target).trigger("mouseover");
+				/*my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 					var border_top = $(window).scrollTop(); 
 					var border_right = $(window).width();
@@ -36,7 +37,7 @@ function simple_tooltip(target, reference){
 					} else{
 						top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}
-					$("."+target).mouseover(function() {my_tooltip.css({left:left_pos, top:top_pos});});
+					$("."+target).mouseover(function() {my_tooltip.css({left:left_pos, top:top_pos});});*/
 	
 			});
 		}
