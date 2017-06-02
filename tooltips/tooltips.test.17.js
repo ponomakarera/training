@@ -12,7 +12,7 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); tooltip_exist[i] = true;
 				console.log("1");
 				my_tooltip = $("#"+reference+i);
-				my_tooltip.css({opacity:0.8, display:"none"});
+				my_tooltip.css({opacity:0.8, display:"none", left:"0px"});
 			
 			});	
 		}
