@@ -2,6 +2,7 @@ function simple_tooltip(target, reference){
 
 	var my_tooltip;
 	var matched_word = {};
+	var test = document.getElementById("dummy");
 	
 	$("."+target).mouseover(function() {
 		
@@ -16,10 +17,9 @@ function simple_tooltip(target, reference){
 				console.timeEnd('timer1');
 			});
 		}
-
-		test.addEventListener("mouseover", function() {
-			alert("hit");
-		});
 		
+	});
+	test.addEventListener("mouseover", function() {
+		alert("hit");
 	});
 }
