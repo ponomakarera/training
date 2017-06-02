@@ -36,8 +36,7 @@ function simple_tooltip(target, reference){
 					} else{
 						top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}
-					my_tooltip.css({left:left_pos, top:top_pos});
-				$("."+target).trigger("mousemove");
+					$("."+target).mouseover(function() {my_tooltip.css({left:left_pos, top:top_pos});});
 	
 			});
 		}
