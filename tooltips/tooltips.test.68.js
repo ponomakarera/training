@@ -14,19 +14,20 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
 				console.timeEnd('timer1');
-				$(classname).trigger("mousemove");
+				$(classname).trigger("mousemove", kmouse);
 			});
 		}
 	});
 	
-	$("."+target).mouseover(function(kmouse) {
-		console.log("mouseover");
+	$("."+target).mouseover(function() {
+	
 		var i = $(this).attr('id');
 		my_tooltip = $("#"+reference+i);
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
 	}).mousemove(function(kmouse) {
 		
+		console.log("mousemove");
 		var border_top = $(window).scrollTop(); 
 		var border_right = $(window).width();
 		var left_pos;
