@@ -2,6 +2,7 @@ function simple_tooltip(target, reference){
 
 	var my_tooltip;
 	var matched_word = {};
+	$.ajaxSetup({ async: false });
 	
 	$("."+target).mouseover(function() {
 		
@@ -12,8 +13,8 @@ function simple_tooltip(target, reference){
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
-				my_tooltip = $("#"+reference+i);
-				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(1);
+				/*my_tooltip = $("#"+reference+i);
+				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(1);*/
 				console.timeEnd('timer1');
 			});
 		}
