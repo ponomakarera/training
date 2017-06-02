@@ -19,7 +19,7 @@ function simple_tooltip(target, reference){
 
 		test.addEventListener("mouseover", function() {
 			alert("hit");
-		}
+		});
 		
 	});
 }
