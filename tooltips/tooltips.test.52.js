@@ -39,7 +39,7 @@ function simple_tooltip(target, reference){
 						top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}
 					my_tooltip.css({left:left_pos, top:top_pos});
-				})
+				});
 			});
 		}
 		
