@@ -18,7 +18,6 @@
 		}
 		Object.keys(dic).sort(function(a, b) {return b.length - a.length;}).forEach(function(key) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ dic[key] +"'></span>");
-			console.log(key);
 		});
 		for (var j = 0; j < contents.length; j++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[j] +"</linkcancel>");
