@@ -6,6 +6,7 @@ function simple_tooltip(target, reference){
 	$("."+target).on('mouseenter', function() {
 		
 		var i = $(this).attr('id');
+		var classname = $(this);
 		
 		if(!matched_word[i]) {
 			console.time('timer1');
@@ -13,11 +14,13 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
 				console.timeEnd('timer1');
+				$(classname).trigger("mouseover");
 			});
 		}
 	});
 	
 	$("."+target).mouseover(function(kmouse) {
+		console.log("mouseover");
 		var i = $(this).attr('id');
 		my_tooltip = $("#"+reference+i);
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
