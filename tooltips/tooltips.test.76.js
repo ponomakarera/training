@@ -3,8 +3,8 @@ function simple_tooltip(target, reference){
 	var my_tooltip;
 	var matched_word = {};
 	
-	$("."+target).mouseenter(function(kmouse) {
-		
+	$("."+target).mouseover(function(kmouse) {
+	
 		var i = $(this).attr('id');
 		
 		if(!matched_word[i]) {
@@ -36,16 +36,10 @@ function simple_tooltip(target, reference){
 				} else{
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
 				}
-				if($(':hover').is("#"+ i)) {my_tooltip.css({left:left_pos, top:top_pos});}
-				//if (jQuery(":hover").attr("id").indexOf(i) >= 0) {}
-				
+				if($(':hover').is("#"+ i)) {my_tooltip.css({left:left_pos, top:top_pos});}				
 			});
 		}
-	});
-	
-	$("."+target).mouseover(function() {
-	
-		var i = $(this).attr('id');
+		
 		my_tooltip = $("#"+reference+i);
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
