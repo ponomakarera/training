@@ -1,6 +1,7 @@
 (function () {
 	
-	var array = {
+	//post title and post id that with memo tag.
+	var dic = {
 	
 	'あ': '149175896520', 'とは': '148474924130', 'aiueo': '161354348280', 'aiu': '161354358415',
 	
@@ -15,20 +16,20 @@
 			txt = txt.replace(new RegExp(/<linkcancel>(?!<\/linkcancel>)([\s\S]+?)<\/linkcancel>/),"<linkcancel></linkcancel>");
 			contents.push(RegExp.$1);
 		}
-		for (var key in array) {
-			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ array[key] +"'></span>");
-		}
+		Object.keys(dic).sort(function(a, b) {return b.length - a.length;}).forEach(function(key) {
+			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ dic[key] +"'></span>");
+		});
 		for (var j = 0; j < contents.length; j++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[j] +"</linkcancel>");
 		}
-		for (var key in array) {
+		for (var key in dic) {
 			if ((' '+ target[i].className +' ').indexOf(' '+ key +' ') >= 0) {
-				txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
+				txt = txt.replace(new RegExp("<span id=."+ dic[key] +".></span>", "g"),key);
 			}
 			else {
-				if (txt.match("<span id=."+ array[key] +".></span>")) {
-					txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>"),"<a  class='textlink' href='https://ponomakarera.tumblr.com/post/"+ array[key] +"/"+ key +"' style='color:#0645ad' id='"+ array[key] +"'>"+ key +"</a>");
-					txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
+				if (txt.match("<span id=."+ dic[key] +".></span>")) {
+					txt = txt.replace(new RegExp("<span id=."+ dic[key] +".></span>"),"<a  class='textlink' href='https://ponomakarera.tumblr.com/post/"+ dic[key] +"/"+ key +"' style='color:#0645ad' id='"+ dic[key] +"'>"+ key +"</a>");
+					txt = txt.replace(new RegExp("<span id=."+ dic[key] +".></span>", "g"),key);
 				}
 			}
 		}
