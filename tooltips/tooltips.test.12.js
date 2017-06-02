@@ -22,7 +22,8 @@ function simple_tooltip(target, reference, tooltip_exist = {}){
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
 	}).mousemove(function(kmouse) {
-	
+		console.log("tooltip_exist = "+ tooltip_exist);
+		console.log("my_tooltip is "+ my_tooltip);
 		var border_top = $(window).scrollTop(); 
 		var border_right = $(window).width();
 		var left_pos;
