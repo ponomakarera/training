@@ -3,7 +3,7 @@
 	//post title and post id that with memo tag.
 	var dic = {
 	
-	'あ': '149175896520', 'とは': '148474924130', 'aiueo': '161354348280', 'aiu': '161354358415',
+	'あ': '149175896520', 'とは': '148474924130', 'aiueo': '161354348280', 'aiu': '161354358415', 'ははははは': '11111111',
 	
 	};
 	
@@ -18,6 +18,7 @@
 		}
 		Object.keys(dic).sort(function(a, b) {return b.length - a.length;}).forEach(function(key) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ dic[key] +"'></span>");
+			console.log(key);
 		});
 		for (var j = 0; j < contents.length; j++) {
 			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),"<linkcancel>"+ contents[j] +"</linkcancel>");
