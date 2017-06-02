@@ -3,7 +3,7 @@ function simple_tooltip(target, reference){
 	var my_tooltip;
 	var matched_word = {};
 	
-	$("."+target).mouseover(function(kmouse) {
+	$("."+target).mouseover(function() {
 		
 		var i = $(this).attr('post_id');
 		var classname = $(this);
@@ -16,7 +16,7 @@ function simple_tooltip(target, reference){
 				console.timeEnd('timer1');
 				my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-				$(classname).trigger("mousemove", kmouse);
+				$(classname).trigger("mouseover");
 			});
 		}
 		
