@@ -27,7 +27,7 @@
 			}
 			else {
 				if (txt.match("<span id=."+ array[key] +".></span>")) {
-					txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>"),"<a  class='addtooltip' href='https://ponomakarera.tumblr.com/post/"+ array[key] +"/"+ key +"' style='color:#0645ad' post_id='"+ array[key] +"'>"+ key +"</a>");
+					txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>"),"<a  class='textlink' href='https://ponomakarera.tumblr.com/post/"+ array[key] +"/"+ key +"' style='color:#0645ad' post_id='"+ array[key] +"'>"+ key +"</a>");
 					txt = txt.replace(new RegExp("<span id=."+ array[key] +".></span>", "g"),key);
 				}
 			}
@@ -43,11 +43,11 @@
 		} 
 		else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
 			//tablet
-			simple_tooltip("addtooltip","tooltip");
+			simple_tooltip("textlink","tooltip");
 		}
 		else {
 			//pc
-			simple_tooltip("addtooltip","tooltip");
+			simple_tooltip("textlink","tooltip");
 		}
 	});
 })();
