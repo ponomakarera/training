@@ -1,7 +1,7 @@
-function simple_tooltip(target, reference){
+function simple_tooltip(target, reference, tooltip_exist = {}){
 
 	var my_tooltip;
-	var tooltip_exist = {};
+	//var tooltip_exist = {};
 	
 	$("."+target).mouseover(function() {
 		
@@ -10,11 +10,11 @@ function simple_tooltip(target, reference){
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
 			
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); tooltip_exist[i] = true;
-				/*simple_tooltip("textlink","tooltip", tooltip_exist);
-				my_tooltip = $("#"+reference+i);
+				console.log("tooltip_exist = "+ tooltip_exist);
+				simple_tooltip("textlink","tooltip", tooltip_exist);
+				/*my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 				$("."+target).mousemove(function(kmouse) {});*/
-				console.log("test");
 			
 			});	
 		}
