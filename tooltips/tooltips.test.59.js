@@ -7,7 +7,7 @@ function simple_tooltip(target, reference){
 		
 		var i = $(this).attr('id');
 		var test = document.getElementById(i);
-		test.addEventListener( "mouseover", function() {alert("hit")});
+		test.addEventListener( "mouseout", function() {alert("hit");});
 		
 		if(!matched_word[i]) {
 			console.time('timer1');
