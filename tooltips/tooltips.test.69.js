@@ -3,7 +3,7 @@ function simple_tooltip(target, reference){
 	var my_tooltip;
 	var matched_word = {};
 	
-	$("."+target).on('mouseenter', function() {
+	$("."+target).on('mouseenter', function(kmouse) {
 		
 		var i = $(this).attr('id');
 		var classname = $(this);
