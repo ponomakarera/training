@@ -53,7 +53,7 @@
 			addtooltips();
 			simple_tooltip("textlink","tooltip");
 		}
-		function addtooltips {
+		function addtooltips () {
 			for (key in matched_word) {
 				$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ matched_word[key] +"&jsonp=?", function (data) {
 					$("body").append("<div class='tooltip' id='tooltip"+ matched_word[key] +"'><p>"+ data.response.posts[0].body +"</p></div>");
