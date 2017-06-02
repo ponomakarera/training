@@ -18,7 +18,7 @@ function simple_tooltip(target, reference){
 	});
 	
 	$("."+target).mouseover(function(kmouse) {
-
+		var i = $(this).attr('id');
 		my_tooltip = $("#"+reference+i);
 		my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
