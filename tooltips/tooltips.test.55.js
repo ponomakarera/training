@@ -3,7 +3,7 @@ function simple_tooltip(target, reference){
 	var my_tooltip;
 	var matched_word = {};
 	
-	$("."+target).mouseover(function() {
+	$("."+target).mouseover(function(kmouse) {
 		
 		var i = $(this).attr('post_id');
 		var classname = $(this);
@@ -16,7 +16,6 @@ function simple_tooltip(target, reference){
 				console.timeEnd('timer1');
 				my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
-				$(classname).trigger("mousemove");/*mousemove(function(kmouse) {
 					var border_top = $(window).scrollTop(); 
 					var border_right = $(window).width();
 					var left_pos;
@@ -39,7 +38,8 @@ function simple_tooltip(target, reference){
 						top_pos = kmouse.pageY-my_tooltip.height()-offset;
 					}
 					my_tooltip.css({left:left_pos, top:top_pos});
-				});*/
+					var test = document.getElementByClass(target);
+					test.addEventListener("mouseout", function() {my_tooltip.css({left:"-9999999px"});}); 
 			});
 		}
 		
