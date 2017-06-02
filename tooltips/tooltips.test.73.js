@@ -36,8 +36,8 @@ function simple_tooltip(target, reference){
 				} else{
 					top_pos = kmouse.pageY-my_tooltip.height()-offset;
 				}
-				
-				if (jQuery(":hover").attr("id").indexOf(i) >= 0) {my_tooltip.css({left:left_pos, top:top_pos});}
+				console.log(jQuery(":hover").attr("id"));
+				//if (jQuery(":hover").attr("id").indexOf(i) >= 0) {my_tooltip.css({left:left_pos, top:top_pos});}
 				
 			});
 		}
