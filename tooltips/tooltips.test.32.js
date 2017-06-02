@@ -11,7 +11,7 @@ function simple_tooltip(target, reference){
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
-				$(classname).addClass("textlink");
+				$(classname).addClass("textlink").removeClass(target);
 				console.timeEnd('timer1');
 			});
 		}
