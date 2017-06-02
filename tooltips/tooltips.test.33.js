@@ -18,6 +18,8 @@ function simple_tooltip(target, reference){
 	});
 	
 	$(".textlink").mouseover(function() {
+	
+		console.log("textlink hit");
 		
 		var i = $(this).attr('post_id');
 		
