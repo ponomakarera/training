@@ -34,5 +34,21 @@
 		}
 		target[i].innerHTML = txt;
 	}
-	//$(document).ready(function(){ simple_tooltip("textlink","tooltip"); });
+	
+	//device check
+	$(function () {
+		var ua = navigator.userAgent;
+		if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+			//smartphone
+		} 
+		else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+			//tablet
+			simple_tooltip("textlink","tooltip");
+		}
+		else {
+			//pc
+			simple_tooltip("textlink","tooltip");
+		}
+	});
+	
 })();
