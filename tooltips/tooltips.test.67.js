@@ -14,7 +14,7 @@ function simple_tooltip(target, reference){
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
 				matched_word[i] = true;
 				console.timeEnd('timer1');
-				$(classname).trigger("mouseover");
+				$(classname).trigger("mousemove");
 			});
 		}
 	});
