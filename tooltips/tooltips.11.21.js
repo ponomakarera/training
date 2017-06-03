@@ -15,7 +15,6 @@ function simple_tooltip(target, reference){
 	
 		mousepoint = kmouse
 		setpos();
-		console.log("mousemove my_tooltip.height is "+ my_tooltip.height());
 		
 	}).mouseout(function(){
 	
@@ -23,9 +22,9 @@ function simple_tooltip(target, reference){
 	
 	});
 	
-	function addtooltip(i) {console.time("time");
+	function addtooltip(i) {
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
-			$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); console.timeEnd("time");
+			$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>");
 			if($(':hover').is("#"+ i)) {
 				my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
@@ -37,7 +36,6 @@ function simple_tooltip(target, reference){
 				else {
 					setpos();
 				}
-				console.log("getjson my_tooltip.height is "+ my_tooltip.height());
 			}
 		});
 	}
@@ -47,7 +45,6 @@ function simple_tooltip(target, reference){
 		var border_right = $(window).width();
 		var left_pos;
 		var top_pos;
-		var right_pos;
 		var offset = 20;
 		
 		if(border_right - (offset *2) >= my_tooltip.width() + mousepoint.pageX){
