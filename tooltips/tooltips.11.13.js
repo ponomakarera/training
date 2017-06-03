@@ -21,7 +21,7 @@ function simple_tooltip(target, reference){
 					var top_pos;
 					var right_pos;
 					var offset = 20;
-					$("#"+ reference+ i +"").on('load',function(){
+					$("#"+ reference+ i +" p").on('load',function(){
 						if(border_right - (offset *2) >= my_tooltip.width() + mousepoint.pageX){
 							left_pos = mousepoint.pageX+offset;
 						}
