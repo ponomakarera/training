@@ -22,7 +22,21 @@
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
-	document.getElementById("adlink").href = linkurl[rand];
-	document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"'>";
-	
+	//device check
+	var ua = navigator.userAgent;
+	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+		//smartphone
+		document.getElementById("adlink").href = linkurl[rand];
+		document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"' align='right'>";
+	} 
+	else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+		//tablet
+		document.getElementById("adlink").href = linkurl[rand];
+		document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"'>";
+	}
+	else {
+		//pc
+		document.getElementById("adlink").href = linkurl[rand];
+		document.getElementById("adlink").innerHTML="<img id='ad' src='"+ image[rand] +"'>";
+	}
 })();
