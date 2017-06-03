@@ -10,10 +10,8 @@ function simple_tooltip(target, reference){
 		
 		if(!tooltip_exist[i]) {
 			tooltip_exist[i] = true;
-			console.time('timer1');
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
-				console.timeEnd('timer1');
 				if($(':hover').is("#"+ i)) {
 					my_tooltip = $("#"+reference+i);
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
@@ -38,7 +36,7 @@ function simple_tooltip(target, reference){
 					} else{
 						top_pos = mousepoint.pageY-my_tooltip.height()-offset;
 					}
-					console.log("getjson border_top is "+ border_top);
+					console.log("getjson mousepoint.pageY is "+ mousepoint.pageY);
 					my_tooltip.css({left:left_pos, top:top_pos});
 				}		
 			});
@@ -72,7 +70,7 @@ function simple_tooltip(target, reference){
 		} else{
 			top_pos = kmouse.pageY-my_tooltip.height()-offset;
 		}
-		console.log("mousemove border_top is "+ border_top);
+		console.log("mousemove kmouse.pageY is "+ kmouse.pageY);
 		my_tooltip.css({left:left_pos, top:top_pos});
 			
 	}).mouseout(function(){
