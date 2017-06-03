@@ -11,10 +11,11 @@ function simple_tooltip(target, reference){
 			matched_word[i] = true;
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
 				$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); 
-				document.getElementById(i).addEventListener("click", function(kmouse) {
+				if($(':hover').is("#"+ i)) {
 					my_tooltip = $("#"+reference+i);
 					my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 					
+					$(window).mouseover( function(kmouse) {
 						var border_top = $(window).scrollTop(); 
 						var border_right = $(window).width();
 						var left_pos;
@@ -37,7 +38,8 @@ function simple_tooltip(target, reference){
 							top_pos = kmouse.pageY-my_tooltip.height()-offset;
 						}
 						my_tooltip.css({left:left_pos, top:top_pos});
-				});		
+					});
+				}			
 			});
 		}
 		
