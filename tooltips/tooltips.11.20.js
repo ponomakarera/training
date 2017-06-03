@@ -23,10 +23,10 @@ function simple_tooltip(target, reference){
 	
 	});
 	
-	function addtooltip(i) {console.time("getjson");
+	function addtooltip(i) {console.time("time");
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
-			$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); console.timeEnd("getjson");
-			console.time("length"); if($(":hover #"+ i).length) {console.timeEnd("length");
+			$("body").append("<div class='tooltip' id='"+ reference+ i +"'><p>"+ data.response.posts[0].body +"</p></div>"); console.timeEnd("time");
+			if($(':hover').is("#"+ i)) {
 				my_tooltip = $("#"+reference+i);
 				my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);
 				if ($("#"+ reference+ i +" img").length) {
