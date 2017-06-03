@@ -36,7 +36,7 @@ function simple_tooltip(target, reference){
 					} else{
 						top_pos = mousepoint.pageY-my_tooltip.height()-offset;
 					}
-					console.log("getjson mousepoint.pageY is "+ mousepoint.pageY);
+					console.log("getjson my_tooltip.height is "+ my_tooltip.height());
 					my_tooltip.css({left:left_pos, top:top_pos});
 				}		
 			});
@@ -70,7 +70,7 @@ function simple_tooltip(target, reference){
 		} else{
 			top_pos = kmouse.pageY-my_tooltip.height()-offset;
 		}
-		console.log("mousemove kmouse.pageY is "+ kmouse.pageY);
+		console.log("mousemove my_tooltip.height is "+ my_tooltip.height());
 		my_tooltip.css({left:left_pos, top:top_pos});
 			
 	}).mouseout(function(){
