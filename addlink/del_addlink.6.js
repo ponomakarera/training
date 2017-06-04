@@ -3,7 +3,7 @@
 	var script = document.getElementsByTagName('script');
 	currentScript = script[script.length - 1];
 	
-	closestByClass(currentScript, "addlink").classList.toggle('addlink');
+	closestByClass(currentScript, "addlink")[0].classList.toggle('addlink');
 	
 	function closestByClass(element, classname) {
 		// Traverse the DOM up with a while loop
