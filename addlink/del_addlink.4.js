@@ -9,6 +9,7 @@
 		// Traverse the DOM up with a while loop
 		while (element.className != classname) {
 			// Increment the loop to the parent node
+			console.log("className is "+ element.className);
 			element = element.parentNode;
 			if (!element) {
 				console.log("no addlink ");
