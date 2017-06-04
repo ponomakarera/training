@@ -9,10 +9,8 @@
 		// Traverse the DOM up with a while loop
 		while ((' '+ element.className +' ').indexOf(' '+ classname +' ') < 0) {
 			// Increment the loop to the parent node
-			console.log("className is "+ element.className);
 			element = element.parentNode;
 			if (!element) {
-				console.log("no addlink ");
 				return null;
 			}
 		}
@@ -20,7 +18,6 @@
 		// the class you specified in the second parameter of the function `classname`
 
 		// Then return the matched element
-		console.log("element is "+ element);
 		return element;
 	}
 	
