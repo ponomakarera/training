@@ -1,6 +1,7 @@
 (function () {
 
-	var currentScript = document.getElementsByTagName('script')[script.length - 1];
+	var script = document.getElementsByTagName('script');
+	currentScript = script[script.length - 1];
 	
 	closestByClass(currentScript, "addlink").classList.toggle('addlink');
 	
