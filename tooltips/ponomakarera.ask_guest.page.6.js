@@ -4,6 +4,7 @@
 	
 	if (href.match(new RegExp("https://ponomakarera.tumblr.com/ask")) || href.match(new RegExp("https://ponomakarera.tumblr.com/submit"))) {
 		document.getElementsByClassName('addlink').className = "";
+		console.log("test");
 	}
 	
 })();
