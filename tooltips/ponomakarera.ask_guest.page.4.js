@@ -1,4 +1,4 @@
-$(function () {
+(function () {
 
 	var href = window.location.href ;
 	var formpage = document.getElementsByClassName('addlink');
@@ -7,4 +7,4 @@ $(function () {
 		formpage.classList.remove('addlink');
 	}
 	
-});
+})();
