@@ -22,6 +22,6 @@
 		return element;
 	}
 	
-	clasestByClass(currentScript, "addlink").classList.toggle('addlink');
+	closestByClass(currentScript, "addlink").classList.toggle('addlink');
 	
 })();
