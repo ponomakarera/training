@@ -3,6 +3,7 @@
 	
 	var currentScript = document.currentScript || (function() {
 		var nodeList = document.getElementsByTagName('script')
+		console.log("nodeList.item is "+ nodeList.item(nodeList.length - 1))
 		return nodeList.item(nodeList.length - 1)
 	}())	
 	
@@ -12,6 +13,7 @@
 			// Increment the loop to the parent node
 			element = element.parentNode;
 			if (!element) {
+				console.log("no addlink ");
 				return null;
 			}
 		}
@@ -19,9 +21,10 @@
 		// the class you specified in the second parameter of the function `classname`
 
 		// Then return the matched element
+		console.log("element is "+ element);
 		return element;
 	}
 	
-	closestByClass(currentScript, "addlink").classList.toggle('addlink');
+	closestByClass(currentScript, "addlink")[0].classList.toggle('addlink');
 	
 })();
