@@ -3,7 +3,7 @@
 	var href = window.location.href ;
 	
 	if (href.match(new RegExp("https://ponomakarera.tumblr.com/ask")) || href.match(new RegExp("https://ponomakarera.tumblr.com/submit"))) {
-		document.getElementById('js-div').classList.toggle('addlink');
+		console.log(document.getElementById('js-div').classList.contains('addlink'));
 	}
 	
 })();
