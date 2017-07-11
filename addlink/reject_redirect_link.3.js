@@ -1,10 +1,12 @@
 $(function () {
+
+	var redilink = 't.umblr.com/redirect?z=';
     $("a").each(function() {
 	
 		//get the original URL
 		var theURL = $(this).attr('href');
 		
-		if (theURL.match(/t.umblr.com/redirect?z=/)) {
+		if (theURL.match(new RegExp(redilink))) {
 		
 			//split at the equals sign
 			var one = theURL.split('=');
