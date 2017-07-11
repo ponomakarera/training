@@ -6,7 +6,7 @@ $(function () {
 		//get the original URL
 		var theURL = $(this).attr('href');
 		
-		if (theURL != null && theURL.match(new RegExp(redilink))) {
+		if (theURL != null && theURL.match(/t.umblr.com\/redirect\?z\=/)) {
 		
 			console.log(theURL);
 		
