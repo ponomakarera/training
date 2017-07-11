@@ -6,8 +6,9 @@ $(function () {
 		//get the original URL
 		var theURL = $(this).attr('href');
 		
-		console.log(theURL);
 		if (theURL != null && theURL.match(new RegExp(redilink))) {
+		
+			console.log(theURL);
 		
 			//split at the equals sign
 			var one = theURL.split('=');
