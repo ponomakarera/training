@@ -1,5 +1,5 @@
 $(function() {
-    $.ajax('external.html', {
+    $.ajax('http://izumi-kazan.tumblr.com/', {
         datatype:'html'
     }).then(function(data){
         $('#ajax_data').html(data);
