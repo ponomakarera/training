@@ -9,6 +9,7 @@
 	  'https://ponomakarera.tumblr.com/tagged/%E4%B8%A6%E5%B9%B3%E7%94%BA',//並平町
 	  'https://ponomakarera.tumblr.com/post/158195813595/%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%82%92%E6%8F%8F%E3%81%8F%E6%99%82%E3%81%AB%E4%BD%BF%E3%81%88%E3%81%9D%E3%81%86%E3%81%AA%E7%B5%B5%E9%9B%86',//イラストを描く時に使えそうな絵集
 	  'https://ponomakarera.tumblr.com/post/162845814275/emigration-v-6-%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB',//Emigration (v 6) 日本語化ファイル
+	  'https://ponomakarera.tumblr.com/post/164489780410/racial-tension',//Racial Tension
 	]
 	
 	//image
@@ -20,6 +21,7 @@
 	  'https://68.media.tumblr.com/66b3a66a8fef1852876374dda88782dc/tumblr_okqa838NzS1t0jrzao1_500.png',//並平町
 	  'https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_1280.jpg',//イラストを描く時に使えそうな絵集
 	  'https://68.media.tumblr.com/3b09d5d60759a1a99f07e707062153a0/tumblr_oswngsTrQ31t0jrzao1_540.jpg',//Emigration (v 6) 日本語化ファイル
+	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_540.png',//Racial Tension
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
