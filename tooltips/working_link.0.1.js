@@ -21,7 +21,7 @@ $(function () {
 	if (working.length > 1) {date.sort(comparedate);}
 	
 	for (var i in date) {
-		$("body").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style="color:#666; font-size: 12px;">"+ date[i].replace(new RegExp(" GMT"),"") +"</span><br><br>");
+		$("body").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[i].replace(new RegExp(' GMT'),'') +"</span><br><br>");
 	}
 	
 	
