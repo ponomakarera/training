@@ -14,7 +14,7 @@ $(function () {
 	
 	for (i = 0; i < working.length; i++) {
 	
-		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
+		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[listnumber] +"&limit=1&jsonp=?", function (data) {
 			date[listnumber] = data.response.posts[0].date;
 			datework[data.response.posts[0].date] = working[listnumber++];
 			
@@ -22,7 +22,7 @@ $(function () {
 				if (working.length > 1) {date.sort(comparedate);}
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
-				for (var j in date) {
+				for (j = 0; j < working.length; j++) {
 					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
 				}
 			}
