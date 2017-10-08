@@ -20,7 +20,8 @@ $(function () {
 			
 			if (listnumber == working.length) {
 				if (working.length > 1) {date.sort(comparedate);}
-	
+				
+				$("body").append("<div id="workinglist"></div>");
 				for (var j in date) {
 					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
 				}
