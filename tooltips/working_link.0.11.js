@@ -13,8 +13,8 @@ $(function () {
 	
 	for (i = 0; i < working.length; i++) {
 	
-		var worktitle = working[i];
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
+			var worktitle = working[i];
 			date[i] = data.response.posts[0].date;
 			datework[data.response.posts[0].date] = worktitle;
 			console.log("date : "+ data.response.posts[0].date);
@@ -41,12 +41,12 @@ $(function () {
 		var aminute
 		var asecond
 		if (a.match(/(.+)-(.+)-(.+) (.+):(.+):(.+)/)) {
-			ayear = RegExp.$1;
-			amonth = RegExp.$2;
-			aday = RegExp.$3;
-			ahour = RegExp.$4;
-			aminute = RegExp.$5;
-			asecond = RegExp.$6;
+			ayear = Number(RegExp.$1);
+			amonth = Number(RegExp.$2);
+			aday = Number(RegExp.$3);
+			ahour = Number(RegExp.$4);
+			aminute = Number(RegExp.$5);
+			asecond = Number(RegExp.$6);
 		}
 		
 		var byear
@@ -56,12 +56,12 @@ $(function () {
 		var bminute
 		var bsecond
 		if (b.match(/(.+)-(.+)-(.+) (.+):(.+):(.+)/)) {
-			byear = RegExp.$1;
-			bmonth = RegExp.$2;
-			bday = RegExp.$3;
-			bhour = RegExp.$4;
-			bminute = RegExp.$5;
-			bsecond = RegExp.$6;
+			byear = Number(RegExp.$1);
+			bmonth = Number(RegExp.$2);
+			bday = Number(RegExp.$3);
+			bhour = Number(RegExp.$4);
+			bminute = Number(RegExp.$5);
+			bsecond = Number(RegExp.$6);
 		}
 		
 		if (ayear < byear) {return 1;}
