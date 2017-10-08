@@ -10,17 +10,17 @@ $(function () {
 	var datework = {};
 	var i
 	var j
-	
+	var listnumber = 0;
 	$.ajaxSetup({async: false});
 	
 	for (i = 0; i < working.length; i++) {
 	
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
 			console.log("i = "+ i);
-			[i] = data.response.posts[0].date;
-			datework[data.response.posts[0].date] = working[i];
+			date[listnumber] = data.response.posts[0].date;
+			datework[data.response.posts[0].date] = working[listnumber++];
 			
-			if (i == working.length - 1) {
+			if (listnumber == working.length) {
 				if (working.length > 1) {date.sort(comparedate); console.log(date);}
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
