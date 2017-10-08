@@ -22,7 +22,7 @@ $(function () {
 				if (working.length > 1) {date.sort(comparedate);}
 	
 				for (var j in date) {
-					$(".side-tags").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
+					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
 				}
 			}
 			
@@ -62,12 +62,12 @@ $(function () {
 			bsecond = Number(RegExp.$6);
 		}
 
-		if (ayear > byear) {console.log("ayear : "+ ayear +" byear : "+ byear); return -1;}
-		if (amonth > bmonth) {console.log("amonth : "+ amonth +" bmonth : "+ bmonth); return -1;}
-		if (aday > bday) {console.log("aday : "+ aday +" bday : "+ bday); return -1;}
-		if (ahour > bhour) {console.log("ahour : "+ ahour +" bhour : "+ bhour); return -1;}
-		if (aminute > bminute) {console.log("aminute : "+ aminute +" bminute : "+ bminute); return -1;}
-		if (asecond > bsecond) {console.log("asecond : "+ asecond +" bsecond : "+ bsecond); return -1;}
+		if (ayear > byear) {return -1;}
+		if (amonth > bmonth) {return -1;}
+		if (aday > bday) {return -1;}
+		if (ahour > bhour) {return -1;}
+		if (aminute > bminute) {return -1;}
+		if (asecond > bsecond) {return -1;}
 		
 	}
 });
