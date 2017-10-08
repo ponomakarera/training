@@ -32,7 +32,7 @@ $(function () {
 	}
 	
 	function comparedate (a, b) {
-		
+		console.log("hit");
 		var ayear
 		var amonth
 		var aday
