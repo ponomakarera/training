@@ -5,7 +5,7 @@ $(function () {
 	'不思議の国のアリス', '並平町'
 	
 	];
-	console.log("working.length = "+ working.length);
+
 	var date = new Array(working.length);
 	var datework = {};
 	var i
@@ -18,9 +18,10 @@ $(function () {
 			datework[data.response.posts[0].date] = working[i];
 			console.log("date : "+ data.response.posts[0].date);
 			console.log("work : "+ working[i]);
+			console.log("i = "+ i);
 			
-			if (i == working.length) {
-				if (working.length > 1) {date.sort(comparedate); console.log(working);}
+			if (i == working.length - 1) {
+				if (working.length > 1) {date.sort(comparedate);}
 	
 				for (var j in date) {
 					$(".side-tags").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
