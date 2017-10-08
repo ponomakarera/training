@@ -10,7 +10,8 @@ $(function () {
 	var datework = {};
 	var i
 	var j
-	var listnumber = 0;
+	
+	$.ajaxSetup({async: false});
 	
 	for (i = 0; i < working.length; i++) {
 	
