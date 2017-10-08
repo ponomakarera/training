@@ -64,11 +64,17 @@ $(function () {
 		}
 
 		if (ayear > byear) {return -1;}
-		if (amonth > bmonth) {console.log("ayear : "+ ayear +" byear : "+ byear); return -1;}
+		if (ayear < byear) {return 1;}
+		if (amonth > bmonth) {console.log("amonth : "+ amonth +" bmonth : "+ bmonth); return -1;}
+		if (amonth < bmonth) {console.log("amonth : "+ amonth +" bmonth : "+ bmonth); return 1;}
 		if (aday > bday) {return -1;}
+		if (aday < bday) {return 1;}
 		if (ahour > bhour) {return -1;}
+		if (ahour < bhour) {return 1;}
 		if (aminute > bminute) {return -1;}
+		if (aminute < bminute) {return 1;}
 		if (asecond > bsecond) {return -1;}
+		if (asecond < bsecond) {return 1;}
 		
 	}
 });
