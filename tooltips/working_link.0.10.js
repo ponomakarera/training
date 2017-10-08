@@ -13,11 +13,12 @@ $(function () {
 	
 	for (i = 0; i < working.length; i++) {
 	
+		var worktitle = working[i];
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
 			date[i] = data.response.posts[0].date;
-			datework[data.response.posts[0].date] = working[i];
+			datework[data.response.posts[0].date] = worktitle;
 			console.log("date : "+ data.response.posts[0].date);
-			console.log("work : "+ working[i]);
+			console.log("work : "+ worktitle);
 			
 			if (i == working.length) {
 				if (working.length > 1) {date.sort(comparedate);}
