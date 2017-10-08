@@ -5,7 +5,7 @@ $(function () {
 	'不思議の国のアリス', '並平町'
 	
 	];
-	
+	console.log("working[0] = "+ working[0]);
 	var date = new Array(working.length);
 	var datework = {};
 	
