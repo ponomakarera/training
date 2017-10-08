@@ -19,7 +19,7 @@ $(function () {
 			datework[data.response.posts[0].date] = working[listnumber++];
 			
 			if (listnumber == working.length) {
-				if (working.length > 1) {date.sort(comparedate);}
+				if (working.length > 1) {date.sort(comparedate); console.log(date);}
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
 				for (j = 0; j < working.length; j++) {
