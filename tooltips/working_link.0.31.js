@@ -11,7 +11,7 @@ $(function () {
 	for (var i = 0; i < working.length; i++) {
 		titlesearch[working[i]] = true;
 	}
-
+	console.log(titlesearch);
 	var date = new Array(working.length);
 	var datework = {};
 	var listnumber = 0;
@@ -24,6 +24,7 @@ $(function () {
 			for (var tags in data.response.posts[0].tags) {
 				if (titlesearch[tags]) {
 						datework[data.response.posts[0].date] = tags;
+						console.log("tags : "+ tags);
 				}
 			}
 			
@@ -41,7 +42,6 @@ $(function () {
 	}
 	
 	function comparedate (a, b) {
-		console.log("hit");
 		var ayear
 		var amonth
 		var aday
