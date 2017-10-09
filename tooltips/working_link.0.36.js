@@ -13,18 +13,19 @@ $(function () {
 	}
 	
 	var date = new Array(working.length);
+	var dateposts = {};
 	var datework = {};
 	var listnumber = 0;
 	
 	for (var i = 0; i < working.length; i++) {
 	
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
-			var jstdate = gmttojst(data.response.posts[0].date);
-			date[listnumber++] = jstdate;
+			date[listnumber++] = data.response.posts[0].date;
+			dateposts[data.response.posts[0].date] = data.response.total_posts;
 						
 			for (var i in data.response.posts[0].tags) {
 				if (titlesearch[data.response.posts[0].tags[i]]) {
-						datework[jstdate] = data.response.posts[0].tags[i];
+						datework[data.response.posts[0].date] = data.response.posts[0].tags[i];
 				}
 			}
 			
@@ -33,7 +34,7 @@ $(function () {
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
 				for (var i = 0; i < working.length; i++) {
-					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[i].replace(new RegExp(' GMT'),'') +"</span><br><br>");
+					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[i].replace(new RegExp(' \d{2}:\d{2}:\d{2} GMT'),'') +" 投稿数： "+ dateposts[date[i]]</span><br><br>");
 				}
 			}
 			
@@ -87,6 +88,8 @@ $(function () {
 		
 	}
 	
+	
+	/* GMT to JST */
 	function gmttojst(date) {
 		var hour;
 		if (date.match(/ (\d{2}):/)) {
