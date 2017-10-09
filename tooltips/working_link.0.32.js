@@ -11,7 +11,7 @@ $(function () {
 	for (var i = 0; i < working.length; i++) {
 		titlesearch[working[i]] = true;
 	}
-	console.log(titlesearch);
+	
 	var date = new Array(working.length);
 	var datework = {};
 	var listnumber = 0;
@@ -20,6 +20,8 @@ $(function () {
 	
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
 			date[listnumber++] = data.response.posts[0].date;
+			
+			console.log("date.tags : "+ data.response.posts[0].tags);
 			
 			for (var tags in data.response.posts[0].tags) {
 				if (titlesearch[tags]) {
