@@ -19,20 +19,21 @@ $(function () {
 	for (var i = 0; i < working.length; i++) {
 	
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
-			date[listnumber++] = data.response.posts[0].date;
+			var jstdate = gmttojst(data.response.posts[0].date);
+			date[listnumber++] = jstdate;
 						
 			for (var i in data.response.posts[0].tags) {
 				if (titlesearch[data.response.posts[0].tags[i]]) {
-						datework[data.response.posts[0].date] = data.response.posts[0].tags[i];
+						datework[jstdate] = data.response.posts[0].tags[i];
 				}
 			}
 			
 			if (listnumber == working.length) {
-				if (working.length > 1) {date.sort(comparedate); console.log(date);}
+				if (working.length > 1) {date.sort(comparedate);}
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
-				for (var j = 0; j < working.length; j++) {
-					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[j]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[j]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[j].replace(new RegExp(' GMT'),'') +"</span><br><br>");
+				for (var i = 0; i < working.length; i++) {
+					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>"+ date[i].replace(new RegExp(' GMT'),'') +"</span><br><br>");
 				}
 			}
 			
@@ -73,8 +74,8 @@ $(function () {
 
 		if (ayear > byear) {return -1;}
 		if (ayear < byear) {return 1;}
-		if (amonth > bmonth) {console.log("amonth : "+ amonth +" bmonth : "+ bmonth); return -1;}
-		if (amonth < bmonth) {console.log("amonth : "+ amonth +" bmonth : "+ bmonth); return 1;}
+		if (amonth > bmonth) {return -1;}
+		if (amonth < bmonth) {return 1;}
 		if (aday > bday) {return -1;}
 		if (aday < bday) {return 1;}
 		if (ahour > bhour) {return -1;}
@@ -84,5 +85,23 @@ $(function () {
 		if (asecond > bsecond) {return -1;}
 		if (asecond < bsecond) {return 1;}
 		
+	}
+	
+	function gmttojst(date) {
+		var hour;
+		if (date.match(/ (\d{2}):/)) {
+			if (Number(RegExp.$1) + 9 > 23) {
+				hour = Number(RegExp.$1) + 9 - 24;
+			}
+			else {
+				hour = Number(RegExp.$1) + 9;
+			}
+			if (hour < 10) {
+				return date.replace(new RegExp(" "+ RegExp.$1 +":")," 0"+ hour +":");
+			}
+			else {
+				return date.replace(new RegExp(" "+ RegExp.$1 +":")," "+ hour +":");
+			}
+		}
 	}
 });
