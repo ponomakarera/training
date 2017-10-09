@@ -21,10 +21,9 @@ $(function () {
 		$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag="+ working[i] +"&limit=1&jsonp=?", function (data) {
 			date[listnumber++] = data.response.posts[0].date;
 						
-			for (var tags in data.response.posts[0].tags) {
-				console.log("tags : "+ tags);
-				if (titlesearch[tags]) {
-						datework[data.response.posts[0].date] = tags;
+			for (var i in data.response.posts[0].tags) {
+				if (titlesearch[data.response.posts[0].tags[i]]) {
+						datework[data.response.posts[0].date] = data.response.posts[0].tags[i];
 				}
 			}
 			
