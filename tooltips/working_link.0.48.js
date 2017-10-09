@@ -34,7 +34,7 @@ $(function () {
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
 				for (var i = 0; i < working.length; i++) {
-					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ date[i].replace(new RegExp(' .+:.+:.+ GMT'),'') +"</span><br><br>");
+					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ date[i].replace(new RegExp('(.+)-(.+)-(.+) .+:.+:.+ GMT'),'$1年$2月$3日') +"</span><br><br>");
 				}
 			}
 			
