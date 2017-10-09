@@ -92,7 +92,7 @@ $(function () {
 		if (date.match(/\d{4}-(\d{2})-(\d{2})/)) {
 			if (Number(RegExp.$1) < 10) {
 				date = date.replace(new RegExp("-$1-"),"-"+ Number(RegExp.$1) +"-");
-				console.log(date.replace(new RegExp("-$1-"),"-"+ Number(RegExp.$1) +"-"));
+				console.log(date.replace(new RegExp("-.+-"),"-"+ Number(RegExp.$1) +"-"));
 			}
 			if (Number(RegExp.$2) < 10) {
 				date = date.replace(new RegExp("-$2 "),"-"+ Number(RegExp.$2) +" ");
