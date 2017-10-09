@@ -90,15 +90,12 @@ $(function () {
 	
 	function jpndate(date) {
 		if (date.match(/\d{4}-(\d{2})-(\d{2})/)) {
-			var number;
 			if (Number(RegExp.$1) < 10) {
-				number = Number(RegExp.$1);
-				date = date.replace(new RegExp("-\d{2}-"),"-"+ number +"-");
+				date = date.replace(new RegExp("-$1-"),"-"+ Number(RegExp.$1) +"-");
 				console.log(date);
 			}
 			if (Number(RegExp.$2) < 10) {
-				number = Number(RegExp.$2);
-				date = date.replace(new RegExp("-\d{2} "),"-"+ number +" ");
+				date = date.replace(new RegExp("-$2 "),"-"+ Number(RegExp.$2) +" ");
 			}
 			return date.replace(new RegExp('(.+)-(.+)-(.+) .+:.+:.+ GMT'),'$1年$2月$3日');
 		}
