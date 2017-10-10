@@ -102,10 +102,10 @@ $(function () {
 	
 	function hourcheck(hour) {
 		if (hour + 9 > 23) {
-			return 1;
+			return true;
 		}
 		else {
-			return -1;
+			return false;
 		}
 	}
 	
@@ -117,15 +117,15 @@ $(function () {
 			day += 1;
 		}
 		if (day > 31) {
-			return 1;
+			return true;
 		}
 		if (under31days[String(month)] && day > 30 ) {
-			return 1;
+			return true;
 		}
 		if (month == 2 && day > 28) {
-			return 1;
+			return true;
 		}
-		return -1;
+		return false;
 	}
 	
 	function monthcheck(daycheck, month) {
@@ -133,9 +133,9 @@ $(function () {
 			month += 1;
 		}
 		if (month > 12) {
-			return 1;
+			return true;
 		}
-		return -1;
+		return false;
 	}
 	
 	
@@ -156,12 +156,20 @@ $(function () {
 				year += 1;
 			}
 			if (daycheck(hourcheck(hour), month, day)) {
-				month += 1;
+				if (monthcheck(daycheck(hourcheck(hour), month, day), month)) {
+					month = 1;
+				}
+				else {
+					month += 1;
+				}
 			}
 			if (hourcheck(hour)) {
-				console.log("hour : "+ hour);
-				console.log("hourcheck : "+ hourcheck(hour));
-				day += 1;
+				if (daycheck(hourcheck(hour), month, day)) {
+					day = 1;
+				}
+				else {
+					day += 1;
+				}
 			}
 		}
 		return date.replace(new RegExp("(.+)-(.+)-(.+) .+:.+:.+ GMT"),""+ year +"年"+ month +"月"+ day +"日");
