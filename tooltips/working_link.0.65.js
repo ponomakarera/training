@@ -159,6 +159,8 @@ $(function () {
 				month += 1;
 			}
 			if (hourcheck(hour)) {
+				console.log("hour : "+ hour);
+				console.log("hourcheck : "+ hourcheck(hour));
 				day += 1;
 			}
 		}
