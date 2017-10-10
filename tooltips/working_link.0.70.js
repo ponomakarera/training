@@ -33,7 +33,7 @@ $(function () {
 				if (working.length > 1) {date.sort(comparedate);}
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
-				$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span>");
+				$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span><br>");
 				for (var i = 0; i < working.length; i++) {
 					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br>");
 				}
