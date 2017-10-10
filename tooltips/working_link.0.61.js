@@ -34,7 +34,7 @@ $(function () {
 				
 				$("#workinglistset").append("<div id='workinglist'></div>");
 				for (var i = 0; i < working.length; i++) {
-					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ jpndate(date[i]) +"</span><br><br>");
+					$("#workinglist").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br>");
 				}
 			}
 			
@@ -89,7 +89,7 @@ $(function () {
 	}
 	
 	function jpndate(date) {
-		if (date.match(/\d{4}-(\d{2})-(\d{2})/)) {
+		if (date.match(/.+-(.+)-(.+) .+:/)) {
 			if (Number(RegExp.$1) < 10) {
 				date = date.replace(new RegExp("-"+ RegExp.$1 +"-"),"-"+ Number(RegExp.$1) +"-");
 			}
@@ -100,22 +100,70 @@ $(function () {
 		}
 	}	
 	
-	/* GMT to JST */
-	function gmttojst(date) {
-		var hour;
-		if (date.match(/ (\d{2}):/)) {
-			if (Number(RegExp.$1) + 9 > 23) {
-				hour = Number(RegExp.$1) + 9 - 24;
-			}
-			else {
-				hour = Number(RegExp.$1) + 9;
-			}
-			if (hour < 10) {
-				return date.replace(new RegExp(" "+ RegExp.$1 +":")," 0"+ hour +":");
-			}
-			else {
-				return date.replace(new RegExp(" "+ RegExp.$1 +":")," "+ hour +":");
-			}
+	function hourcheck(hour) {
+		if (hour + 9 > 23) {
+			return 1;
+		}
+		else {
+			return -1;
 		}
 	}
+	
+	function daycheck(hourcheck, month, day) {
+		
+		var under31days = {'2':true, '4':true, '6':true, '9':true, '11':true};
+		
+		if (hourcheck) {
+			day += 1;
+		}
+		if (day > 31) {
+			return 1;
+		}
+		if (under31days[String(month)] && day > 30 ) {
+			return 1;
+		}
+		if (month == 2 && day > 28) {
+			return 1;
+		}
+		return -1;
+	}
+	
+	function monthcheck(daycheck, month) {
+		if (daycheck) {
+			month += 1;
+		}
+		if (month > 12) {
+			return 1;
+		}
+		return -1;
+	}
+	
+	
+	/* GMT to JST */
+	function gmttojst(date) {
+		var year;
+		var month;
+		var day;
+		var hour;
+		if (date.match(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):/)) {
+			
+			year = Number(RegExp.$1);
+			month = Number(RegExp.$2);
+			day = Number(RegExp.$3);
+			hour = Number(RegExp.$4);
+			
+			if (monthcheck(daycheck(hourcheck(hour), month, day), month)) {
+				year += 1;
+			}
+			if (daycheck(hourcheck(hour), month, day)) {
+				month += 1;
+			}
+			if (hourcheck(hour)) {
+				day += 1;
+			}
+		}
+		return date.replace(new RegExp("(.+)-(.+)-(.+) .+:.+:.+ GMT"),""+ year +"年"+ month +"月"+ day +"日");
+		
+	}
+	
 });
