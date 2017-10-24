@@ -32,6 +32,25 @@ $(function () {
 			if (listnumber == working.length) {
 				if (working.length > 1) {date.sort(comparedate);}
 				
+				//device check
+				var ua = navigator.userAgent;
+				if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+					$("#workinglistset").append("<div id='workinglistmobile'></div>");
+					for (var i = 0; i < working.length; i++) {
+						if (!(i == working.length - 1)) {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br>");}
+						else {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br>");}
+					}
+				} 
+				else {
+					//pc
+					$("#workinglistset").append("<div id='workinglist'></div>");
+					$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span><br>");
+					for (var i = 0; i < working.length; i++) {
+						if (!(i == working.length - 1)) {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br></div>");}
+						else {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br></div>");}
+					}
+				}
+				
 				$("#workinglistset").append("<div id='workinglist'></div>");
 				$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span><br>");
 				for (var i = 0; i < working.length; i++) {
