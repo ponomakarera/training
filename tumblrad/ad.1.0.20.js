@@ -16,12 +16,12 @@
 	var image = [
 	  'https://68.media.tumblr.com/a42ff6d3f4ddb6734dec1672db2bb6b1/tumblr_o5xwixDP3z1t0jrzao1_500.png',//妄想都市
 	  'https://68.media.tumblr.com/076e815b6c14450bddff046b0333d931/tumblr_ok75pcYIvw1t0jrzao1_500.png',//外国人作家一覧
-	  'https://68.media.tumblr.com/b6acbb548c0408735908365cd6996e55/tumblr_okq4ixlt7E1t0jrzao1_r2_1280.png',//不思議の国のアリス
+	  'https://68.media.tumblr.com/b6acbb548c0408735908365cd6996e55/tumblr_okq4ixlt7E1t0jrzao1_500.png',//不思議の国のアリス
 	  'https://68.media.tumblr.com/3e6ebcfd023e2d8ed70ffe2e5d4d22d4/tumblr_okq9goxYnh1t0jrzao1_500.png',//外国人画家一覧
 	  'https://68.media.tumblr.com/66b3a66a8fef1852876374dda88782dc/tumblr_okqa838NzS1t0jrzao1_500.png',//並平町
-	  'https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_1280.jpg',//イラストを描く時に使えそうな絵集
-	  'https://68.media.tumblr.com/3b09d5d60759a1a99f07e707062153a0/tumblr_oswngsTrQ31t0jrzao1_540.jpg',//Emigration (v 6) 日本語化ファイル
-	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_540.png',//Racial Tension
+	  'https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_500.jpg',//イラストを描く時に使えそうな絵集
+	  'https://68.media.tumblr.com/3b09d5d60759a1a99f07e707062153a0/tumblr_oswngsTrQ31t0jrzao1_500.jpg',//Emigration (v 6) 日本語化ファイル
+	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_500.png',//Racial Tension
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
