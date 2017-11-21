@@ -20,9 +20,10 @@ $(function () {
 		var tooltip_exist = {};
 		var mousepoint;
 	
-		$("."+target).mouseover(function() {
+		$("."+target).mouseover(function(kmouse) {
 	
 			i = $(this).attr('id');
+			mousepoint = kmouse
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
 			my_tooltip = $("#"+reference+i);	
 			i = $("#"+i);
