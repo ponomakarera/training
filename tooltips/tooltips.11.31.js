@@ -15,7 +15,7 @@ $(function () {
 
 	function simple_tooltip(target, reference){
 
-		var my_tooltip;
+		var my_tooltip = $("#nothing");
 		var tooltip_exist = {};
 		var mousepoint;
 	
@@ -31,10 +31,6 @@ $(function () {
 			mousepoint = kmouse
 			setpos();
 		
-		}).mouseout(function(){
-	
-			my_tooltip.css({left:"-9999999px", top:"-9999999px"});				  
-	
 		});
 		
 		$(":not(textlink)").mouseover(function() {
