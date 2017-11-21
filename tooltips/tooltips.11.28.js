@@ -19,7 +19,7 @@ $(function () {
 		var tooltip_exist = {};
 		var mousepoint;
 	
-		$("."+target, "."+reference).mouseover(function() {
+		$(".textlink, .tooltip").mouseover(function() {
 	
 			var i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
