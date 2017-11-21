@@ -32,6 +32,12 @@ $(function () {
 			setpos();
 		
 		});
+		
+		$("."+reference).mouseout(function() {
+		
+			my_tooltip.css({left:"-9999999px", top:"-9999999px"});	
+		
+		});
 	
 		function addtooltip(i) {
 			$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&id="+ i +"&jsonp=?", function (data) {
