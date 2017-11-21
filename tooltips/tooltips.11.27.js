@@ -15,23 +15,15 @@ $(function () {
 
 	function simple_tooltip(target, reference){
 
-		var my_tooltip = $("#nothing1");
-		var i = $("#nothing2");
+		var my_tooltip;
 		var tooltip_exist = {};
 		var mousepoint;
 	
-		$("."+target).mouseover(function(kmouse) {
+		$("."+target, "."+reference).mouseover(function() {
 	
-			i = $(this).attr('id');
-			mousepoint = kmouse
+			var i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
-			my_tooltip = $("#"+reference+i);	
-			i = $("#"+i);
-		
-		});
-	
-		$("my_tooltip, i").mouseover(function() {
-	
+			my_tooltip = $("#"+reference+i);
 			my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
 		
 		}).mousemove(function(kmouse) {
