@@ -18,12 +18,10 @@ $(function () {
 		var my_tooltip;
 		var tooltip_exist = {};
 		var mousepoint;
-		var i = $("#nothing");
 	
 		$("."+target).mouseover(function() {
 	
-			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});
-			i = $(this).attr('id');
+			var i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
 			my_tooltip = $("#"+reference+i);
 			my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
@@ -33,12 +31,10 @@ $(function () {
 			mousepoint = kmouse
 			setpos();
 		
-		});
-		
-		$(":not('#'+ reference + i)").mouseover(function() {
-		
-			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});	
-		
+		}).mouseout(function(){
+	
+			my_tooltip.css({left:"-9999999px", top:"-9999999px"});				  
+	
 		});
 	
 		function addtooltip(i) {
@@ -77,7 +73,7 @@ $(function () {
 			}
 				
 			if(border_top + (offset *2)>= mousepoint.pageY - my_tooltip.height()){
-				top_pos = border_top +offset;
+				top_pos = mousepoint.pageY +offset;
 			} else{
 				top_pos = mousepoint.pageY-my_tooltip.height()-offset;
 			}
