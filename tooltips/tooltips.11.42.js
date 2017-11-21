@@ -34,7 +34,7 @@ $(function () {
 		
 		});
 		
-		$(".tooltip").mouseout(function() {
+		$("html").mouseover(function() {
 		
 			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});	
 		
