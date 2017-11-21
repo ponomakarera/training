@@ -21,7 +21,7 @@ $(function () {
 	
 		$("."+target).mouseover(function() {
 	
-			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});	
+			$("."+reference).css({left:"-9999999px", top:"-9999999px"});	
 			var i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
 			my_tooltip = $("#"+reference+i);
