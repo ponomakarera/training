@@ -18,11 +18,12 @@ $(function () {
 		var my_tooltip;
 		var tooltip_exist = {};
 		var mousepoint;
+		var i = $("#nothing");
 	
 		$("."+target).mouseover(function() {
 	
 			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});
-			var i = $(this).attr('id');
+			i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
 			my_tooltip = $("#"+reference+i);
 			my_tooltip.css({opacity:0.8, display:"none"}).fadeIn(400);	
@@ -34,12 +35,8 @@ $(function () {
 		
 		});
 		
-		$(".tooltip").mouseover(function() {
+		$(":not('#'+ reference + i)").mouseover(function() {
 		
-			
-		
-		}).mouseout(function() {
-	
 			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});	
 		
 		});
