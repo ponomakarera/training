@@ -33,7 +33,7 @@ $(function () {
 		
 		});
 		
-		$("."+reference).mouseout(function() {
+		$("#container").mouseover(function() {
 		
 			my_tooltip.css({left:"-9999999px", top:"-9999999px"});	
 		
