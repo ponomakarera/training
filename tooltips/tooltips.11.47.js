@@ -21,6 +21,7 @@ $(function () {
 	
 		$("."+target).mouseover(function() {
 	
+			$(".tooltip").css({left:"-9999999px", top:"-9999999px"});	
 			var i = $(this).attr('id');
 			if(!tooltip_exist[i]) { tooltip_exist[i] = true; addtooltip(i); }
 			my_tooltip = $("#"+reference+i);
@@ -73,9 +74,13 @@ $(function () {
 			}
 				
 			if(border_top + (offset *2)>= mousepoint.pageY - my_tooltip.height()){
-				top_pos = mousepoint.pageY +offset;
+				top_pos = border_top +offset;
 			} else{
 				top_pos = mousepoint.pageY-my_tooltip.height()-offset;
+			}
+			
+			if ((border_right - (offset *2) < my_tooltip.width() + mousepoint.pageX) && (border_top + (offset *2)>= mousepoint.pageY - my_tooltip.height())) {
+				top_pos = mousepoint.pageY +offset;
 			}
 			my_tooltip.css({left:left_pos, top:top_pos});
 		}
