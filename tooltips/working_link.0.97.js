@@ -7,8 +7,9 @@ $(function () {
 	外国人作家
 	外国人画家
 	
-	*/
- 
+	set below variable */
+	var working_list = 4;
+	
 	var date = [];
 	var dateposts = {};
 	var datework = {};
@@ -17,47 +18,58 @@ $(function () {
 			date.push(data.response.posts[0].date);
 			dateposts[data.response.posts[0].date] = data.response.total_posts;
 			datework[data.response.posts[0].date] = "不思議の国のアリス";
+			appendworkinglist(date.length);
 	});
 	
 	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=並平町&limit=1&jsonp=?", function (data) {
 			date.push(data.response.posts[0].date);
 			dateposts[data.response.posts[0].date] = data.response.total_posts;
 			datework[data.response.posts[0].date] = "並平町";
+			appendworkinglist(date.length);
 	});
 	
 	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=外国人作家&limit=1&jsonp=?", function (data) {
 			date.push(data.response.posts[0].date);
 			dateposts[data.response.posts[0].date] = data.response.total_posts;
 			datework[data.response.posts[0].date] = "外国人作家";
+			appendworkinglist(date.length);
 	});
 	
 	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=外国人画家&limit=1&jsonp=?", function (data) {
 			date.push(data.response.posts[0].date);
 			dateposts[data.response.posts[0].date] = data.response.total_posts;
 			datework[data.response.posts[0].date] = "外国人画家";
+			appendworkinglist(date.length);
 	});
 	
 	
-	date.sort(comparedate);
+	function appendworkinglist (check) {
+		
+		if (check == working_list) {
+		
+			date.sort(comparedate);
 	
-	//device check
-	var ua = navigator.userAgent;
-	if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
-		$("#workinglistset").append("<div id='workinglistmobile'></div>");
-		for (var i = 0; i < date.length; i++) {
-			if (!(i == date.length - 1)) {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br>");}
-			else {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br>");}
+			//device check
+			var ua = navigator.userAgent;
+			if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) {
+				$("#workinglistset").append("<div id='workinglistmobile'></div>");
+				for (var i = 0; i < date.length; i++) {
+					if (!(i == date.length - 1)) {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br>");}
+					else {$("#workinglistmobile").append("<a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br>");}
+				}
+			} 
+			else {
+				//pc
+				$("#workinglistset").append("<div id='workinglist'></div>");
+				$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span><br>");
+				for (var i = 0; i < date.length; i++) {
+					console.log("test");
+					if (!(i == date.length - 1)) {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br></div>");}
+					else {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br></div>");}
+				}
+			}
 		}
-	} 
-	else {
-		//pc
-		$("#workinglistset").append("<div id='workinglist'></div>");
-		$("#workinglist").append("<span style='font-weight: bold;'>作っているもの</span><br>");
-		for (var i = 0; i < date.length; i++) {
-			console.log("test");
-			if (!(i == date.length - 1)) {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br><br></div>");}
-			else {$("#workinglist").append("<div style='line-height:16px;'><a href='https://ponomakarera.tumblr.com/tagged/"+ datework[date[i]] +"' style='color:#00830c; text-decoration: none;'>"+ datework[date[i]] +"</a><br><span style='color:#666; font-size: 12px;'>投稿数（"+ dateposts[date[i]] +"） "+ gmttojst(date[i]) +"</span><br></div>");}
-		}
+		
 	}
 	
 	
