@@ -40,6 +40,8 @@ $(function () {
 	
 	date.sort(comparedate);
 	console.log(date);
+	console.log(dateposts);
+	console.log(datework);
 	
 	//device check
 	var ua = navigator.userAgent;
