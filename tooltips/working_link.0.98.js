@@ -2,24 +2,17 @@ $(function () {
  
 	/* working list
 	
-	不思議の国のアリス
 	並平町
 	外国人作家
 	外国人画家
 	
 	set below variable */
-	var working_list = 4;
+	var working_list = 3;
 	
 	var date = [];
 	var dateposts = {};
 	var datework = {};
- 
-	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=不思議の国のアリス&limit=1&jsonp=?", function (data) {
-			date.push(data.response.posts[0].date);
-			dateposts[data.response.posts[0].date] = data.response.total_posts;
-			datework[data.response.posts[0].date] = "不思議の国のアリス";
-			appendworkinglist(date.length);
-	});
+	
 	
 	$.getJSON("https://api.tumblr.com/v2/blog/ponomakarera.tumblr.com/posts/?api_key=1Uw1n0Yvp6uylFWhR8AyhgmPTgAlvItyeOFK6XKuYcMYiygM6V&tag=並平町&limit=1&jsonp=?", function (data) {
 			date.push(data.response.posts[0].date);
