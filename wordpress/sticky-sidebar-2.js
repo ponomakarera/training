@@ -411,11 +411,11 @@ var StickySidebar = function () {
 
         switch (affixType) {
           case 'VIEWPORT-TOP':
-            style.inner = { position: 'fixed', top: dims.topSpacing, background: '#fafafa',
+            style.inner = { position: 'fixed', top: dims.topSpacing, background: '#fafafa !important',
               left: dims.sidebarLeft - dims.viewportLeft, width: dims.sidebarWidth };
             break;
           case 'VIEWPORT-BOTTOM':
-            style.inner = { position: 'fixed', top: 'auto', left: dims.sidebarLeft, background: '#fafafa',
+            style.inner = { position: 'fixed', top: 'auto', left: dims.sidebarLeft, background: '#fafafa !important',
               bottom: dims.bottomSpacing, width: dims.sidebarWidth };
             break;
           case 'CONTAINER-BOTTOM':
