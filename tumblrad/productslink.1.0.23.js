@@ -25,6 +25,9 @@
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
+	console.log("test");
+	document.getElementById("productslink").href = linkurl[rand];
+	document.getElementById("productslink").insertAdjacentHTML("afterbegin", "<img id='ad' src='"+ image[rand] +"'>");
 	
 	//device check
 	var ua = navigator.userAgent;
