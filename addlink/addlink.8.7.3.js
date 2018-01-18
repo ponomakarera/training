@@ -10,8 +10,8 @@
 	var target = document.getElementsByClassName('addlink');
 	
 	for (var i = 0; i < target.length; i++){
-		console.log(target[i]);
-		var txt = String(target[i]);
+		console.log(target[i].innerHTML);
+		var txt = target[i].innerHTML;
 		var contents = [];
 		while (txt.match(/<linkcancel>(?!<\/linkcancel>)[\s\S]+?<\/linkcancel>/)) {
 			txt = txt.replace(new RegExp(/<linkcancel>(?!<\/linkcancel>)([\s\S]+?)<\/linkcancel>/),"<linkcancel></linkcancel>");
