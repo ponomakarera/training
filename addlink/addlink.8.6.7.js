@@ -22,6 +22,10 @@
 	for (var i = 0; i < target.length; i++){
 		var txt = target[i].innerHTML;		
 		
+		if (txt.match(/rejectaddlink/)) {
+			console.log("hit");
+			continue;
+		}
 		Object.keys(dic).sort(function(a, b) {return b.length - a.length;}).forEach(function(key) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ dic[key] +"'></span>");
 		});
