@@ -10,10 +10,9 @@
 	
 	//linkcancel
 	var linkcancel = document.getElementsByClassName('linkcancel');
-	var contents = [];
+	
 	for (var j = 0; j < linkcancel.length; j++){
-		contents.push(linkcancel[j].innerHTML);
-		linkcancel[j].innerHTML = "";
+		linkcancel[j].innerHTML = "<linkcancel>"+ linkcancel[j].innerHTML +"</linkcancel>";
 	}
 	
 	//addlink
@@ -21,13 +20,21 @@
 	
 	for (var i = 0; i < target.length; i++){
 		var txt = target[i].innerHTML;		
+		var contents = [];
 		
 		if (txt.match(/rejectaddlink/)) {
 			continue;
 		}
+		while (txt.match(/<linkcancel>(?!<\/linkcancel>)[\s\S]+?<\/linkcancel>/)) {
+			txt = txt.replace(new RegExp(/<linkcancel>(?!<\/linkcancel>)([\s\S]+?)<\/linkcancel>/),"<linkcancel></linkcancel>");
+			contents.push(RegExp.$1);
+		}
 		Object.keys(dic).sort(function(a, b) {return b.length - a.length;}).forEach(function(key) {
 			txt = txt.replace(new RegExp(key, "g"),"<span id='"+ dic[key] +"'></span>");
 		});
+		for (var k = 0; k < contents.length; k++) {
+			txt = txt.replace(new RegExp("<linkcancel></linkcancel>"),contents[k]);
+		}
 		for (var key in dic) {
 			if ((' '+ target[i].className +' ').indexOf(' '+ key +' ') >= 0) {
 				txt = txt.replace(new RegExp("<span id=."+ dic[key] +".></span>", "g"),key);
@@ -40,10 +47,6 @@
 			}
 		}
 		target[i].innerHTML = txt;
-	}
-	
-	for (var k = 0; k < contents.length; k++) {
-		linkcancel[k].innerHTML = contents[k];
 	}
 	
 })();
