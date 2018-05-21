@@ -11,6 +11,7 @@
 	  'https://ponomakarera.social/post/162845814275/emigration-v-6-%E6%97%A5%E6%9C%AC%E8%AA%9E%E5%8C%96%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB',//Emigration (v 6) 日本語化ファイル
 	  'https://ponomakarera.social/post/164489780410/racial-tension',//Racial Tension
 	  'https://ponomakarera.social/post/173674210890/%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%A9%E3%81%97%E3%81%9F%E6%99%82%E3%81%AB%E8%81%B4%E3%81%8F%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF%E9%9F%B3%E6%A5%BD',//イライラした時に聴くクラシック音楽
+	  'https://ponomakarera.social/post/174117448910/fuck-unhappiness-v-1',//Fuck Unhappiness (v 1)
 	]
 	
 	//image
@@ -24,6 +25,7 @@
 	  'https://68.media.tumblr.com/3b09d5d60759a1a99f07e707062153a0/tumblr_oswngsTrQ31t0jrzao1_500.jpg',//Emigration (v 6) 日本語化ファイル
 	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_500.png',//Racial Tension
 	  'https://78.media.tumblr.com/a91065d8f0c8fcdea2316ebe80b2fb30/tumblr_p8d9b8VVEx1t0jrzao1_400.png',//イライラした時に聴くクラシック音楽
+	  'https://78.media.tumblr.com/3459cb95ef0667a90da90e1902dc2a26/tumblr_p937cdB67H1t0jrzao1_500.png',//Fuck Unhappiness (v 1)
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
