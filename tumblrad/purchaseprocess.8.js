@@ -10,6 +10,7 @@
 	  'https://ponomakarera.social/post/164489780410/racial-tension',//Racial Tension
 	  'https://ponomakarera.social/post/168677703740/%E4%B8%8D%E6%80%9D%E8%AD%B0%E3%81%AE%E5%9B%BD%E3%81%AE%E3%82%A2%E3%83%AA%E3%82%B9',//不思議の国のアリス
 	  'https://ponomakarera.social/post/173674210890/%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%A9%E3%81%97%E3%81%9F%E6%99%82%E3%81%AB%E8%81%B4%E3%81%8F%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF%E9%9F%B3%E6%A5%BD',//イライラした時に聴くクラシック音楽
+	  'https://ponomakarera.social/post/174117448910/fuck-unhappiness-v-1',//Fuck Unhappiness (v 1)
 	]
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
