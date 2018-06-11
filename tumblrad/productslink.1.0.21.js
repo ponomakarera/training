@@ -12,6 +12,7 @@
 	  'https://ponomakarera.social/post/164489780410/racial-tension',//Racial Tension
 	  'https://ponomakarera.social/post/173674210890/%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%A9%E3%81%97%E3%81%9F%E6%99%82%E3%81%AB%E8%81%B4%E3%81%8F%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF%E9%9F%B3%E6%A5%BD',//イライラした時に聴くクラシック音楽
 	  'https://ponomakarera.social/post/174117448910/fuck-unhappiness-v-1',//Fuck Unhappiness (v 1)
+	  'https://ponomakarera.social/post/174772644300/vox-populicommunity-patch-domestic-competition',//Vox Populi(Community Patch) – Domestic Competition
 	]
 	
 	//image
@@ -26,6 +27,7 @@
 	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_500.png',//Racial Tension
 	  'https://78.media.tumblr.com/a91065d8f0c8fcdea2316ebe80b2fb30/tumblr_p8d9b8VVEx1t0jrzao1_400.png',//イライラした時に聴くクラシック音楽
 	  'https://78.media.tumblr.com/3459cb95ef0667a90da90e1902dc2a26/tumblr_p937cdB67H1t0jrzao1_500.png',//Fuck Unhappiness (v 1)
+	  'https://78.media.tumblr.com/fb2611ebc8920104ce7ef30899722eb7/tumblr_pa4xafvPuR1t0jrzao1_400.png',//Vox Populi(Community Patch) – Domestic Competition
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
