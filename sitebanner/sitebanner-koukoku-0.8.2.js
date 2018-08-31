@@ -39,7 +39,8 @@
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
 	var adspace = document.getElementsByClassName("antenna")
-	console.log(adspace);
+	adspace[0].innerHTML = '<img src="'+ image[rand] +'">';
+	console.log(adspace[0]);
 	if (adspace.length == 1) {
 		adspace.innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 	} 
