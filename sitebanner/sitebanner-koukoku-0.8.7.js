@@ -11,9 +11,10 @@
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
-	var adspace = document.getElementsByClassName("antenna")
+	var adspace = document.getElementsByClassName("adspace");
+	var mobile_adspace = document.getElementsByClassName("mobile-adspace");
 	
 	adspace[0].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo ads" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
-	adspace[1].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
+	mobile_adspace[0].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 
 })();
