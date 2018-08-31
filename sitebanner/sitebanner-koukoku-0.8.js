@@ -14,8 +14,8 @@
 	  'https://ponomakarera.social/post/174117448910/fuck-unhappiness-v-1',//Fuck Unhappiness (v 1)
 	  'https://ponomakarera.social/post/174772644300/vox-populicommunity-patch-domestic-competition',//Vox Populi(Community Patch) – Domestic Competition
 	  'https://ponomakarera.social/post/175943826205/tumblr%E3%83%86%E3%83%BC%E3%83%9E-categories',//Tumblrテーマ – Categories
-          'https://ponomakarera.social/post/176382764625/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography',//Tumblrテーマ – Photography
-          'https://ponomakarera.social/post/176949685825/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography-2',//Tumblrテーマ – Photography 2
+      'https://ponomakarera.social/post/176382764625/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography',//Tumblrテーマ – Photography
+      'https://ponomakarera.social/post/176949685825/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography-2',//Tumblrテーマ – Photography 2
 	]
 	
 	//image
@@ -32,12 +32,21 @@
 	  'https://78.media.tumblr.com/3459cb95ef0667a90da90e1902dc2a26/tumblr_p937cdB67H1t0jrzao1_500.png',//Fuck Unhappiness (v 1)
 	  'https://78.media.tumblr.com/fb2611ebc8920104ce7ef30899722eb7/tumblr_pa4xafvPuR1t0jrzao1_400.png',//Vox Populi(Community Patch) – Domestic Competition
 	  'https://78.media.tumblr.com/74db9cf69429962b35727f91644eb9c1/tumblr_pbytwycMwJ1t0jrzao1_1280.png',//Tumblrテーマ – Categories
-          'https://78.media.tumblr.com/9bff0bdd441ce6ffbce7812f10b94391/tumblr_pclfjrBP0H1t0jrzao1_1280.jpg',//Tumblrテーマ – Photography
+      'https://78.media.tumblr.com/9bff0bdd441ce6ffbce7812f10b94391/tumblr_pclfjrBP0H1t0jrzao1_1280.jpg',//Tumblrテーマ – Photography
 	  'https://78.media.tumblr.com/c8f53e248fa3e1380aee2e2200c9f0e9/tumblr_pdeh7reJL81t0jrzao1_1280.png',//Tumblrテーマ – Photography 2
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
-	document.getElementsByClassName("antenna").innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
+	var adspace = document.getElementsByClassName("antenna")
+	
+	if (adspace.length == 1) {
+		adspace.innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
+	} 
+	else {
+		for (i = 0; i < adspace.length; i++) {
+			adspace[i].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
+		}
+	}
 
 })();
