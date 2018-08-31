@@ -37,14 +37,14 @@
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
-	
 	var adspace = document.getElementsByClassName("antenna")
-	adspace[0].innerHTML = '<img src="'+ image[rand] +'">';
-	console.log(adspace[0]);
+	
 	if (adspace.length == 1) {
-		adspace.innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
+			console.log("adspace.length = 1");
+		adspace[0].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 	} 
 	else {
+		console.log("adspace.length = 2");
 		for (i = 0; i < adspace.length; i++) {
 			adspace[i].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 		}
