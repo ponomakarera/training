@@ -16,5 +16,4 @@
 	antenna[0].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo ads" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 	antenna[1].innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
 
-	console.log(antenna);
 })();
