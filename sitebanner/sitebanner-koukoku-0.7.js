@@ -39,5 +39,5 @@
 	var rand = Math.floor( Math.random() * linkurl.length );
 	
 	document.getElementsByClassName("antenna").innerHTML = '<a href="'+ linkurl[rand] +'" class="logo" target="_blank"><div class="slide-img" style="background-image: url(&quot;'+ image[rand] +'&quot;);"></div></a>';
-	}
+
 })();
