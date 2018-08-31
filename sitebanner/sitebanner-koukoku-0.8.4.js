@@ -20,20 +20,7 @@
 	
 	//image
 	var image = [
-	  'https://68.media.tumblr.com/a42ff6d3f4ddb6734dec1672db2bb6b1/tumblr_o5xwixDP3z1t0jrzao1_500.png',//妄想都市
-	  'https://68.media.tumblr.com/076e815b6c14450bddff046b0333d931/tumblr_ok75pcYIvw1t0jrzao1_500.png',//外国人作家一覧
-	  'https://78.media.tumblr.com/51a3743e3d1e1e05241a1dd9f9dd6483/tumblr_p15qk9RN261t0jrzao1_500.png',//不思議の国のアリス
-	  'https://68.media.tumblr.com/3e6ebcfd023e2d8ed70ffe2e5d4d22d4/tumblr_okq9goxYnh1t0jrzao1_500.png',//外国人画家一覧
-	  'https://68.media.tumblr.com/66b3a66a8fef1852876374dda88782dc/tumblr_okqa838NzS1t0jrzao1_500.png',//並平町
-	  'https://68.media.tumblr.com/ba3302963319ce12c1cf38c1ab7e08f3/tumblr_omk4u3dcai1t0jrzao1_500.jpg',//イラストを描く時に使えそうな絵集
-	  'https://68.media.tumblr.com/3b09d5d60759a1a99f07e707062153a0/tumblr_oswngsTrQ31t0jrzao1_500.jpg',//Emigration (v 6) 日本語化ファイル
-	  'https://68.media.tumblr.com/23f37f2c67cca46b85af4d655c2e0855/tumblr_ov3kodR2ir1t0jrzao1_500.png',//Racial Tension
-	  'https://78.media.tumblr.com/a91065d8f0c8fcdea2316ebe80b2fb30/tumblr_p8d9b8VVEx1t0jrzao1_400.png',//イライラした時に聴くクラシック音楽
-	  'https://78.media.tumblr.com/3459cb95ef0667a90da90e1902dc2a26/tumblr_p937cdB67H1t0jrzao1_500.png',//Fuck Unhappiness (v 1)
-	  'https://78.media.tumblr.com/fb2611ebc8920104ce7ef30899722eb7/tumblr_pa4xafvPuR1t0jrzao1_400.png',//Vox Populi(Community Patch) – Domestic Competition
-	  'https://78.media.tumblr.com/74db9cf69429962b35727f91644eb9c1/tumblr_pbytwycMwJ1t0jrzao1_1280.png',//Tumblrテーマ – Categories
-      'https://78.media.tumblr.com/9bff0bdd441ce6ffbce7812f10b94391/tumblr_pclfjrBP0H1t0jrzao1_1280.jpg',//Tumblrテーマ – Photography
-	  'https://78.media.tumblr.com/c8f53e248fa3e1380aee2e2200c9f0e9/tumblr_pdeh7reJL81t0jrzao1_1280.png',//Tumblrテーマ – Photography 2
+	  'https://78.media.tumblr.com/f6b8c179b61e270738058ca468c3c5eb/tumblr_peb7r1HpJG1xeooa7o1_400.jpg',//妄想都市
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
