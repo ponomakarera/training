@@ -2,12 +2,12 @@
 
 	//link
 	var linkurl = [
-	  'https://ponomakarera.social/post/156130120710/%E5%A6%84%E6%83%B3%E9%83%BD%E5%B8%82',//妄想都市
+	  'https://ponomakarera.com/downloads/tag/tumblr%E3%83%86%E3%83%BC%E3%83%9E/',//WPのtumblrテーマタグ
 	]
 	
 	//image
 	var image = [
-	  'https://78.media.tumblr.com/f6b8c179b61e270738058ca468c3c5eb/tumblr_peb7r1HpJG1xeooa7o1_400.jpg',//妄想都市
+	  'https://78.media.tumblr.com/bf934e8b58cffe28aacd0f52045cc5dc/tumblr_pee3d5Na9z1xeooa7o1_540.jpg',//WPのtumblrテーマタグ
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
