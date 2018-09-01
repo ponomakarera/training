@@ -7,7 +7,7 @@
 	
 	//image
 	var image = [
-	  'https://78.media.tumblr.com/bf934e8b58cffe28aacd0f52045cc5dc/tumblr_pee3d5Na9z1xeooa7o1_540.jpg',//WPのtumblrテーマタグ
+	  'https://78.media.tumblr.com/24632319eec587cb4cf2c7e8eed19006/tumblr_pee3d5Na9z1xeooa7o1_r1_1280.gif',//WPのtumblrテーマタグ
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
