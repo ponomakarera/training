@@ -15,6 +15,7 @@
 	  'https://ponomakarera.social/post/175943826205/tumblr%E3%83%86%E3%83%BC%E3%83%9E-categories',//Tumblrテーマ – Categories
 	  'https://ponomakarera.social/post/176382764625/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography',//Tumblrテーマ – Photography
 	  'https://ponomakarera.social/post/176949685825/tumblr%E3%83%86%E3%83%BC%E3%83%9E-photography-2',//Tumblrテーマ – Photography 2
+	  'https://ponomakarera.social/post/178062686225/tumblr%E3%83%86%E3%83%BC%E3%83%9E-linkit',//Tumblrテーマ – Linkit
 	]
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
