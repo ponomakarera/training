@@ -23,7 +23,7 @@
 	
 	//image
 	var image = [
-	  'https://68.media.tumblr.com/a42ff6d3f4ddb6734dec1672db2bb6b1/tumblr_o5xwixDP3z1t0jrzao1_500.png',//妄想都市
+	  'https://66.media.tumblr.com/8d990cd69d9615d8234e9f7ffd5eed77/tumblr_pww4ii5yk01t0jrzao1_500.png',//妄想都市
 	  'https://68.media.tumblr.com/076e815b6c14450bddff046b0333d931/tumblr_ok75pcYIvw1t0jrzao1_500.png',//外国人作家一覧
 	  'https://78.media.tumblr.com/51a3743e3d1e1e05241a1dd9f9dd6483/tumblr_p15qk9RN261t0jrzao1_500.png',//不思議の国のアリス
 	  'https://68.media.tumblr.com/3e6ebcfd023e2d8ed70ffe2e5d4d22d4/tumblr_okq9goxYnh1t0jrzao1_500.png',//外国人画家一覧
