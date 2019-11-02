@@ -1,4 +1,4 @@
 training
 ========
 
-This repository is personal programming training
+This repository is personal training of programming
