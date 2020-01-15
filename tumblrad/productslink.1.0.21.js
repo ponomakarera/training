@@ -19,6 +19,7 @@
 	  'https://ponomakarera.social/post/178062686225/tumblr%E3%83%86%E3%83%BC%E3%83%9E-linkit',//Tumblrテーマ – Linkit
 	  'https://ponomakarera.social/post/178538050475/wars-for-science-v-1',//Wars for Science (v 1)
 	  'https://ponomakarera.social/post/185454093865/glory-of-a-city-v-1',//Glory of a City (v 1)
+	  'https://ponomakarera.social/post/190270895900/population-loss-at-war-v-1',//Population Loss at War (v 1)
 	]
 	
 	//image
@@ -40,6 +41,7 @@
 	  'https://78.media.tumblr.com/af83c5b752adaa1f05e9eaeccadfa8bb/tumblr_pf0yfa9TLO1t0jrzao1_1280.png',//Tumblrテーマ – Linkit
 	  'https://66.media.tumblr.com/f18b6fe85f94b210a9f37f8fccecf32c/tumblr_pfrgygXpUT1t0jrzao1_r1_1280.jpg',//Wars for Science (v 1)
 	  'https://66.media.tumblr.com/46b469f0646e0f3ddabfb218e4970d13/tumblr_pssi8eJiEl1t0jrzao1_1280.jpg',//Glory of a City (v 1)
+	  'https://66.media.tumblr.com/74c98f635b2e37545b8ee45235e79174/fda32ad434dc473c-de/s400x600/ff2d6d7e092804e4af4e3ef8a11133f24343d647.png',//Population Loss at War (v 1)
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
