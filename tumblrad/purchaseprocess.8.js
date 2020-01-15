@@ -18,6 +18,7 @@
 	  'https://ponomakarera.social/post/178062686225/tumblr%E3%83%86%E3%83%BC%E3%83%9E-linkit',//Tumblrテーマ – Linkit
 	  'https://ponomakarera.social/post/178538050475/wars-for-science-v-1',//Wars for Science (v 1)
 	  'https://ponomakarera.social/post/185454093865/glory-of-a-city-v-1',//Glory of a City (v 1)
+	  'https://ponomakarera.social/post/190270895900/population-loss-at-war-v-1',//Population Loss at War (v 1)
 	]
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
