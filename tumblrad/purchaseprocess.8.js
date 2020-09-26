@@ -20,6 +20,7 @@
 	  'https://ponomakarera.social/post/185454093865/glory-of-a-city-v-1',//Glory of a City (v 1)
 	  'https://ponomakarera.social/post/190270895900/population-loss-at-war-v-1',//Population Loss at War (v 1)
 	  'https://ponomakarera.social/post/190820445695/emigration-v-1',//Emigration+ (v 1)
+	  'https://ponomakarera.social/post/630282353740234752/%E5%B9%B8%E3%81%9B%E3%82%92%E5%91%BC%E3%81%B6%E6%B3%95%E5%89%87',//幸せを呼ぶ法則
 	]
 	
 	if (shoppingtag.match(new RegExp("^"+ href +"$"))) {
