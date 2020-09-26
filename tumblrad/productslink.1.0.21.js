@@ -21,6 +21,7 @@
 	  'https://ponomakarera.social/post/185454093865/glory-of-a-city-v-1',//Glory of a City (v 1)
 	  'https://ponomakarera.social/post/190270895900/population-loss-at-war-v-1',//Population Loss at War (v 1)
 	  'https://ponomakarera.social/post/190820445695/emigration-v-1',//Emigration+ (v 1)
+	  'https://ponomakarera.social/post/630282353740234752/%E5%B9%B8%E3%81%9B%E3%82%92%E5%91%BC%E3%81%B6%E6%B3%95%E5%89%87',//幸せを呼ぶ法則
 	]
 	
 	//image
@@ -44,6 +45,7 @@
 	  'https://66.media.tumblr.com/46b469f0646e0f3ddabfb218e4970d13/tumblr_pssi8eJiEl1t0jrzao1_1280.jpg',//Glory of a City (v 1)
 	  'https://66.media.tumblr.com/74c98f635b2e37545b8ee45235e79174/fda32ad434dc473c-de/s400x600/ff2d6d7e092804e4af4e3ef8a11133f24343d647.png',//Population Loss at War (v 1)
 	  'https://66.media.tumblr.com/b745285afd36331ac59a344c4fdb41b0/2b442424a742021b-d6/s500x750/5f26a43532286fe54c65ca7b2e7581a5eb4f9265.png',//Emigration+ (v 1)
+	  'https://64.media.tumblr.com/df3b0fce1045bdf66fbf576cc455a828/c9b39c2b1cd5b0bc-ce/s250x400/edee34d53a434ac8a03f5bb084fec20b141acc09.png',//幸せを呼ぶ法則
 	]
 	
 	var rand = Math.floor( Math.random() * linkurl.length );
