@@ -4,9 +4,9 @@ $(function () {
 	
 	$('.edd_button').click(function(e) {
 	
-		var download_id = $(this).attr('download_id');
-		var product_title = $(this).attr('product_title');
-		var amount = Number($(this).attr('price'));
+		var download_id = $(this).attr('data-download_id');
+		var product_title = $(this).attr('data-product_title');
+		var amount = Number($(this).attr('data-price'));
 		
 		StripeCheckout.configure({
 			key: 'pk_test_S0hENx8vOQaCk3UsGTs3W0eC',
